@@ -1,3 +1,6 @@
+require 'learning_studio_authentication'
+require 'learning_studio_core'
+
 class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
 
@@ -10,6 +13,7 @@ class CoursesController < ApplicationController
   # GET /courses/1
   # GET /courses/1.json
   def show
+    @results = HTTParty.get('http://api.learningstudio.com/courses/1.json')
   end
 
   # GET /courses/new
