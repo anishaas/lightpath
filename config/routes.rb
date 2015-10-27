@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
+  devise_for :students
+  devise_for :teachers
+  devise_for :users
   resources :lightbulbs
   resources :students
   resources :courses
   resources :teachers
-  get  '/login', to: 'sessions#new',    as: 'new_login'
-  post '/login', to: 'sessions#create', as: 'create_session'
-  delete '/logout', to: 'sessions#destroy', as: 'logout'
+
   root 'application#homepage'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

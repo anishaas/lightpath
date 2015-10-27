@@ -10,9 +10,6 @@ class CoursesController < ApplicationController
 
   # GET /courses/1
   # GET /courses/1.json
-  def show
-    @results = HTTParty.get('http://api.learningstudio.com/courses/1.json')
-  end
 
   # GET /courses/new
   def new
