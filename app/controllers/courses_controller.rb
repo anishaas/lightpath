@@ -1,5 +1,3 @@
-require 'learning_studio_authentication'
-require 'learning_studio_core'
 
 class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
