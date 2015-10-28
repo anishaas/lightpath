@@ -7,10 +7,10 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Student.create(first_name:"Anisha", last_name:"Srivastava", email: "anisha@example.com",
-username:"anishasrivastava", admin:false)
+username:"anishasrivastava", admin:false, password: 'password')
 
 Teacher.create(first_name:"Martin", last_name:"Kevorkian", email: "mk@example.com",
-username:"martinkevorkian", admin:true)
+username:"martinkevorkian", admin:true, password: 'password')
 
 Course.create(name:"World Literature",teacher_id:1, description:"Classic literature")
 
