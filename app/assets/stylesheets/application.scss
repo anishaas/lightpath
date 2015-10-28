@@ -15,3 +15,20 @@
  */
  @import "materialize";
  @import "materialize/components/color";
+
+.background {
+  #bg {
+    opacity: 0.85;
+  }
+}
+
+.login {
+    background: #e1e8ed;
+    width: 400px;
+    padding: 20px;
+    display: inline-block;
+    margin-left: 35%;
+    margin-top: 10%;
+    font-family: 'Lato';
+    text-align:center;
+  }
