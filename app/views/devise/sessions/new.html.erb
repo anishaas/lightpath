@@ -7,6 +7,12 @@
   <div style="position: relative; z-index: 2;">
     <div class = 'login'>
     <h2>Sign in</h2>
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field">
