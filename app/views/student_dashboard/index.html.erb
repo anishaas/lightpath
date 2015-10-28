@@ -1,7 +1,10 @@
 
-<div class = 'courses'>
-  <h3> Your Courses </h3>
-  <%@courses.each do |course|%>
-    <p><%=course.name%></p>
-  <%end%>
-</div>
+  <div class = 'courses'>
+      <h3> Your Courses </h3>
+      <%@courses.each do |course|%>
+        <p><%=link_to course.name, course_path(course)%></p>
+      <%end%>
+  </div>
+  <div class = 'dashboardnav'>
+    <h4>illuminate the path to mastery</h4>
+  </div>
