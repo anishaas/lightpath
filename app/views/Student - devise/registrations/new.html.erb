@@ -1,5 +1,19 @@
-<h2>Sign up</h2>
-<h2>test</h2>
+<div class = 'background' style="position: absolute; z-index: 1; left: 0; top: 0;">
+  <div id="bg">
+    <img src="https://pixabay.com/get/89ee390756ee60bc9bea/1446041830/glasses-983947_1920.jpg" alt="" z-index:-2>
+  </div>
+</div>
+
+<div style="position: relative; z-index: 2;">
+  <div class = 'signup'>
+  <h2>Sign Up</h2>
+  <% if notice %>
+    <p class="alert alert-success"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+    <p class="alert alert-danger"><%= alert %></p>
+  <% end %>
+
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
@@ -37,3 +51,7 @@
 <% end %>
 
 <%= render "Student/shared/links" %>
+      </div>
+    </div>
+  </div>
+</div>
