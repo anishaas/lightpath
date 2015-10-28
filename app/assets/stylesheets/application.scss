@@ -24,11 +24,23 @@
 
 .background {
   #bg {
+    width: 100%;
     opacity: 0.80;
   }
 }
 
 .login {
+    background: #e1e8ed;
+    width: 400px;
+    padding: 40px;
+    display: inline-block;
+    margin-left: 40%;
+    margin-top: 10%;
+    font-family: 'Lato';
+    text-align:center;
+  }
+
+.signup {
     background: #e1e8ed;
     width: 400px;
     padding: 20px;
@@ -38,14 +50,3 @@
     font-family: 'Lato';
     text-align:center;
   }
-
-  .signup {
-      background: #e1e8ed;
-      width: 400px;
-      padding: 20px;
-      display: inline-block;
-      margin-left: 35%;
-      margin-top: 10%;
-      font-family: 'Lato';
-      text-align:center;
-    }
