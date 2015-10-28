@@ -16,6 +16,12 @@
  @import "materialize";
  @import "materialize/components/color";
 
+.homepage {
+  font-family: 'Lato', sans-serif;
+  margin: 0 auto;
+  text-align: center;
+}
+
 .background {
   #bg {
     opacity: 0.80;
