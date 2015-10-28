@@ -1,19 +1,19 @@
-<p id="notice"><%= notice %></p>
+<%= react_component('Sidebar')%>
+<div class = 'courseinfo'>
+  <h5>Course Information</h5>
 <p><%=@results%></p>
 <p>
   <strong>Name:</strong>
   <%= @course.name %>
 </p>
-
 <p>
   <strong>Teacher:</strong>
-  <%= @course.teacher_id %>
+  <%= @course.teacher.first_name + " " + @course.teacher.last_name%>
 </p>
-
 <p>
   <strong>Description:</strong>
   <%= @course.description %>
 </p>
-
-<%= link_to 'Edit', edit_course_path(@course) %> |
-<%= link_to 'Back', courses_path %>
+</div>
+<!-- <%= link_to 'Edit', edit_course_path(@course) %> |
+<%= link_to 'Back', courses_path %> -->

@@ -1,3 +1,32 @@
 // Place all the styles related to the Courses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.sidebar {
+  background-color:#e1e8ed;
+  float:left;
+  padding:20px;
+  width:20%;
+  text-align:center;
+  height:100vh;
+   ul {
+     width:100%;
+     padding-left:10px;
+     padding-right:10px;
+     font-size:20px;
+    a {
+
+    }
+     a:hover {
+       background-color: grey;
+       }
+   }
+}
+
+.courseinfo {
+  padding: 20px;
+  width:1130px;
+  float:right;
+    p {
+        font-size:18px;
+    }
+}
