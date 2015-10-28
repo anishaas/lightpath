@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :students
-  devise_for :teachers
-  devise_for :users
   resources :lightbulbs
   resources :students
   resources :courses
