@@ -3,7 +3,7 @@ var Sidebar = React.createClass({
       return (<div className = 'sidebar'>
           <ul><Link url = {'/login'} name = {'Assignments'}/></ul>
           <ul><Link url = {'/login'} name = {'Quizzes'}/></ul>
-          <ul><Link url = {'/login'} name = {'Your Lightbulbs'}/></ul>
+          <ul><Link url = {'/login'} name = {'Grades'}/></ul>
         </div>);
   }
 });

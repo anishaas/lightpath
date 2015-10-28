@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
-  resources :lightbulbs
   resources :students
   resources :courses
   resources :teachers
+  resources :enrollments do
+    resources :lightbulbs
+    end
+
   # get '/student/sign_up' => 'devise/registrations#new'
   get '/student_dashboard' => 'student_dashboard#index'
   get  '/login', to: 'sessions#new',    as: 'new_login'
