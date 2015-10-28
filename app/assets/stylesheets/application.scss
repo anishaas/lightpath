@@ -16,6 +16,18 @@
  @import "materialize";
  @import "materialize/components/color";
 
+.courses {
+  background:#e1e8ed;
+  padding: 20px;
+  width: 300px;
+  height: 100vh;
+  font-family: 'Lato', sans-serif;
+    p {
+      text-align:center;
+      font-size:20px;
+    }
+}
+
 .homepage {
   font-family: 'Lato', sans-serif;
   margin: 0 auto;

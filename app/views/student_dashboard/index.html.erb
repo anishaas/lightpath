@@ -1,3 +1,7 @@
-<%=@courses.each do |course|%>
-<%=course.name%>
-<%end%>
+
+<div class = 'courses'>
+  <h3> Your Courses </h3>
+  <%@courses.each do |course|%>
+    <p><%=course.name%></p>
+  <%end%>
+</div>
