@@ -90,7 +90,6 @@ ActiveRecord::Schema.define(version: 20151029042026) do
     t.inet     "last_sign_in_ip"
   end
 
-  add_index "teachers", ["email"], name: "index_teachers_on_email", unique: true, using: :btree
   add_index "teachers", ["reset_password_token"], name: "index_teachers_on_reset_password_token", unique: true, using: :btree
 
   create_table "users", force: :cascade do |t|
