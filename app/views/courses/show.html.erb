@@ -14,4 +14,4 @@
 </div>
 <!-- <%= link_to 'Edit', edit_course_path(@course) %> |
 <%= link_to 'Back', courses_path %> -->
-<%=react_component('Lightbulbsbar', courseID:@course.id, lightbulbID:@course.lightbulbs.first.id, lightbulbSummary:@course.lightbulbs.first.summary)%>
+<%=react_component('Lightbulbsbar', course:@course, lightbulbs:@course.lightbulbs)%>

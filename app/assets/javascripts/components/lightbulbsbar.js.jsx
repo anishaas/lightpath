@@ -1,12 +1,12 @@
 var Lightbulbsbar = React.createClass({
   render: function () {
-    var course_id = this.props.courseID
-    var lightbulb_id = this.props.lightbulbID
-    var lightbulb_summary = this.props.lightbulbSummary
+    var course_id = this.props.course.id;
+    var lightbulbs = this.props.lightbulbs;
       return (<div className = 'lightbulbsbar'>
-          <ul><h4>Your Lightbulb Moments</h4></ul>
-          <ul><Link url = {'/courses/' + course_id +'/lightbulb/' + lightbulb_id} name = {lightbulb_summary}/></ul>
-          <ul><Link url = {'/courses/' + course_id +'/lightbulb/' + 2} name = {"Contrast Peter Keating and Howard Roark."}/></ul>
+        <ul><h4>Your Lightbulb Moments</h4></ul>
+        {lightbulbs.map(function (lightbulb, index) {
+          return (<ul key={index}><Link url = {'/courses/' + course_id +'/lightbulb/' + lightbulb.id} name={lightbulb.summary}/></ul>)
+        })}
         </div>);
   }
 });
