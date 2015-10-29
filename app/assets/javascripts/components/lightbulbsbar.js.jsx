@@ -6,7 +6,7 @@ var Lightbulbsbar = React.createClass({
         <ul><h4>Your Lightbulb Moments</h4></ul>
         {lightbulbs.map(function (lightbulb, index) {
           return (<ul key={index}><Link url = {'/courses/' + course_id +'/lightbulb/' + lightbulb.id} name={lightbulb.summary}/></ul>)
+          </div>);
         })}
-        </div>);
   }
 });
