@@ -15,7 +15,7 @@ Teacher.create(first_name:"Justin", last_name:"Herrick", email: "jh@example.com"
 username:"justinherrick", admin:true, password: 'password')
 
 Course.create(name:"World Literature",teacher_id:1, description:"Classic literature")
-Course.create(name:"Backend Engingeering, Ruby on Rails", teacher_id:2, description:"Build web applications using Rails framework")
+Course.create(name:"Backend Engineering, Ruby on Rails", teacher_id:2, description:"Build web applications using Rails framework")
 
 Enrollment.create(student_id:1, course_id:1)
 Enrollment.create(student_id:1, course_id:2)
