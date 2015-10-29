@@ -6,7 +6,7 @@
   <p><%=assignment.description%></p>
   <div id="blanket" style="display:none"></div>
     <!-- Explain the Close function -->
-  <div id="popUpDiv" style="display:none">
+  <!-- <div id="popUpDiv" style="display:none">
     <p><%@assignments.first.lightbulbs.each do |lightbulb|%>
         <%if lightbulb.summary.present?%>
           <p>Summary:</p>
@@ -18,8 +18,9 @@
         <%end%>
       <%end%>
     </p>
-    <a href="" onclick="popup('popUpDiv')">Close</a></div>
-  <div class ="btn" onClick= "popup('popUpDiv')">Create Lighbulb</div>
+    <a href="#" onclick="popup('popUpDiv')">Close</a>
+  </div> -->
+  <a href= "#modal1" class= "modal-trigger btn">Create Lighbulb</a>
 <!-- Does function popup display 'popUpDiv'? -->
   <div id="blanket" style="display:none"></div>
   <div id="popUpDiv" style="display:none">
@@ -27,3 +28,15 @@
       <a href="#" onclick="popup('popUpDiv')"><div class="btn">View Lightbulbs</div></a>
 <%end%>
 </div>
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <h4>Modal Header</h4>
+    <p>A bunch of text</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+  </div>
+</div>
+<!-- href for fading buttons -->
+<!-- inline styling -> stylesheet -->
