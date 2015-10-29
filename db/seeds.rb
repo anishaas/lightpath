@@ -20,8 +20,10 @@ Course.create(name:"Backend Engingeering, Ruby on Rails", teacher_id:2, descript
 Enrollment.create(student_id:1, course_id:1)
 Enrollment.create(student_id:1, course_id:2)
 
-Lightbulb.create(assignment_id: 1, enrollment_id: 1, student_id: 1, summary:"Ahab -- clash of fate and free-will")
-Lightbulb.create(assignment_id: 2, enrollment_id: 2, student_id: 1, summary:"Roark represents individualism, Keating conformity.")
+Lightbulb.create(course_id: 1, assignment_id: 1, enrollment_id: 1, student_id: 1, summary:"Ahab -- clash of fate and free-will")
+Lightbulb.create(course_id: 1, assignment_id: 2, enrollment_id: 1, student_id: 1, summary:"Roark represents individualism, Keating conformity.")
+Lightbulb.create(course_id: 2, assignment_id: 2, enrollment_id: 2, student_id: 1, summary:"A method is a function or feature of a class")
+#teachers can also see which assignments brought the best 'lightbulb moments'
 
 Assignment.create(course_id:1, title:"Moby Dick Reading Response", description: "Analyze Captain Ahab's inner conflit.")
 Assignment.create(course_id:1, title:"The Fountainhead Essay", description: "Contrast Peter Keating and Howard Roark.")

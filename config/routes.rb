@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   resources :students
   resources :courses do
-    resources :assignments do
-      resources :lightbulbs
-    end
+    resources :assignments
+  end
+  resources :courses do
+    resources :lightbulbs
   end
   resources :teachers
   resources :enrollments
