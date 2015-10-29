@@ -1,8 +1,10 @@
 function toggle(div_id) {
 	var el = document.getElementById(div_id);
-	if ( el.style.display == 'none' ) {	el.style.display = 'block';}
-	else {el.style.display = 'none';}
+	if ( el.style.display == 'none' ) {	el.style.display = 'block';
+	}	else {
+		el.style.display = 'none';}
 }
+
 function blanket_size(popUpDivVar) {
 	if (typeof window.innerWidth != 'undefined') {
 		viewportheight = window.innerHeight;
@@ -19,10 +21,10 @@ function blanket_size(popUpDivVar) {
 		}
 	}
 	var blanket = document.getElementById('blanket');
-	blanket.style.height = blanket_height + 'px';
+		blanket.style.height = blanket_height + 'px';
 	var popUpDiv = document.getElementById(popUpDivVar);
-	popUpDiv_height=blanket_height/2-200;//200 is half popup's height
-	popUpDiv.style.top = popUpDiv_height + 'px';
+		popUpDiv_height=blanket_height/2-200;//200 is half popup's height
+		popUpDiv.style.top = popUpDiv_height + 'px';
 }
 function window_pos(popUpDivVar) {
 	if (typeof window.innerWidth != 'undefined') {
@@ -43,6 +45,7 @@ function window_pos(popUpDivVar) {
 	window_width=window_width/2-200;//200 is half popup's width
 	popUpDiv.style.left = window_width + 'px';
 }
+// with popUpDiv function call, display passe in variable?
 function popup(windowname) {
 	blanket_size(windowname);
 	window_pos(windowname);
