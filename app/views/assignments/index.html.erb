@@ -5,8 +5,8 @@
 <%@assignments.each do |assignment|%>
   <h5><%=assignment.title%></h5>
   <p><%=assignment.description%></p>
-    <a href= "#modal1" class= "modal-trigger btn">Create Lighbulb</a>
-    <a href= "#modal2" class= "modal-trigger btn">View Lightbulbs</a>
+  <a href= "#modal1" class="modal-trigger btn">Create Lighbulb</a>
+  <a href= "#modal2" class="modal-trigger btn">View Lightbulbs</a>
   <%end%>
 </div>
 
@@ -34,14 +34,14 @@
   <div class="modal-content">
     <h3>Lightbulb</h3>
     <p><%@assignments.first.lightbulbs.each do |lightbulb|%>
-        <%if lightbulb.summary.present?%>
-          <p>Summary:</p>
-        <%=lightbulb.summary%>
+          <%if lightbulb.summary.present?%>
+            <p>Summary:</p>
+          <%=lightbulb.summary%>
+            <%end%>
+          <%if lightbulb.video_url.present?%>
+            <p>Video URL:</p>
+          <%=lightbulb.video_url%>
           <%end%>
-        <%if lightbulb.video_url.present?%>
-          <p>Video URL:</p>
-        <%=lightbulb.video_url%>
-        <%end%>
       <%end%>
   </div>
   <div class="modal-footer">
