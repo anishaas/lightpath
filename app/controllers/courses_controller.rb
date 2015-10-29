@@ -8,6 +8,11 @@ class CoursesController < ApplicationController
     @courses = Course.all
   end
 
+  def show
+    # @course = Course.fetch(params[:id])
+    # @assignments = @course.assignments
+  end
+
   # GET /courses/1
   # GET /courses/1.json
 

@@ -1,11 +1,8 @@
-<%= react_component('Sidebar')%>
+<%= react_component('Sidebar', courseID:@course.id)%>
 <div class = 'courseinfo'>
+  <h3><center><%=@course.name%></center></h3>
   <h5>Course Information</h5>
 <p><%=@results%></p>
-<p>
-  <strong>Name:</strong>
-  <%= @course.name %>
-</p>
 <p>
   <strong>Teacher:</strong>
   <%= @course.teacher.first_name + " " + @course.teacher.last_name%>

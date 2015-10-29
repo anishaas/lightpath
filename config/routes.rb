@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
   resources :students
-  resources :courses
-  resources :teachers
-  resources :enrollments do
-    resources :lightbulbs
+  resources :courses do
+    resources :assignments do
+      resources :lightbulbs
     end
+  end
+  resources :teachers
+  resources :enrollments
 
   # get '/student/sign_up' => 'devise/registrations#new'
   get '/student_dashboard' => 'student_dashboard#index'
