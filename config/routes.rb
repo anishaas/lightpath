@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   end
   resources :teachers
   resources :enrollments
+  resources :lightbulbs
 
   # get '/student/sign_up' => 'devise/registrations#new'
   get '/student_dashboard' => 'student_dashboard#index'
