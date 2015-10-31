@@ -1,3 +1,4 @@
+// jshint ignore: start
 var Link = React.createClass({
   getInitialState: function () {
     return {

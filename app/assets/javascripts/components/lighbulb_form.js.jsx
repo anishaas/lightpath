@@ -1,3 +1,4 @@
+// jshint ignore: start
 var LightbulbForm = React.createClass ({
   getInitialState: function () {
     return {
