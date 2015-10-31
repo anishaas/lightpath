@@ -1,4 +1,3 @@
-// jshint ignore: start
 var Lightbulbsbar = React.createClass({
   render: function () {
     var course_id = this.props.course.id;

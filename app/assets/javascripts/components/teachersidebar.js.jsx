@@ -1,4 +1,3 @@
-// jshint ignore: start
 var TeacherSidebar = React.createClass({
   render: function () {
     var teacher_id = this.props.teacherID;
