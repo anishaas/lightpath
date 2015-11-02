@@ -6,13 +6,14 @@ var SubmitButton = React.createClass({
   },
 
   handleClick: function (event) {
+    var assignmentid = this.props.assignmentID
       $.ajax({
-        url: '/submissions',
+        url: '/assignments/' + assignmentid + '/submissions',
         method: "POST",
         dataType: "JSON",
         data: {
           submission: {
-            assignment_id: this.props.assignmentID,
+            assignment_id: assignmentid,
             student_id: this.props.studentID,
             body: this.state.body,
           }

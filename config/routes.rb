@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   resources :courses do
     resources :lightbulbs
   end
-  resources :submissions
+  resources :assignments do
+    resources :submissions
+  end
   resources :teachers
   resources :enrollments
   resources :lightbulbs

@@ -1,2 +1,2 @@
 <h1>Respond to the Assignment</h1>
-<%= react_component('SubmitButton', assignmentID: 1, studentID: 1)%>
+<%= react_component('SubmitButton', assignmentID: params[:assignment_id], studentID: current_user.id)%>
