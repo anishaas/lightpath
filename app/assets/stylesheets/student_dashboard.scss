@@ -1,12 +1,53 @@
+.wrapper {
+  width: 75%;
+  float:right;
+}
+.submissions {
+  width: 400px;
+  margin-left:28%;
+  padding: 20px;
+  background-color: #e1e8ed;
+  margin-left: 5%;
+  margin-top: 5%;
+  padding: 50px;
+  padding-top: 20px;
+  text-align:center;
+}
+
+.notifications {
+  width: 400px;
+  margin-left:28%;
+  padding: 20px;
+  background-color: #e1e8ed;
+  margin-left: 5%;
+  margin-top: 5%;
+  padding: 50px;
+  padding-top: 20px;
+  text-align:center;
+}
+
+.lightbulbstats {
+  width: 250px;
+  height: 170px;
+  padding: 8px;
+  height: 220px;
+  background-color: #e1e8ed;
+  margin-left: 58%;
+  padding: 50px;
+  padding-top: 20px;
+  text-align:center;
+}
+
 .dashboardnav {
   background:#FFD452;
   opacity:.80;
-  width: 75%;
-  float: right;
+  width: 100%;
   padding: 50px;
   text-align:center;
   font-family:'Lato',sans-serif;
 }
+
+// display:none for notice
 
 .courses {
   background:#e1e8ed;
