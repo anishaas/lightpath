@@ -1,4 +1,4 @@
-var CreateLightBulbButton = React.createClass({
+var CreateLightBulbForm = React.createClass({
   getInitialState: function () {
     return {
       submitted: false
@@ -75,7 +75,7 @@ var CreateLightBulbButton = React.createClass({
                   </div>
                 </div>
                 <div class="modal-footer">
-                      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+                      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
                 </div>
               </div>
         );

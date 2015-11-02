@@ -3,6 +3,21 @@ class SessionsController < ApplicationController
 def new #new login session
 end
 
+def new_teacher_session
+  render '/sessions/new_teacher_session.html.erb'
+end
+
+def create_teacher_session
+  user = Teacher.find_by_username(params[:username])
+  if user && user.authenticate(params[:password])
+    set_user_session(user) #set session's user id to params passed in user
+    redirect_to teacher_dashboard_path, notice: "Successfully Logged In. Welcome #{current_user.first_name}" + "!"
+  else
+    flash[:alert] = "Login Credentials Invalid!"
+    render :new #back to login page
+  end
+end
+
 def create
   user = Student.find_by_username(params[:username])
   if user && user.authenticate(params[:password])

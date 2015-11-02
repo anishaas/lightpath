@@ -25,7 +25,7 @@ Lightbulb.create(course_id: 1, assignment_id: 2, enrollment_id: 1, student_id: 1
 Lightbulb.create(course_id: 2, assignment_id: 2, enrollment_id: 2, student_id: 1, summary:"A method is a function or feature of a class")
 #teachers can also see which assignments brought the best 'lightbulb moments'
 
-Assignment.create(course_id:1, title:"Moby Dick Reading Response", description: "Analyze Captain Ahab's inner conflit.")
-Assignment.create(course_id:1, title:"The Fountainhead Essay", description: "Contrast Peter Keating and Howard Roark.")
-Assignment.create(course_id:2, title: "Event Loop Blog Post", description: "In your own words explain the event loop and come up with a real world parallel.")
-Assignment.create(course_id:2, title:"Quick Concept Check", description: "Answer the following question in a few sentences: What is a method?")
+Assignment.create(graded: false, course_id:1, title:"Moby Dick Reading Response", description: "Analyze Captain Ahab's inner conflit.")
+Assignment.create(graded: false, course_id:1, title:"The Fountainhead Essay", description: "Contrast Peter Keating and Howard Roark.")
+Assignment.create(graded: false, course_id:2, title: "Event Loop Blog Post", description: "In your own words explain the event loop and come up with a real world parallel.")
+Assignment.create(graded: false, course_id:2, title:"Quick Concept Check", description: "Answer the following question in a few sentences: What is a method?")

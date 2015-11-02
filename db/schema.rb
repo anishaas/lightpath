@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151029042026) do
+ActiveRecord::Schema.define(version: 20151102010238) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20151029042026) do
     t.string  "title"
     t.string  "description"
     t.integer "course_id"
+    t.boolean "graded",      default: false
+    t.integer "teacher_id"
   end
 
   create_table "courses", force: :cascade do |t|
@@ -69,6 +71,11 @@ ActiveRecord::Schema.define(version: 20151029042026) do
   end
 
   add_index "students", ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true, using: :btree
+
+  create_table "submissions", force: :cascade do |t|
+    t.integer "assignment_id"
+    t.string  "body"
+  end
 
   create_table "teachers", force: :cascade do |t|
     t.string   "first_name"
