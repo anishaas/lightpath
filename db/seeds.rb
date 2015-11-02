@@ -29,3 +29,5 @@ Assignment.create(graded: false, course_id:1, title:"Moby Dick Reading Response"
 Assignment.create(graded: false, course_id:1, title:"The Fountainhead Essay", description: "Contrast Peter Keating and Howard Roark.")
 Assignment.create(graded: false, course_id:2, title: "Event Loop Blog Post", description: "In your own words explain the event loop and come up with a real world parallel.")
 Assignment.create(graded: false, course_id:2, title:"Quick Concept Check", description: "Answer the following question in a few sentences: What is a method?")
+
+Submission.create(assignment_id: 1, student_id: 1, body:'answer answer anser')

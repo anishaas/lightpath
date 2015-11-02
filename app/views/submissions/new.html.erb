@@ -1,9 +1,2 @@
-<%= form_for(new_submission_path) do |f| %>
-<div class="field">
-  <%= f.label :body %><br>
-  <%= f.text_field :body %>
-</div>
-<div class="actions">
-  <%= f.submit %>
-</div>
-<%end%>
+<h1>Respond to the Assignment</h1>
+<%= react_component('SubmitButton', assignmentID: 1, studentID: 1)%>

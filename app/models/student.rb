@@ -8,4 +8,5 @@ class Student < ActiveRecord::Base
   has_many :courses, through: :enrollments
   has_many :teachers, through: :courses
   has_many :lightbulbs
+  has_many :submissions
 end
