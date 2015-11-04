@@ -16,12 +16,10 @@
  @import "materialize";
  @import "materialize/components/color";
 
-input {
-  width: 60%;
-  height:50px;
-  text-align: center;
-  font-size: 25px;
-}
+ input {
+   line-height: normal;
+   font-size: 25px;
+ }
 
 #hpbackground {
     img {

@@ -8,8 +8,8 @@ class CoursesController < ApplicationController
   def search
     #get assignments for the course page user is on
     @q = "%#{params[:query]}%"
-    @assignment = Assignment.find_by("title LIKE ?", @q)
-    @assignment
+    @assignments = Assignment.where("title LIKE ?", @q)
+    @assignments
     render 'show'
   end
 # Started working when I changed .where to .find_by
