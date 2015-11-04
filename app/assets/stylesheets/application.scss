@@ -16,6 +16,50 @@
  @import "materialize";
  @import "materialize/components/color";
 
+
+.homepage {
+   font-family: 'Lato', sans-serif;
+   margin: 0 auto;
+   text-align: center;
+
+   h1 {
+        font-size: 150px;
+      }
+
+    h3 {
+      padding: 20px;
+      }
+
+    a {
+      color: black;
+      font-size: 30px;
+      padding:10px;
+      font: black;
+    }
+    a:hover {
+      color: black;
+      background-color: #FFD452;
+      height: 10px;
+      opacity: .6;
+}
+ }
+
+ #hpbackground {
+     img {
+       width: 115%;
+       height:100%;
+       opacity: .65;
+   }
+ }
+
+ #bg {
+   img {
+     width: 115%;
+     height: 100%;
+     opacity: .85;
+   }
+ }
+
  input {
    line-height: normal;
    font-size: 25px;
@@ -39,12 +83,6 @@
 .lblinks {
   padding:10px;
   float:right;
-}
-
-.homepage {
-  font-family: 'Lato', sans-serif;
-  margin: 0 auto;
-  text-align: center;
 }
 
 .signup {
