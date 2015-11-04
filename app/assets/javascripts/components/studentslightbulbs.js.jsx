@@ -5,11 +5,10 @@ var StudentLightbulbsbar = React.createClass({
       return (
         <div className = 'studentslightbulbsbar'>
           <ul><h4>"Your Students' Lightbulbs"</h4></ul>
-              {lightbulbs.map(function (lightbulb, index) {
+              {lightbulbs.map(function (lightbulb, index)
                   (<ul key={index}>
                     <Link url={'/courses/' + course_id +'/lightbulb/' + lightbulb.id} name={lightbulb.summary}/>
                   </ul>);
-                }
               }
         </div>);
       }
