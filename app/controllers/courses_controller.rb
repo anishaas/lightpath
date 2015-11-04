@@ -1,10 +1,20 @@
 
 class CoursesController < ApplicationController
-  before_action :set_course, only: [:show, :edit, :update, :destroy]
+  before_action :set_course, only: [:search, :show, :edit, :update, :destroy]
 
   # GET /courses
   # GET /courses.json
+
+  def search
+    #get assignments for the course page user is on
+    @q = "%#{params[:query]}%"
+    @assignments = Assignment.where("title LIKE ?", @q)
+     @assignments
+    render 'show'
+  end
+
   def index
+    @assignments
     @courses = Course.all
   end
 

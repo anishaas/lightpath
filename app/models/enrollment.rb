@@ -1,5 +1,5 @@
 class Enrollment < ActiveRecord::Base
   belongs_to :student
   belongs_to :course
-  has_many :assignments
+  has_many :submissions
 end

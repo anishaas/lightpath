@@ -1,3 +1,4 @@
+
 <%= react_component('Sidebar', courseID:@course.id)%>
 <div class = 'courseinfo'>
   <h3><center><%=@course.name%></center></h3>
@@ -11,7 +12,27 @@
   <strong>Description:</strong>
   <%= @course.description %>
 </p>
+  <center>
+      <%=react_component('SearchbarLightbulbs')%>
+  </center>
 </div>
-<!-- <%= link_to 'Edit', edit_course_path(@course) %> |
-<%= link_to 'Back', courses_path %> -->
+
 <%=react_component('Lightbulbsbar', course:@course, lightbulbs:current_user.lightbulbs.where(course_id:@course.id))%>
+
+
+<center>
+<div class = 'searchbar'>
+<%=form_tag search_assignments_path do %>
+  <input class="search full width" id="searchbar" name="query" placeholder = "Search through your classmates' lightbulbs!"
+  autocomplete:"on">
+  <%if @assignments != nil%>
+    <%@assignments.each do |assignment|%>
+      <h6><%=assignment.title%></h6>
+        <%assignment.lightbulbs.each do |lightbulb|%>
+          <p><%=lightbulb.summary%></p> - <%=lightbulb.student.first_name%>
+        <%end%>
+    <%end%>
+  <%end%>
+</div>
+</center>
+<%end%>

@@ -16,6 +16,18 @@
  @import "materialize";
  @import "materialize/components/color";
 
+#bg {
+  img {
+    width: 115%;
+    height: 100%;
+    opacity: .85;
+  }
+}
+.lblinks {
+  padding:10px;
+  float:right;
+}
+
 .homepage {
   font-family: 'Lato', sans-serif;
   margin: 0 auto;

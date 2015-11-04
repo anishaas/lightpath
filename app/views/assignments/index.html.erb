@@ -6,8 +6,8 @@
   <h5><%=assignment.title%></h5>
   <p><%=assignment.description%></p>
   <div class = 'btn'><%=link_to 'Submit Assignment', new_assignment_submission_path(assignment)%></div>
-  <a href= "#modal1" class="modal-trigger btn">Create Lighbulb</a>
-  <a href= "#modal2" class="modal-trigger btn">View Lightbulbs</a>
+  <a href= "#modal1" class="modal-trigger btn"><img src ='http://s13.postimg.org/6n2pzw1zb/image.png'></a>
+  <a href= "#modal2" class="modal-trigger btn">View Lightbulbs!</a>
   <%= react_component('CreateLightBulbForm', assignmentID: assignment.id, courseID: assignment.course.id)%>
   <%end%>
 </div>

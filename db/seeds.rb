@@ -8,6 +8,8 @@
 
 Student.create(first_name:"Anisha", last_name:"Srivastava", email: "anisha@example.com",
 username:"anishasrivastava", admin:false, password: 'password')
+Student.create(first_name:"Mikaila", last_name:"Smith", email: "mikaila@example.com",
+username:"mikailasmith", admin:false, password: 'password')
 
 Teacher.create(first_name:"Martin", last_name:"Kevorkian", email: "mk@example.com",
 username:"martinkevorkian", admin:true, password: 'password')
@@ -19,10 +21,13 @@ Course.create(name:"Backend Engineering, Ruby on Rails", teacher_id:2, descripti
 
 Enrollment.create(student_id:1, course_id:1)
 Enrollment.create(student_id:1, course_id:2)
+Enrollment.create(student_id:2, course_id:1)
 
 Lightbulb.create(course_id: 1, assignment_id: 1, enrollment_id: 1, student_id: 1, summary:"Ahab -- clash of fate and free-will")
 Lightbulb.create(course_id: 1, assignment_id: 2, enrollment_id: 1, student_id: 1, summary:"Roark represents individualism, Keating conformity.")
-Lightbulb.create(course_id: 2, assignment_id: 2, enrollment_id: 2, student_id: 1, summary:"A method is a function or feature of a class")
+Lightbulb.create(course_id: 2, assignment_id: 4, enrollment_id: 2, student_id: 1, summary:"A method is a function or feature of a class")
+Lightbulb.create(course_id: 1, assignment_id: 2, enrollment_id: 1, student_id: 2, summary:"Book book book")
+
 #teachers can also see which assignments brought the best 'lightbulb moments'
 
 Assignment.create(graded: false, course_id:1, title:"Moby Dick Reading Response", description: "Analyze Captain Ahab's inner conflit.")

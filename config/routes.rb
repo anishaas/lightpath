@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :lightbulbs
 
   # get '/student/sign_up' => 'devise/registrations#new'
+  post '/courses/:id' => 'courses#search', as: 'search_assignments'
   get '/student_dashboard' => 'student_dashboard#index'
   get '/teacher_dashboard' => 'teacher_dashboard#index'
   get  '/login', to: 'sessions#new',    as: 'new_login'
