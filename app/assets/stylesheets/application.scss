@@ -16,6 +16,21 @@
  @import "materialize";
  @import "materialize/components/color";
 
+input {
+  width: 60%;
+  height:50px;
+  text-align: center;
+  font-size: 25px;
+}
+
+#hpbackground {
+    img {
+      width: 115%;
+      height:100%;
+      opacity: .65;
+  }
+}
+
 #bg {
   img {
     width: 115%;

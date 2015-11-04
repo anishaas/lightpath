@@ -1,6 +1,12 @@
 // Place all the styles related to the Courses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+input {
+  width: 60%;
+  height:50px;
+  text-align: center;
+  font-size: 25px;
+}
 
 img {
   width:50px;
@@ -15,6 +21,7 @@ img {
     }
       p {
         text-align:center;
+        font-size:14px;
       }
 }
 
