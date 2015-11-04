@@ -11,9 +11,9 @@ var Link = React.createClass({
     this.setState({classNames: 'btn btn-primary'});
   },
   render: function () {
-    return (<a href={this.props.url} className={this.state.className}
+    return (
+      <a href={this.props.url} className={this.state.className}
             onMouseOver={this.mouseOver}
-            onMouseOut={this.mouseLeave}
-            name={this.props.name}></a>);
+            onMouseOut={this.mouseLeave}>{this.props.name}</a>);
   }
 });
