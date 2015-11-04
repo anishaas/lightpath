@@ -50,7 +50,7 @@ handleClick: function (event) {
                 className={this.state.className}/>
 
               <label htmlFor='Article'>ArticleURL</label>
-            <input id='Article' placeholder={'Enter Article URL'}
+              <input id='Article' placeholder={'Enter Article URL'}
               size="50" type="string"
               onChange={this.changeArticleURL}
               value={this.state.ArticleURL}

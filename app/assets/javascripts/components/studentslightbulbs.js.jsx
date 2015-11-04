@@ -9,7 +9,7 @@ var StudentLightbulbsbar = React.createClass({
           lightbulbs.map(function (lightbulb, index) {
           return (
             <ul key={index}>
-              <Link url = {'/courses/' + course_id +'/lightbulb/' + lightbulb.id} name={lightbulb.summary}/>
+              <Link url ={'/courses/' + course_id +'/lightbulb/' + lightbulb.id} name={lightbulb.summary}/>
             </ul>
             )
           })

@@ -6,7 +6,7 @@ var CreateLightBulbForm = React.createClass({
   },
 //AJAX Request
   handleClick: function (event) {
-    var assignment_id = this.props.assignmentID
+    var assignment_id = this.props.assignmentID;
       $.ajax({
         url: '/lightbulbs',
         method: "POST",

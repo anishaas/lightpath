@@ -14,6 +14,6 @@ var Link = React.createClass({
     return (<a className={this.state.className}
             onMouseOver={this.mouseOver}
             onMouseOut={this.mouseLeave}
-            href={this.props.url}>{this.props.name}</a>);
+            href={this.props.url}>{this.props.name}></a>);
   }
 });
