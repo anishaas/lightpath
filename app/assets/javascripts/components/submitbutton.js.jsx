@@ -6,7 +6,7 @@ var SubmitButton = React.createClass({
   },
 
   handleClick: function (event) {
-    var assignmentid = this.props.assignmentID
+    var assignmentid = this.props.assignmentID;
       $.ajax({
         url: '/assignments/' + assignmentid + '/submissions',
         method: "POST",
@@ -29,7 +29,7 @@ var SubmitButton = React.createClass({
 
 render: function () {
       if (this.state.submitted) {
-          return (<div className=''>Submitted!</div>);
+          return (<div className=''>Submitted!</div);
       } else {
           return(
           <div className='form'>
