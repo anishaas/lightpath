@@ -3,7 +3,7 @@
 <div class = 'courseinfo'>
   <h3><center><%=@course.name%></center></h3>
   <h5>Course Information</h5>
-<p><%=@results%></p>
+
 <p>
   <strong>Teacher:</strong>
   <%= @course.teacher.first_name + " " + @course.teacher.last_name%>
@@ -21,7 +21,7 @@
   <%= form_tag search_assignments_path do %>
     <input class="search full width" id="searchbar" name="query" placeholder = "Search through your classmates' lightbulbs by assignment!"
     autocomplete:"on">
-    <% if params[:query] != nil%>
+    <% if params[:query] != nil && @assignments.length >= 1 %>
       <% @assignments.each do |assignment|%>
         <% if assignment != nil && assignment.course_id == @course.id%>
             <h6><%=assignment.title%></h6>
@@ -30,11 +30,13 @@
               <% end %>
         <% elsif assignment != nil && assignment.course_id != @course.id%>
             <p>Sorry, that assignment belongs to a different course!</p>
-        <% elsif assignment == nil%>
-            <p>Sorry, that assignment cannot be found in your courses!</p>
         <% end %>
-      <% end %>
+        <% end %>
+    <% elsif params[:query] != nil && @assignments.length == 0%>
+      <p> Sorry, that assignment doesn't exist for any of your courses! </p>
     <% end %>
   <% end %>
   </div>
 </center>
+<!--
+Why doesn't greater than 0 on top conditional not work? Also why doesn't checking if nil work? -->

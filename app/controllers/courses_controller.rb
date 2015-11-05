@@ -9,9 +9,10 @@ class CoursesController < ApplicationController
     #get assignments for the course page user is on
     @q = "%#{params[:query]}%"
     @assignments = Assignment.where("title LIKE ?", @q)
-    @assignments
     render 'show'
   end
+
+  # lower, .strip, downcase
 # Started working when I changed .where to .find_by
   def index
     @assignments
