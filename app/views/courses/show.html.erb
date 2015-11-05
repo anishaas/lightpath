@@ -3,21 +3,20 @@
     <div id='cssmenu'>
     <ul>
       <p></p>
-       <li class='active'><a href='#'><span><p></p>Home<p></p></span></a></li>
+      <li class='last'><a href='/student_dashboard'><span><p></p>Back To Dashboard<p></p></span></a></li>
        <li class='has-sub'><a href='#'><span><p></p>Assignments<p></p></span></a>
           <ul>
-             <li><a href='#'><span>Assignment 1</span></a></li>
-             <li><a href='#'><span>Assignment 2</span></a></li>
-             <li class='last'><a href='#'><span>Assignment 3</span></a></li>
+            <%@course.assignments.each do |assignment|%>
+             <li><a href='#'><span><%=assignment.title%></span></a></li>
+             <%end%>
           </ul>
        </li>
        <li class='has-sub'><a href='#'><span><p></p>Quizzes<p></p></span></a>
           <ul>
-             <li><a href='#'><span>Quiz 1</span></a></li>
-             <li class='last'><a href='#'><span>/Quiz 2</span></a></li>
+             <li><a href='#'><span><%=@course.assignments.first.title%></span></a></li>
           </ul>
        </li>
-       <li class='last'><a href='#'><span><p></p>Dashboard<p></p></span></a></li>
+       <li class='last'><a href='/student_dashboard'><span><p></p>Logout<p></p></span></a></li>
     </ul>
     </div>
  </div>
