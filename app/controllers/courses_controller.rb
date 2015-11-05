@@ -7,8 +7,12 @@ class CoursesController < ApplicationController
 
   def search
     #get assignments for the course page user is on
-    @q = "%#{params[:query]}%"
-    @assignments = Assignment.where("title LIKE ?", @q)
+    @q = "%#{params[:query]}%".downcase.strip
+    @assignments = Assignment.where("lower(title) LIKE ?", @q)
+    @results = @assignments
+    @results += Lesson.where("lower(title) || lower(description) LIKE ?", @q)
+    @assignments
+    @results
     render 'show'
   end
 

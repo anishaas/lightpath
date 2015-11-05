@@ -21,22 +21,17 @@
   <%= form_tag search_assignments_path do %>
     <input class="search full width" id="searchbar" name="query" placeholder = "Search through your classmates' lightbulbs by assignment!"
     autocomplete:"on">
-    <% if params[:query] != nil && @assignments.length >= 1 %>
-      <% @assignments.each do |assignment|%>
-        <% if assignment != nil && assignment.course_id == @course.id%>
-            <h6><%=assignment.title%></h6>
-              <% assignment.lightbulbs.each do |lightbulb| %>
-                <p><%=lightbulb.summary%></p> - <%=lightbulb.student.first_name%>
-              <% end %>
-        <% elsif assignment != nil && assignment.course_id != @course.id%>
-            <p>Sorry, that assignment belongs to a different course!</p>
-        <% end %>
-        <% end %>
-    <% elsif params[:query] != nil && @assignments.length == 0%>
-      <p> Sorry, that assignment doesn't exist for any of your courses! </p>
-    <% end %>
-  <% end %>
+<%if @results %>
+        <%@results.each do |result|%>
+            <h6><%="Assignment:" + " " +result.title if result.has_attribute?('lesson_id')%></h6>
+              <p><%="Lesson:" + " " + result.number.to_s + " " +result.title if result.has_attribute?('number')%></p>
+            <h6>Lightbulbs:</h6>
+            <%result.lightbulbs.each do |lightbulb|%>
+              <p><%=lightbulb.summary%></p>
+              <p> - <%=lightbulb.student.first_name%></p>
+            <%end%>
+         <%end%>
+  <%end%>
+<%end%>
   </div>
 </center>
-<!--
-Why doesn't greater than 0 on top conditional not work? Also why doesn't checking if nil work? -->
