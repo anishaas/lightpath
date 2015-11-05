@@ -12,6 +12,7 @@ var Lightbulbsbar = React.createClass({
               <div className = 'lbimg'><img src ='http://s13.postimg.org/6n2pzw1zb/image.png'></img></div>
               <div className = 'lblinks'><Link url = {'/courses/' + course_id +'/lightbulb/' + lightbulb.id} name={lightbulb.summary}/></div>
             </ul>
+
           );
           })
         }

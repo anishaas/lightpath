@@ -13,6 +13,7 @@ class CoursesController < ApplicationController
     @results += Lesson.where("lower(title) || lower(description) LIKE ?", @q)
     @assignments
     @results
+    @bulbs= current_user.lightbulbs.where(course_id: @course.id)
     render 'show'
   end
 
@@ -26,6 +27,7 @@ class CoursesController < ApplicationController
   def show
     # @course = Course.fetch(params[:id])
     # @assignments = @course.assignments
+    @bulbs= current_user.lightbulbs.where(course_id: @course.id)
   end
 
   # GET /courses/1
