@@ -1,37 +1,56 @@
-<%= react_component('Sidebar', courseID: @course.id) %>
-
-<div class = 'courseinfo'>
-  <h3><center><%=@course.name%></center></h3>
-  <h5>Course Information</h5>
-
-<p>
-  <strong>Teacher:</strong>
-  <%= @course.teacher.first_name + " " + @course.teacher.last_name%>
-</p>
-<p>
-  <strong>Description:</strong>
-  <%= @course.description %>
-</p>
-</div>
-
-<%= react_component('Lightbulbsbar', course: @course, lightbulbs: current_user.lightbulbs.where(course_id: @course.id)) %>
-
-<center>
-  <div class='searchbar'>
-  <%= form_tag search_assignments_path do %>
-    <input class="search full width" id="searchbar" name="query" placeholder = "Search through your classmates' lightbulbs by assignment!"
-    autocomplete:"on">
-<%if @results %>
-        <%@results.each do |result|%>
-            <h6><%="Assignment:" + " " +result.title if result.has_attribute?('lesson_id')%></h6>
-              <p><%="Lesson:" + " " + result.number.to_s + " " +result.title if result.has_attribute?('number')%></p>
-            <h6>Lightbulbs:</h6>
-            <%result.lightbulbs.each do |lightbulb|%>
-              <p><%=lightbulb.summary%></p>
-              <p> - <%=lightbulb.student.first_name%></p>
-            <%end%>
-         <%end%>
-  <%end%>
-<%end%>
+<div class = 'row'>
+  <div class="col s3">
+    <div id='cssmenu'>
+    <ul>
+      <p></p>
+       <li class='active'><a href='#'><span><p></p>Home<p></p></span></a></li>
+       <li class='has-sub'><a href='#'><span><p></p>Assignments<p></p></span></a>
+          <ul>
+             <li><a href='#'><span>Assignment 1</span></a></li>
+             <li><a href='#'><span>Assignment 2</span></a></li>
+             <li class='last'><a href='#'><span>Assignment 3</span></a></li>
+          </ul>
+       </li>
+       <li class='has-sub'><a href='#'><span><p></p>Quizzes<p></p></span></a>
+          <ul>
+             <li><a href='#'><span>Quiz 1</span></a></li>
+             <li class='last'><a href='#'><span>/Quiz 2</span></a></li>
+          </ul>
+       </li>
+       <li class='last'><a href='#'><span><p></p>Dashboard<p></p></span></a></li>
+    </ul>
+    </div>
+ </div>
+  <div class="col s6">
+    <h3><center><%=@course.name%></center></h3>
+    <h5>Course Information</h5>
+    <p><strong>Teacher:</strong>
+    <%=@course.teacher.first_name + " " + @course.teacher.last_name%>
+    </p>
+    <p>
+    <strong>Description:</strong>
+    <%= @course.description %>
+    </p>
+    <div class='searchbar'>
+    <%= form_tag search_assignments_path do %>
+      <input class="search full width" id="searchbar" name="query" placeholder = "Search through your classmates' lightbulbs by assignment!"
+      autocomplete:"on">
+      <%if @results %>
+              <%@results.each do |result|%>
+                  <h6><%="Assignment:" + " " +result.title if result.has_attribute?('lesson_id')%></h6>
+                    <p><%="Lesson:" + " " + result.number.to_s + " " +result.title if result.has_attribute?('number')%></p>
+                  <h6>Lightbulbs:</h6>
+                  <%result.lightbulbs.each do |lightbulb|%>
+                    <p><%=lightbulb.summary%></p>
+                    <p> - <%=lightbulb.student.first_name%></p>
+                  <%end%>
+               <%end%>
+        <%end%>
+      <%end%>
+    </div>
   </div>
-</center>
+
+  <div class="col s3">
+  <%= react_component('Lightbulbsbar', course: @course, lightbulbs: current_user.lightbulbs.where(course_id: @course.id)) %>
+  </div>
+</div>

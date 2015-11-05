@@ -2,8 +2,7 @@
 <html>
 <head>
   <title>Lightpath</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
   <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 </head>
@@ -11,7 +10,7 @@
   <% if alert %>
     <p class="alert alert-danger"><%= alert %></p>
   <% end %>
-<%= yield %>
-
+  <%= yield %>
+  <%= javascript_include_tag 'application' %>
 </body>
 </html>
