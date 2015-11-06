@@ -4,7 +4,7 @@
       <ul>
         <p></p>
         <li class='last'><a href='/student_dashboard'><span><p></p>Back To Dashboard<p></p></span></a></li>
-         <li class='has-sub'><a href='#'><span><p></p>Assignments<p></p></span></a>
+         <li class='has-sub'><a href='/courses/1/assignments'><span><p></p>Assignments<p></p></span></a>
             <ul>
               <%@course.assignments.each do |assignment|%>
                <li><a href='#'><span><%=assignment.title%></span></a></li>
@@ -43,7 +43,9 @@
                       <h6><%= "Lesson:" + " " + result.number.to_s + " " +result.title if result.has_attribute?('number')%></h6>
                       <h6>Lightbulbs:</h6>
                       <% result.lightbulbs.each do |lightbulb|%>
-                        <p><%= lightbulb.summary%></p>
+                        <p><%= lightbulb.summary if lightbulb.summary.present?%></p>
+                        <p><%= lightbulb.video_url if lightbulb.video_url.present?%></p>
+                        <p><%= link_to lightbulb.article_url, '#{lightbulb.articule_url}' if lightbulb.article_url.present?%></p>
                         <p> - <%= lightbulb.student.first_name%></p>
                       <% end %>
                 </div>
@@ -69,7 +71,8 @@
         <img src ='http://s13.postimg.org/6n2pzw1zb/image.png'></img>
         <%=lightbulb.summary if lightbulb.summary.present?%>
         <%=link_to lightbulb.video_url, 'www.youtube.com' if lightbulb.video_url.present?%>
-        <div class="btn" id="send">Send!</div>
+        <%=link_to lightbulb.article_url, '#{article_url}' if lightbulb.article_url.present?%>
+        <div class="btn" id="send">Share</div>
       </div></p>
     <%end%>
   </div>

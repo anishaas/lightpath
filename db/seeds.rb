@@ -30,6 +30,7 @@ Lightbulb.create(lesson_id: 3, course_id: 1, assignment_id: 2, enrollment_id: 1,
 Lightbulb.create(lesson_id: 2, course_id: 2, assignment_id: 3, enrollment_id: 2, student_id: 2, summary:"Request and response")
 Lightbulb.create(lesson_id: 1, course_id: 2, assignment_id: 5, enrollment_id: 1, student_id: 1, summary:"Object object vs. functional is functional sdlkfjalksd")
 Lightbulb.create(lesson_id: 2, course_id: 2, enrollment_id: 1, student_id: 1, video_url:"www.youtube.com")
+Lightbulb.create(lesson_id: 4, course_id: 2, enrollment_id: 1, student_id: 1, article_url:"http://railscasts.com/episodes/163-self-referential-association?view=asciicast")
 
 #teachers can also see which assignments brought the best 'lightbulb moments'
 
@@ -37,7 +38,7 @@ Assignment.create(lesson_id: 3, graded: false, course_id:1, title:"Moby Dick Rea
 Assignment.create(lesson_id: 3, graded: false, course_id:1, title:"The Fountainhead Essay", description: "Contrast Peter Keating and Howard Roark.")
 Assignment.create(lesson_id: 2, graded: false, course_id:2, title: "Event Loop Blog Post", description: "In your own words explain the event loop and come up with a real world parallel.")
 Assignment.create(lesson_id: 1, graded: false, course_id:2, title:"Quick Concept Check", description: "Answer the following question in a few sentences: What is a method?")
-Assignment.create(lesson_id: 1, title:"Blog Post on Object Oriented Programming", description:"Write a blog post defining object oriented programming
+Assignment.create(lesson_id: 1, course_id:2, title:"Blog Post on Object Oriented Programming", description:"Write a blog post defining object oriented programming
 and compare/contrast it to functional programming")
 
 Submission.create(assignment_id: 1, student_id: 1, body:'answer answer answer')
@@ -46,3 +47,5 @@ Lesson.create(number: 1, course_id: 2, title:"Object Oriented Programming", desc
 Object object object object object")
 Lesson.create(number: 2, course_id: 2, title:"Interacting with Server", description: "Communicate with the server. Request response, request response")
 Lesson.create(number: 1, course_id: 1, title:"Novels", description: "Studying the novel. Themes. Conformity. Individualism.")
+Lesson.create(number: 10, course_id: 2, title:"Self-referential Tables", description: "A field in the table need to be associated with another field in the table that has the same content.
+Ex) Friend following a friend on social media.")
