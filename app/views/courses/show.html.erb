@@ -37,7 +37,7 @@
         <% if @results %>
           <% @results.each do |result| %>
           <div class="card-panel teal">
-                <h6><%= "Assignment:" + " " +result.title if result.has_attribute?('lesson_id')%></h6>
+                <strong><h6><%= "Assignment:" + " " +result.title if result.has_attribute?('lesson_id')%></h6></strong>
                 <h6><%= "Lesson:" + " " + result.number.to_s + " " +result.title if result.has_attribute?('number')%></h6>
                 <h6>Lightbulbs:</h6>
                 <% result.lightbulbs.each do |lightbulb|%>

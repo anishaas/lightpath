@@ -3,7 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .card-panel.teal {
-    background-color: #FFAC4F !important;
+    background-color: #FFD452 !important;
+    h6 {
+      font-weight: bold;
+    }
 }
 
 #side {
