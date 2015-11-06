@@ -34,6 +34,7 @@
       <%= form_tag search_assignments_path do %>
         <input class="search full width" id="searchbar" name="query" placeholder = "Type in a topic!"
         autocomplete:"on" />
+        <%if @results%>
         <% if @results.length > 0 %>
             <% @results.each do |result| %>
               <% if result.course_id == @course.id%>
@@ -48,9 +49,9 @@
                 </div>
               <%else%>
                 <div class="card-panel teal" id='error'>
-                  <%="Sorry no lightbulbs can be found for this course based on your search!"%>
+                  <%="Sorry your search is relevant for a different course. Check out another course from your dashboard!"%>
                 </div>
-              <% end %>
+                <% end %>
             <% end %>
         <%else%>
             <div class="card-panel teal" id='error'>
@@ -58,6 +59,7 @@
             </div>
         <% end %>
       <% end %>
+    <% end %>
     </div>
   </div>
   <div class="col s3">
