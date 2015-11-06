@@ -2,6 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#send {
+  background: #F62459;
+  width: 30px;
+  height: 25px;
+  float:right;
+  padding:0;
+  line-height: 25px;
+  padding-left: 10px;
+  padding-right: 55px;
+    h5 {
+      font-size: 12px;
+    }
+}
+
+
 #error {
   background-color: red;
   opacity: .8;

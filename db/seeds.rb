@@ -29,6 +29,7 @@ Lightbulb.create(lesson_id: 1, course_id: 2, assignment_id: 4, enrollment_id: 2,
 Lightbulb.create(lesson_id: 3, course_id: 1, assignment_id: 2, enrollment_id: 1, student_id: 2, summary:"Roark is ultimately more fulfilled.")
 Lightbulb.create(lesson_id: 2, course_id: 2, assignment_id: 3, enrollment_id: 2, student_id: 2, summary:"Request and response")
 Lightbulb.create(lesson_id: 1, course_id: 2, assignment_id: 5, enrollment_id: 1, student_id: 1, summary:"Object object vs. functional is functional sdlkfjalksd")
+Lightbulb.create(lesson_id: 2, course_id: 2, enrollment_id: 1, student_id: 1, video_url:"www.youtube.com")
 
 #teachers can also see which assignments brought the best 'lightbulb moments'
 
