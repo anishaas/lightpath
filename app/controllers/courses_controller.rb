@@ -11,6 +11,7 @@ class CoursesController < ApplicationController
     @assignments = Assignment.where("lower(title) LIKE ?", @q)
     @results = @assignments
     @results += Lesson.where("lower(title) || lower(description) LIKE ?", @q)
+    @results += Lightbulb.where("lower(summary) || lower(video_url) LIKE ?", @q)
     @assignments
     @results
     @bulbs = current_user.lightbulbs.where(course_id: @course.id)

@@ -4,8 +4,9 @@
       <ul>
         <p></p>
         <li class='last'><a href='/student_dashboard'><span><p></p>Back To Dashboard<p></p></span></a></li>
-         <li class='has-sub'><a href='/courses/1/assignments'><span><p></p>Assignments<p></p></span></a>
+         <li class='has-sub'><a href='/courses/:id/assignments'><span><p></p>Assignments<p></p></span></a>
             <ul>
+              <li><%= link_to "View All Assignments", course_assignments_path(@course)%></li>
               <%@course.assignments.each do |assignment|%>
                <li><a href='#'><span><%=assignment.title%></span></a></li>
                <%end%>
@@ -41,6 +42,7 @@
                 <div class="card-panel teal">
                       <strong><h6><%= "Assignment:" + " " +result.title if result.has_attribute?('lesson_id')%></h6></strong>
                       <h6><%= "Lesson:" + " " + result.number.to_s + " " +result.title if result.has_attribute?('number')%></h6>
+                      <h6><%= "Lightbulb:" + " " + result.summary + " "  if result.has_attribute?('summary')%></h6>
                       <h6>Lightbulbs:</h6>
                       <% result.lightbulbs.each do |lightbulb|%>
                         <p><%= lightbulb.summary if lightbulb.summary.present?%></p>
@@ -97,8 +99,9 @@
       <div class="modal-footer">
         <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
           <%if params[:queryclassmates]%>
+          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
           <%=react_component 'ShareButton', senderID: current_user.id, receiverID: @recipient.id, subject:"Test Two", body: "Checking again?"%>
+        </a>
           <%end%>
-
       </div>
   </div>
