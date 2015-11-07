@@ -17,6 +17,12 @@ class CoursesController < ApplicationController
     render 'show'
   end
 
+  def search_classmates
+    @q = "%#{params[:query]}%".downcase.strip
+    @classmates = Student.where("lower(first_name) LIKE ?", @q)
+    #Use on modal
+  end
+
   # lower, .strip, downcase
 # Started working when I changed .where to .find_by
   def index

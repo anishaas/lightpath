@@ -44,7 +44,7 @@
                       <h6>Lightbulbs:</h6>
                       <% result.lightbulbs.each do |lightbulb|%>
                         <p><%= lightbulb.summary if lightbulb.summary.present?%></p>
-                        <p><%= lightbulb.video_url if lightbulb.video_url.present?%></p>
+                        <p><%= link_to lightbulb.video_url, '#{lightbulb.video_url}' if lightbulb.video_url.present?%></p>
                         <p><%= link_to lightbulb.article_url, '#{lightbulb.articule_url}' if lightbulb.article_url.present?%></p>
                         <p> - <%= lightbulb.student.first_name%></p>
                       <% end %>
@@ -72,8 +72,7 @@
         <%=lightbulb.summary if lightbulb.summary.present?%>
         <%=link_to lightbulb.video_url, 'www.youtube.com' if lightbulb.video_url.present?%>
         <%=link_to lightbulb.article_url, '#{article_url}' if lightbulb.article_url.present?%>
-        <div class="btn" id="send">Share</div>
-      </div></p>
+        <%=react_component 'ShareButton', senderID: current_user.id, receiverID: Student.find(2).id, subject:"Test", body: "Is this working?"%>      </div></p>
     <%end%>
   </div>
   </div>

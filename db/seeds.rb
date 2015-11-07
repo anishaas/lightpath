@@ -49,3 +49,5 @@ Lesson.create(number: 2, course_id: 2, title:"Interacting with Server", descript
 Lesson.create(number: 1, course_id: 1, title:"Novels", description: "Studying the novel. Themes. Conformity. Individualism.")
 Lesson.create(number: 10, course_id: 2, title:"Self-referential Tables", description: "A field in the table need to be associated with another field in the table that has the same content.
 Ex) Friend following a friend on social media.")
+
+Message.create(sender_id: 1, receiver_id: 2, subject: "Test",body: "Hi")

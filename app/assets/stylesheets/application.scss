@@ -16,6 +16,16 @@
  @import "materialize";
  @import "materialize/components/color";
 
+ .btn {
+   background: #F62459;
+   width: 30px;
+   height: 25px;
+   float: right;
+   padding: 0;
+   line-height: 25px;
+   padding-left: 10px;
+   padding-right: 55px;
+ }
 
 .homepage {
    font-family: 'Lato', sans-serif;
