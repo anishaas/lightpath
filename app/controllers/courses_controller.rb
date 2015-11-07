@@ -1,6 +1,6 @@
 
 class CoursesController < ApplicationController
-  before_action :set_course, only: [:search, :show, :edit, :update, :destroy]
+  before_action :set_course, only: [:search_classmates, :search, :show, :edit, :update, :destroy]
 
   # GET /courses
   # GET /courses.json
@@ -13,17 +13,20 @@ class CoursesController < ApplicationController
     @results += Lesson.where("lower(title) || lower(description) LIKE ?", @q)
     @assignments
     @results
-    @bulbs= current_user.lightbulbs.where(course_id: @course.id)
+    @bulbs = current_user.lightbulbs.where(course_id: @course.id)
     render 'show'
   end
 
   def search_classmates
-    @q = "%#{params[:query]}%".downcase.strip
-    @classmates = Student.where("lower(first_name) LIKE ?", @q)
+    @qu = "%#{params[:queryclassmates]}%".downcase.strip
+    @recipient = Student.find_by("lower(first_name) LIKE ?", @qu)
+    @recipient
+    @results
+    @bulbs= current_user.lightbulbs.where(course_id: @course.id)
+    render 'show'
     #Use on modal
   end
 
-  # lower, .strip, downcase
 # Started working when I changed .where to .find_by
   def index
     @assignments

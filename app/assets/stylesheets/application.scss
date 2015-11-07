@@ -16,6 +16,14 @@
  @import "materialize";
  @import "materialize/components/color";
 
+.modal .modal-content {
+  padding: 30px;
+}
+
+label {
+   font-size: 15px;
+ }
+
  .btn {
    background: #F62459;
    width: 30px;

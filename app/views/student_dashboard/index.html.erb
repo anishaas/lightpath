@@ -34,7 +34,9 @@
   <div class="card-panel teal" id="notifications">
     <h6> Notifications </h6>
     <%@submissions.each do |submission|%>
-    <p><%=submission.assignment.title%></p>
+    <p><%current_user.received_messages.each do |message|%></p>
+        <%=message.subject%>
+      <%end%>
     <%end%>
   </div>
   </div>

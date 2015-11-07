@@ -20,7 +20,16 @@
     <h3>Lightbulb</h3>
     <p><%@assignments.first.lightbulbs.each do |lightbulb|%>
           <%if lightbulb.summary.present?%>
-            <p>Summary:</p>
+          <div className='form'>
+            <p>
+            <label htmlFor='Summary'>Summary</label>
+            <input id='Summary' placeholder={'Summarize the concept in your own words'}
+                size="50" type="string"
+                onChange={this.changeSummary}
+                value={this.state.Summary}
+                className={this.state.className}/>
+              </p>
+            </div>
           <%=lightbulb.summary%>
             <%end%>
           <%if lightbulb.video_url.present?%>
@@ -33,9 +42,3 @@
     <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
   </div>
 </div>
-
-<!-- Does function popup display 'popUpDiv'? -->
-  <!-- <div id="blanket" style="display:none"></div>
-  <div id="popUpDiv" style="display:none"> -->
-      <!-- <a href="#" onclick="popup('popUpDiv')">Close</a></div>
-      <a href="#" onclick="popup('popUpDiv')"><div class="btn">View Lightbulbs</div></a> -->

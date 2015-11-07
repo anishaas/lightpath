@@ -25,7 +25,7 @@ var ShareButton = React.createClass({
 
   render: function () {
         if (this.state.shared) {
-            return (<div className=''>Shared!</div>);
+            return (<div className="" onClick={this.handleClick}>Share</div>);
         } else {
             return(
             <div className="btn" onClick={this.handleClick}>Share</div>

@@ -10,6 +10,8 @@ Student.create(first_name:"Anisha", last_name:"Srivastava", email: "anisha@examp
 username:"anishasrivastava", admin:false, password: 'password')
 Student.create(first_name:"Mikaila", last_name:"Smith", email: "mikaila@example.com",
 username:"mikailasmith", admin:false, password: 'password')
+Student.create(first_name:"Arjun", last_name:"Srivastava", email: "arjun@example.com",
+username:"arjunsrivastava", admin:false, password: 'password')
 
 Teacher.create(first_name:"Martin", last_name:"Kevorkian", email: "mk@example.com",
 username:"martinkevorkian", admin:true, password: 'password')
@@ -22,6 +24,7 @@ Course.create(name:"Backend Engineering, Ruby on Rails", teacher_id:2, descripti
 Enrollment.create(student_id:1, course_id:1)
 Enrollment.create(student_id:1, course_id:2)
 Enrollment.create(student_id:2, course_id:1)
+Enrollment.create(student_id:3, course_id:2)
 
 Lightbulb.create(lesson_id: 3, course_id: 1, assignment_id: 1, enrollment_id: 1, student_id: 1, summary:"Ahab -- clash of fate and free-will")
 Lightbulb.create(lesson_id: 3, course_id: 1, assignment_id: 2, enrollment_id: 1, student_id: 1, summary:"Roark represents individualism, Keating conformity.")
