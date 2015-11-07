@@ -17,25 +17,11 @@
 
 <div id="modal2" class="modal">
   <div class="modal-content">
-    <h3>Lightbulb</h3>
-    <p><%@assignments.first.lightbulbs.each do |lightbulb|%>
-          <%if lightbulb.summary.present?%>
-          <div className='form'>
-            <p>
-            <label htmlFor='Summary'>Summary</label>
-            <input id='Summary' placeholder={'Summarize the concept in your own words'}
-                size="50" type="string"
-                onChange={this.changeSummary}
-                value={this.state.Summary}
-                className={this.state.className}/>
-              </p>
-            </div>
-          <%=lightbulb.summary%>
-            <%end%>
-          <%if lightbulb.video_url.present?%>
-            <p>Video URL:</p>
-          <%=lightbulb.video_url%>
-          <%end%>
+    <h3>Lightbulbs</h3>
+    <%@assignmentone.lightbulbs.each do |lightbulb|%>
+          <p><%= "Summary:" + lightbulb.summary + " " + "-" + " " + lightbulb.student.first_name if lightbulb.summary.present?%></p>
+          <p><%= "Video URL:" + lightbulb.video_url if lightbulb.video_url.present?%></p>
+          <p><%= "Article URL:" + lightbulb.article_url if lightbulb.article_url.present?%></p>
       <%end%>
   </div
   <div class="modal-footer">
