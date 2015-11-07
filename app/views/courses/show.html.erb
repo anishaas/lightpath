@@ -88,17 +88,17 @@
       <p>
         <div class='searchclassmates'>
           <%= form_tag search_classmates_path do %>
-            <input class="search full width two" id="searchclassmates" name="queryclassmates" placeholder = "Search for a classmate to share with!"
+            <input class="search full width two" id="searchclassmates" name="queryclassmates" placeholder = "Search for a classmate to share your lightbulb moment with!"
             autocomplete:"on" />
           <%end%>
         </div>
       </p>
       </div>
       <div class="modal-footer">
-        <%if @recipient%>
-        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+          <%if params[:queryclassmates]%>
           <%=react_component 'ShareButton', senderID: current_user.id, receiverID: @recipient.id, subject:"Test Two", body: "Checking again?"%>
-        </a>
           <%end%>
+
       </div>
   </div>
