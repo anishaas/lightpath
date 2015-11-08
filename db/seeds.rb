@@ -54,3 +54,4 @@ Lesson.create(number: 10, course_id: 2, title:"Self-referential Tables", descrip
 Ex) Friend following a friend on social media.")
 
 Message.create(sender_id: 1, receiver_id: 2, subject: "Test",body: "Hi")
+Message.create(sender_id: 3, receiver_id: 1, subject: "Test",body: "Check out this lightbulb moment for The Fountainhead Essay!")
