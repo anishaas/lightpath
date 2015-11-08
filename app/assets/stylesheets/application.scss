@@ -16,6 +16,10 @@
  @import "materialize";
  @import "materialize/components/color";
 
+ table.highlight > tbody > tr:hover {
+   background-color: #e1e8ed;
+ }
+
 
  body {
    background: #eee;

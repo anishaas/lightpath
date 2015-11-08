@@ -1,6 +1,6 @@
 
 class CoursesController < ApplicationController
-  before_action :set_course, only: [:search_classmates, :search, :show, :edit, :update, :destroy]
+  before_action :set_course, only: [:send_lightbulb, :search, :show, :edit, :update, :destroy]
 
   # GET /courses
   # GET /courses.json
@@ -18,7 +18,10 @@ class CoursesController < ApplicationController
     render 'show'
   end
 
-  def search_classmates
+  def send_lightbulb
+    @subject = "%#{params[:querysubject]}%".downcase.strip
+    @subject
+    @bulbs= current_user.lightbulbs.where(course_id: @course.id)
     @qu = "%#{params[:queryclassmates]}%".downcase.strip
     @recipient = Student.find_by("lower(first_name) LIKE ?", @qu)
     @recipient
@@ -27,7 +30,6 @@ class CoursesController < ApplicationController
     render 'show'
     #Use on modal
   end
-
 # Started working when I changed .where to .find_by
   def index
     @assignments

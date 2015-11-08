@@ -86,22 +86,23 @@
 </div>
 <div id="modal3" class="modal">
   <div class="modal-content">
-    <div className='form'>
-      <p>
-        <div class='searchclassmates'>
+    <%= form_tag send_lightbulb_path do %>
+    <div class='searchclassmates'>
           <%= form_tag search_classmates_path do %>
             <input class="search full width two" id="searchclassmates" name="queryclassmates" placeholder = "Search for a classmate to share your lightbulb moment with!"
             autocomplete:"on" />
           <%end%>
-        </div>
-      </p>
-      </div>
-      <div class="modal-footer">
-        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
-          <%if params[:queryclassmates]%>
-          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
-          <%=react_component 'ShareButton', senderID: current_user.id, receiverID: @recipient.id, subject:"Test Two", body: "Checking again?"%>
-        </a>
-          <%end%>
-      </div>
+    </div>
+     <%= label_tag :recipient  %>
+     <%= text_field_tag :queryclassmates %>
+     <%= label_tag :subject %>
+     <%= text_field_tag :querysubject %>
+     <%if params[:queryclassmates]%>
+    <%=react_component 'ShareButton', senderID: current_user.id, receiverID: @recipient.id, subject: @subject, body: @subject%>
+    <% end %>
+   <% end %>
+ </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+  </div>
   </div>
