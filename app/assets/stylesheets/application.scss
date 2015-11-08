@@ -16,6 +16,11 @@
  @import "materialize";
  @import "materialize/components/color";
 
+
+ body {
+   background: #eee;
+ }
+
 .modal .modal-content {
   padding: 30px;
 }

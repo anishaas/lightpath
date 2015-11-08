@@ -39,7 +39,7 @@
         <% if @results.length > 0 %>
             <% @results.each do |result| %>
               <% if result.course_id == @course.id%>
-                <div class="card-panel teal">
+                <div class="card-panel teal" id = "result">
                       <strong><h6><%= "Assignment:" + " " +result.title if result.has_attribute?('lesson_id')%></h6></strong>
                       <h6><%= "Lesson:" + " " + result.number.to_s + " " +result.title if result.has_attribute?('number')%></h6>
                       <h6><%= "Lightbulb:" + " " + result.summary + " "  if result.has_attribute?('summary')%></h6>
