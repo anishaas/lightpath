@@ -20,12 +20,8 @@ class CoursesController < ApplicationController
 
   def send_lightbulb
     @subject = "%#{params[:querysubject]}%".downcase.strip
-    @subject
-    @bulbs= current_user.lightbulbs.where(course_id: @course.id)
     @qu = "%#{params[:queryclassmates]}%".downcase.strip
     @recipient = Student.find_by("lower(first_name) LIKE ?", @qu)
-    @recipient
-    @results
     @bulbs= current_user.lightbulbs.where(course_id: @course.id)
     render 'show'
     #Use on modal
@@ -40,6 +36,7 @@ class CoursesController < ApplicationController
     # @course = Course.fetch(params[:id])
     # @assignments = @course.assignments
     @bulbs= current_user.lightbulbs.where(course_id: @course.id)
+    @recipient = Student.find_by("lower(first_name) LIKE ?", @qu)
   end
 
   # GET /courses/1

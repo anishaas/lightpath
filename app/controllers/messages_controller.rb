@@ -17,6 +17,13 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.new(message_params)
+    @qu = "%#{params[:queryclassmates]}%".downcase.strip
+    @recipient = Student.find_by("lower(first_name) LIKE ?", @qu)
+    @message.receiver_id = @recipient.id
+    @lightbulb = Lightbulb.find(params[:lightbulbID])
+    @message.body = @lightbulb.summary if @lightbulb.summary.present?
+    @message.body = @lightbulb.video_url if @lightbulb.video_url.present?
+    @message.body = @lightbulb.article_url if @lightbulb.article_url.present?
       respond_to do |format|
         if @message.save
           format.html { redirect_to @message, notice: 'message was successfully created.' }
@@ -35,6 +42,6 @@ class MessagesController < ApplicationController
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def message_params
-        params.require(:message).permit(:sender_id, :receiver_id, :subject, :body)
+        params.require(:message).permit(:sender_id, :subject, :body)
       end
 end

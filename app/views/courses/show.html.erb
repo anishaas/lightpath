@@ -70,36 +70,28 @@
     <h6>Lightbulb Moments</h6>
     <%@bulbs.each do |lightbulb|%>
         <div class="row card-panel teal" id = "lightbulbmomentcard">
+          <div class="col s12" id = "side">
+            <div class="col s3">
           <img src ='http://s13.postimg.org/6n2pzw1zb/image.png'></img>
+          </div>
+          <div class="col s9">
           <%=lightbulb.summary if lightbulb.summary.present?%>
           <%=link_to lightbulb.video_url, 'www.youtube.com' if lightbulb.video_url.present?%>
           <%=link_to lightbulb.article_url, '#{article_url}' if lightbulb.article_url.present?%>
           <a href= "#modal3" class="modal-trigger btn">Share</a>
         </div>
+        </div>
+        </div>
+        <div id="modal3" class="modal">
+          <div class="modal-content">
+            <%=react_component 'ShareLightbulbForm', lightbulbID:lightbulb.id, courseID: @course.id, senderID: current_user.id%>
+         </div>
+          <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+          </div>
+        </div>
+
       <%end%>
     </div>
   </div>
-
 </div>
-<div id="modal3" class="modal">
-  <div class="modal-content">
-    <%= form_tag send_lightbulb_path do %>
-    <div class='searchclassmates'>
-          <%= form_tag search_classmates_path do %>
-            <input class="search full width two" id="searchclassmates" name="queryclassmates" placeholder = "Search for a classmate to share your lightbulb moment with!"
-            autocomplete:"on" />
-          <%end%>
-    </div>
-     <%= label_tag :recipient  %>
-     <%= text_field_tag :queryclassmates %>
-     <%= label_tag :subject %>
-     <%= text_field_tag :querysubject %>
-     <%if params[:queryclassmates]%>
-    <%=react_component 'ShareButton', senderID: current_user.id, receiverID: @recipient.id, subject: @subject, body: @subject%>
-    <% end %>
-   <% end %>
- </div>
-  <div class="modal-footer">
-    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
-  </div>
-  </div>

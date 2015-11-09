@@ -16,6 +16,10 @@
  @import "materialize";
  @import "materialize/components/color";
 
+ .btn:hover, .btn-large:hover {
+   background-color: orange;
+ }
+
 #side {
   float:right;
 }

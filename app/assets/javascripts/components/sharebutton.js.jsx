@@ -13,7 +13,7 @@ var ShareButton = React.createClass({
         data: {
           message: {
             sender_id: this.props.senderID,
-            receiver_id: this.props.receiverID,
+            receiver_id: this.refs.queryClass.value,
             subject: this.props.subject,
             body: this.props.body,
           }
@@ -25,10 +25,16 @@ var ShareButton = React.createClass({
 
   render: function () {
         if (this.state.shared) {
-            return (<div className="" onClick={this.handleClick}>Share</div>);
+            return (<div className="" onClick={this.handleClick}>Shared</div>);
         } else {
             return(
-            <div className="btn" onClick={this.handleClick}>Share</div>
+              <form action={"/courses/" + this.props.courseID + "/send_lightbulb"} accept-charset="UTF-8" method="post">
+                <div class="searchclassmates">
+                  <input class="search full width two" id="searchclassmates" ref='queryClass' name="queryclassmates" placeholder="Search for a classmate to share your lightbulb moment with!" />
+                  <input class="search full width two" id="subjectline" ref='querySubject' name="querysubject" placeholder="Subject Line" />
+                </div>
+                <div className="btn" onClick={this.handleClick}>Share</div>
+              </form>
           );
       }
   }
