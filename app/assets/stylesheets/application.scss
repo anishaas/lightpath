@@ -16,6 +16,18 @@
  @import "materialize";
  @import "materialize/components/color";
 
+#side {
+  float:right;
+}
+
+ td {
+   padding: 0px;
+   display: table-cell;
+   text-align: left;
+   vertical-align: middle;
+   border-radius: 2px;
+ }
+
  table.highlight > tbody > tr:hover {
    background-color: #e1e8ed;
  }

@@ -1,5 +1,10 @@
 .assignments {
   padding:20px;
+  margin-left:50px;
+  margin-right:50px;
+  border: solid 1px grey;
+  border-radius: 3px;
+  margin-top:5%;
 }
 
 #modal1 {
@@ -8,4 +13,16 @@
 
 table.highlight > tbody > tr:hover {
   background-color: grey;
+}
+
+
+#submitbutton {
+    background: #F62459;
+    margin-right: 80px;
+}
+
+#viewlightbulbs {
+  background: #F62459;
+  width: 100px;
+  height: 50px;
 }

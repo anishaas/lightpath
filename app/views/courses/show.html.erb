@@ -66,23 +66,20 @@
     <% end %>
     </div>
   </div>
-  <div class="col s3">
+  <div class="col s3" id = "side">
     <h6>Lightbulb Moments</h6>
     <%@bulbs.each do |lightbulb|%>
-  </div>
-  </div>
-  <div class="row">
-        <div class="col s3">
-          <div class="card-panel teal" id = "side">
+        <div class="row card-panel teal">
           <img src ='http://s13.postimg.org/6n2pzw1zb/image.png'></img>
           <%=lightbulb.summary if lightbulb.summary.present?%>
           <%=link_to lightbulb.video_url, 'www.youtube.com' if lightbulb.video_url.present?%>
           <%=link_to lightbulb.article_url, '#{article_url}' if lightbulb.article_url.present?%>
           <a href= "#modal3" class="modal-trigger btn">Share</a>
-      </div>
+        </div>
+      <%end%>
+    </div>
   </div>
-    <%end%>
-  </div>
+
 </div>
 <div id="modal3" class="modal">
   <div class="modal-content">

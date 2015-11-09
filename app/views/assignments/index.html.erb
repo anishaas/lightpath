@@ -1,7 +1,9 @@
 <link href="styles.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="css-pop.js"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 <div class = 'assignments'>
-  <table class='highlight'>
+  <table class='highlight bordered'>
        <thead>
          <tr>
           <th data-field="">Name</th>
@@ -11,11 +13,12 @@
        <tbody>
          <%@assignments.each do |assignment|%>
          <tr>
-            <td><h5><%=assignment.title%></h5></td>
+            <td><h6><%=assignment.title%></h6></td>
             <td><p><%=assignment.description%></p></td>
-            <td><p>  <div class = 'btn'><%=link_to 'Submit Assignment', new_assignment_submission_path(assignment)%></div>
+            <td></td>
+            <td><p><a href= "#modal2" class="modal-trigger btn" id= 'viewlightbulbs'>View Lightbulbs!</a></p></td>
+            <td><p><a class="btn-floating btn-large waves-effect waves-light red" id= 'submitbutton'><i class="material-icons">done</i></a><%=link_to 'Submit', new_assignment_submission_path(assignment)%></div></p></td>
             <td><a href= "#modal1" class="modal-trigger btn"><img src ='http://s13.postimg.org/6n2pzw1zb/image.png'></a></td>
-            <td><a href= "#modal2" class="modal-trigger btn">View Lightbulbs!</a></td>
             <td><%=react_component('CreateLightBulbForm', assignmentID: assignment.id, courseID: assignment.course.id)%></p></td>
        </tr>
        <%end%>
