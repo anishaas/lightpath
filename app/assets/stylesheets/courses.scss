@@ -2,9 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#wrapping {
+  padding: 30px;
+}
+
 #lightbulbmomentcard.row.card-panel.teal{
-  background: #FFD452;
-  opacity: .85;
+  background: #FFD452 !important;
+  opacity: .8;
 }
 
 .col.s12.m4.l9 {
@@ -15,7 +19,6 @@
   background-color: #FFD452 !important;
   opacity: .75;
   color: black;
-
 }
 
 .btn {
