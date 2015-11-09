@@ -6,7 +6,7 @@
 
 <div style="position: relative; z-index: 2;">
 <center><div class = 'login'>
-  <h4>Sign In</h4>
+  <h4 id= "signin">Sign In</h4>
   <% if notice %>
     <p class="alert alert-success"><%= notice %></p>
   <% end %>
@@ -14,9 +14,9 @@
     <p class="alert alert-danger"><%= alert %></p>
   <% end %>
   <%= form_tag create_session_path do %>
-    <p>Username: <%= text_field_tag :username %></p>
-    <p>Password: <%= password_field_tag :password %></p>
-    <p><%= submit_tag "Login!" %></p>
+    <p id= 'signin'>Username: <%= text_field_tag :username %></p>
+    <p id= 'signin'>Password: <%= password_field_tag :password %></p>
+    <p><%= submit_tag "LOGIN" %></p>
   <% end %>
       </div>
     </center>
