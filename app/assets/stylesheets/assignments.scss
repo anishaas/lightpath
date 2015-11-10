@@ -1,3 +1,31 @@
+a.modal-trigger.btn {
+  width:35px;
+  height:35px;
+  img {
+    width:35px;
+    height:35px;
+    margin-left:5px;
+  }
+}
+
+#submitbutton {
+  background: #F62459;
+  margin-right: 5px;
+  margin-left: 5px;
+  text-align: center;
+  height: 35px;
+    a {
+      margin-top:4px;
+    }
+    a:hover {
+      background-color: orange;
+    }
+}
+
+#submitbutton:hover {
+  background-color: orange;
+}
+
 .assignments {
   padding:20px;
   margin-left:50px;
@@ -20,16 +48,15 @@ table.highlight > tbody > tr:hover {
   background-color: grey;
 }
 
-
-#submitbutton {
-    background: #F62459;
-    margin-right: 80px;
-}
-
-#viewlightbulbs {
+#viewlightbulbs.modal-trigger.btn {
   background: #F62459;
   width: 100px;
-  height: 50px;
+  margin-bottom: 15px;
+  padding-top:7px;
+}
+
+#viewlightbulbs.modal-trigger.btn:hover {
+    background-color: orange;
 }
 
 #viewlightbulb.row.card-panel.teal{
@@ -38,4 +65,16 @@ table.highlight > tbody > tr:hover {
   height: 10%;
   padding: 5px;
   width: 60%;
+}
+
+#viewlightbulbs.row.card-panel.teal{
+  background: #FFD452 !important;
+  opacity: .8;
+  height: 10%;
+  padding: 5px;
+  width: 60%;
+}
+
+.modal.modal-content {
+    padding: 0px;
 }

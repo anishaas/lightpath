@@ -25,6 +25,8 @@ Enrollment.create(student_id:1, course_id:1)
 Enrollment.create(student_id:1, course_id:2)
 Enrollment.create(student_id:2, course_id:1)
 Enrollment.create(student_id:3, course_id:2)
+Enrollment.create(student_id:3, course_id:1)
+
 
 Lightbulb.create(lesson_id: 3, course_id: 1, assignment_id: 1, enrollment_id: 1, student_id: 1, summary:"Ahab -- clash of fate and free-will")
 Lightbulb.create(lesson_id: 3, course_id: 1, assignment_id: 2, enrollment_id: 1, student_id: 1, summary:"Roark represents individualism, Keating conformity.")
@@ -32,8 +34,10 @@ Lightbulb.create(lesson_id: 1, course_id: 2, assignment_id: 4, enrollment_id: 2,
 Lightbulb.create(lesson_id: 3, course_id: 1, assignment_id: 2, enrollment_id: 1, student_id: 2, summary:"Roark is ultimately more fulfilled.")
 Lightbulb.create(lesson_id: 2, course_id: 2, assignment_id: 3, enrollment_id: 2, student_id: 2, summary:"Request and response")
 Lightbulb.create(lesson_id: 1, course_id: 2, assignment_id: 5, enrollment_id: 1, student_id: 1, summary:"Object object vs. functional is functional sdlkfjalksd")
-Lightbulb.create(lesson_id: 2, course_id: 2, enrollment_id: 1, student_id: 1, video_url:"www.youtube.com")
-Lightbulb.create(lesson_id: 4, course_id: 2, enrollment_id: 1, student_id: 1, article_url:"railscasts.com/episodes/163-self-referential-association")
+Lightbulb.create(lesson_id: 2, course_id: 2, assignment_id: 1, enrollment_id: 5, student_id: 3, video_url:"www.youtube.com")
+Lightbulb.create(lesson_id: 4, course_id: 2, assignment_id: 1, enrollment_id: 2, student_id: 1, article_url:"railscasts.com/episodes/163-self-referential-association")
+Lightbulb.create(lesson_id: 1, course_id: 2, assignment_id: 4, enrollment_id: 4, student_id: 3, summary:"I view a method as an action carried out by a class.
+For example, if the class is Beyonce, the methods could be dance and sing.")
 
 #teachers can also see which assignments brought the best 'lightbulb moments'
 
@@ -52,6 +56,3 @@ Lesson.create(number: 2, course_id: 2, title:"Interacting with Server", descript
 Lesson.create(number: 1, course_id: 1, title:"Novels", description: "Studying the novel. Themes. Conformity. Individualism.")
 Lesson.create(number: 10, course_id: 2, title:"Self-referential Tables", description: "A field in the table need to be associated with another field in the table that has the same content.
 Ex) Friend following a friend on social media.")
-
-Message.create(sender_id: 1, receiver_id: 2, subject: "Test",body: "Hi")
-Message.create(sender_id: 3, receiver_id: 1, subject: "Test",body: "Check out this lightbulb moment for The Fountainhead Essay!")
