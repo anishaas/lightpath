@@ -16,7 +16,22 @@
             <td><h6><%=assignment.title%></h6></td>
             <td><p><%=assignment.description%></p></td>
             <td></td>
-            <td><p><a href= "#modal2" class="modal-trigger btn" id= 'viewlightbulbs'>View Lightbulbs!</a></p></td>
+            <td><p><a href= "#modal-<%= assignment.id %>" class="modal-trigger btn" id= 'viewlightbulbs'>View Lightbulbs!</a></p></td>
+            <div id="modal-<%= assignment.id %>" class="modal">
+              <div class="modal-content">
+                <center>
+                <h3>Lightbulbs</h3>
+                <% assignment.lightbulbs.each do |lightbulb|%>
+                  <div class="row card-panel teal" id = "viewlightbulb">
+                        <p><%="Summary:" + " " + lightbulb.summary + " " + "-" + " " + " " + lightbulb.student.first_name if lightbulb.summary.present?%></p>
+                        <p><%= "Video URL:" + lightbulb.video_url if lightbulb.video_url.present?%></p>
+                        <p><%= "Article URL:" + lightbulb.article_url if lightbulb.article_url.present?%></p>
+                  </div>
+                <%end%>
+              </center>
+              <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+                </div>
+              </div>
             <td><p><a class="btn-floating btn-large waves-effect waves-light red" id= 'submitbutton'><i class="material-icons">done</i></a><%=link_to 'Submit', new_assignment_submission_path(assignment)%></div></p></td>
             <td><a href= "#modal1" class="modal-trigger btn"><img src ='http://s13.postimg.org/6n2pzw1zb/image.png'></a></td>
             <td><%=react_component('CreateLightBulbForm', assignmentID: assignment.id, courseID: assignment.course.id)%></p></td>
@@ -27,16 +42,3 @@
 </div>
 
 <!-- Modal Structure -->
-<div id="modal2" class="modal">
-  <div class="modal-content">
-    <h3>Lightbulbs</h3>
-    <%@assignmentone.lightbulbs.each do |lightbulb|%>
-          <p><%= "Summary:" + lightbulb.summary + " " + "-" + " " + lightbulb.student.first_name if lightbulb.summary.present?%></p>
-          <p><%= "Video URL:" + lightbulb.video_url if lightbulb.video_url.present?%></p>
-          <p><%= "Article URL:" + lightbulb.article_url if lightbulb.article_url.present?%></p>
-      <%end%>
-  </div>
-  <div class="modal-footer">
-    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
-  </div>
-</div>

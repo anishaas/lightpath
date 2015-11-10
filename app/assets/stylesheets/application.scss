@@ -16,6 +16,14 @@
  @import "materialize";
  @import "materialize/components/color";
 
+ .notification {
+   width: 300px;
+   padding: 10px;
+   background-color: rgba(185, 186, 187, 0.6) !important;
+   margin-bottom: 5px;
+   float:left;
+ }
+
  .btn:hover, .btn-large:hover {
    background-color: orange;
  }

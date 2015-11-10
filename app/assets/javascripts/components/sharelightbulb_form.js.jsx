@@ -18,11 +18,19 @@ var ShareLightbulbForm = React.createClass({
             sender_id: this.props.senderID,
             subject: this.state.subject,
           }
-        }
-          }).done(function () {
+        },
+          success: function () {
+          console.log('succeeded!');
           this.setState({ shared: true });
-        }.bind(this));
-  },
+      }.bind(this),
+      error: function () {
+        console.log('error occured');
+        this.setState({ shared: true });
+        }.bind(this),
+      }
+      );
+      },
+
 //Setting state of component to user inputs
   changeRecipient: function (e) {
     this.setState({ recipientID: e.target.value });
@@ -46,8 +54,8 @@ var ShareLightbulbForm = React.createClass({
                   value={this.state.Recipient}
                   className={this.state.className}/>
 
-                <label htmlFor='Subject'>Subject</label>
-                <input id='Subject' placeholder={'Subject Line'}
+                <label htmlFor='Send A Note'>Send A Note</label>
+                <input id='Subject' placeholder={'Send a note with your lightbulb!'}
                 size="50" type="string"
                 onChange={this.changeSubject}
                 value={this.state.Subject}

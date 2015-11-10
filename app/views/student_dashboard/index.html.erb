@@ -1,58 +1,52 @@
-<div class="row">
-     <div class="col s12 card-panel teal" id="courses">
-       <div class="col s12 m4 l11">
-          <h3> Your Courses </h3>
-             <%@courses.each do |course|%>
-             <h5><%=link_to course.name, course_path(course)%></h5>
-             <%end%></p></div>
+<div class='row'>
+<div class="col s3 card-panel teal" id="courses">
+      <div class="col s12 m4 l11">
+        <h3> Your Courses </h3>
+          <%@courses.each do |course|%>
+          <h5><%=link_to course.name, course_path(course)%></h5>
+          <%end%></p>
       </div>
+  </div>
 
-      <div class="col s12 m4 l9">
-        <div class="row">
-            <div class = 'dashboardnav'>
-              <h4>illuminate the path to mastery</h4>
+  <%= notice%>
+
+  <div class="col s9">
+      <div class='row'>
+          <div class="col s3 card-panel teal" id="lightbulbstats">
+              <h1><%=current_user.lightbulbs.count%></h1>
+              <h6>Lightbulbs so far. Keep lighting!</h6>
+           </div>
+
+           <div class="col s3 card-panel teal" id="lightbulbstats2">
+               <h1><%=current_user.submissions.count%></h1>
+               <h6>You've submitted <%="#{current_user.submissions.count}"%> assignments!</h6>
             </div>
+
+          <div class="col s3 card-panel teal" id="box">
+              <h1><%=current_user.lightbulbs.count%></h1>
+              <h6>Lightbulbs so far. Keep lighting!</h6>
+           </div>
         </div>
-
-        <p id="notice"><%= notice %></p>
-
-         <div class="row">
-           <div class="col s12 m4 l8 card-panel teal" id="lightbulbstats">
-               <h1><%=current_user.lightbulbs.count%></h1>
-               <h6>Lightbulbs so far. Keep lighting!</h6>
-            </div>
-
-            <div class="col s12 m4 l8 card-panel teal" id="lightbulbstats2">
-                <h1><%=current_user.lightbulbs.count%></h1>
-                <h6>Lightbulbs so far. Keep lighting!</h6>
-             </div>
-
-             <div class="col s12 m4 l8 card-panel teal" id="lightbulbstats">
-                 <h1><%=current_user.lightbulbs.count%></h1>
-                 <h6>Lightbulbs so far. Keep lighting!</h6>
-              </div>
-        </div>
-
         <div class="row">
-          <div class="row card-panel teal" id="submissions">
-            <h6> Recent Submissions </h6>
+          <div class="col s6 card-panel teal" id="submissions">
+            <div id='headingnotifications'><h5> Recent Submissions </h5></div>
             <%@submissions.each do |submission|%>
             <p><%=submission.assignment.title%></p>
             <%end%>
           </div>
-       </div>
 
-       <div class="row">
-         <div class= "row card-panel teal" id="notifications">
-           <h6> Notifications </h6>
-           <%@messages.each do |message|%>
-           <div class="notification">
-               <%=message.subject%>
-               <%=message.body%>
-               From:
-               <%=message.sender.first_name%>
-            </div>
-           <%end%>
-         </div>
-      </div>
+          <div class= "col s6 card-panel teal" id="notifications">
+            <div id='headingnotifications'><h5> Notifications </h5></div>
+            <%@messages.each do |message|%>
+            <div class= "row card-panel teal" id="notification">
+              <img src ='http://s13.postimg.org/6n2pzw1zb/image.png'></img>
+                <%=message.subject%>
+                <%=message.body%>
+                From:
+                <%=message.sender.first_name%>
+           </div>
+            <%end%>
+          </div>
+        </div>
+    </div>
 </div>
