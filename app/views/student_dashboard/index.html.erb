@@ -23,8 +23,8 @@
             </div>
 
           <div class="col s3 card-panel teal" id="box">
-              <h1><%=current_user.lightbulbs.count%></h1>
-              <h6>Lightbulbs so far. Keep lighting!</h6>
+              <h1><%=current_user.sent_messages.count%></h1>
+              <h6>You've shared <%="#{current_user.sent_messages.count}"%> lightbulbs. Keep sharing!</h6>
            </div>
         </div>
         <div class="row">
