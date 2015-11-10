@@ -33,7 +33,7 @@ Lightbulb.create(lesson_id: 3, course_id: 1, assignment_id: 2, enrollment_id: 1,
 Lightbulb.create(lesson_id: 1, course_id: 2, assignment_id: 4, enrollment_id: 2, student_id: 1, summary:"A method is a function or feature of a class")
 Lightbulb.create(lesson_id: 3, course_id: 1, assignment_id: 2, enrollment_id: 1, student_id: 2, summary:"Roark is ultimately more fulfilled.")
 Lightbulb.create(lesson_id: 2, course_id: 2, assignment_id: 3, enrollment_id: 2, student_id: 2, summary:"Request and response")
-Lightbulb.create(lesson_id: 1, course_id: 2, assignment_id: 5, enrollment_id: 1, student_id: 1, summary:"Object object vs. functional is functional sdlkfjalksd")
+Lightbulb.create(lesson_id: 1, course_id: 2, assignment_id: 5, enrollment_id: 1, student_id: 1, summary: "Object oriented programming is about encapsulation and inheritance")
 Lightbulb.create(lesson_id: 2, course_id: 2, assignment_id: 1, enrollment_id: 5, student_id: 3, video_url:"www.youtube.com")
 Lightbulb.create(lesson_id: 4, course_id: 2, assignment_id: 1, enrollment_id: 2, student_id: 1, article_url:"railscasts.com/episodes/163-self-referential-association")
 Lightbulb.create(lesson_id: 1, course_id: 2, assignment_id: 4, enrollment_id: 4, student_id: 3, summary:"I view a method as an action carried out by a class.
@@ -50,7 +50,7 @@ and compare/contrast it to functional programming")
 
 Submission.create(assignment_id: 1, student_id: 1, body:'answer answer answer')
 
-Lesson.create(number: 1, course_id: 2, title:"Object Oriented Programming", description: "Everything is an object. Everything. Literally everything. All the things.
+Lesson.create(number: 1, course_id: 2, title:"Object Oriented Programming", description: "In OOP, everything is an object.
 Object object object object object")
 Lesson.create(number: 2, course_id: 2, title:"Interacting with Server", description: "Communicate with the server. Request response, request response")
 Lesson.create(number: 1, course_id: 1, title:"Novels", description: "Studying the novel. Themes. Conformity. Individualism.")
