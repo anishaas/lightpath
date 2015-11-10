@@ -13,7 +13,7 @@ a.modal-trigger.btn {
   margin-right: 5px;
   margin-left: 5px;
   text-align: center;
-  height: 35px;
+  height: 40px;
     a {
       margin-top:4px;
     }
@@ -53,6 +53,7 @@ table.highlight > tbody > tr:hover {
   width: 100px;
   margin-bottom: 15px;
   padding-top:7px;
+  height: 40px;
 }
 
 #viewlightbulbs.modal-trigger.btn:hover {
@@ -77,4 +78,9 @@ table.highlight > tbody > tr:hover {
 
 .modal.modal-content {
     padding: 0px;
+    height: 40px;
+}
+
+#createlightbulbbutton {
+  height: 40px;
 }

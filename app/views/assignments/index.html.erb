@@ -33,7 +33,7 @@
                 </div>
               </div>
             <td><div class="btn-large waves-effect waves-light" id= 'submitbutton'><%=link_to 'Submit', new_assignment_submission_path(assignment)%></div></td>
-            <td><a href= "#modal1" class="modal-trigger btn"><img src ='http://s13.postimg.org/6n2pzw1zb/image.png'></a></td>
+            <td><a href= "#modal1" class="modal-trigger btn" id= "createlightbulbbutton"><img src ='http://s13.postimg.org/6n2pzw1zb/image.png'></a></td>
             <td><%=react_component('CreateLightBulbForm', assignmentID: assignment.id, courseID: assignment.course.id)%></p></td>
        </tr>
        <%end%>

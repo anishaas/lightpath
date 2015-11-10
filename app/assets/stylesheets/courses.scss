@@ -2,7 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
+a.modal-trigger.btn {
+  width:25px;
+  height:25px;
+}
 
 #wrapping {
   padding: 30px;
