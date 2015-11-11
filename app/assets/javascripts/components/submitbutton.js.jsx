@@ -33,13 +33,13 @@ render: function () {
       } else {
           return(
           <div className='form'>
-          <label htmlFor='Body'>Submission Content</label>
+          <label htmlFor='Body'></label>
           <input id='Article' placeholder={'Submit your response here!'}
           size="50" type="string"
           onChange={this.changebody}
           value={this.state.body}
           className={this.state.className}/>
-          <div className="btn" onClick={this.handleClick}>Submit Assignment!</div>
+        <div className="btn" onClick={this.handleClick}>Submit</div>
         </div>);
     }
   }
