@@ -38,7 +38,7 @@
 
 
  body {
-   background: #eee;
+   background: rgba(55, 182, 233, .1)!important;
  }
 
 .modal .modal-content {
@@ -75,16 +75,17 @@ label {
       }
 
     a {
-      color:#fbaa19;
+      background-color:#fbaa19;
+      color: black;
       font-size: 30px;
       padding:10px;
       font: black;
+
     }
     a:hover {
       color: black;
-      background-color: #FFD452;
+      background-color: lighten(#fbaa19, 10%);
       height: 10px;
-      opacity: .6;
 }
  }
 

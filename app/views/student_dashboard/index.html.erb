@@ -3,8 +3,8 @@
       <div class="col s12 m4 l11">
         <h3> Your Courses </h3>
           <%@courses.each do |course|%>
-          <h5><%=link_to course.name, course_path(course)%></h5>
-          <%end%></p>
+          <p class='course'><%=link_to course.name, course_path(course)%></p>
+          <%end%>
       </div>
   </div>
 

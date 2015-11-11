@@ -9,6 +9,7 @@ guiding the student through the course material.
 A) Concisely summarizing the concept is his/her own words
 >
 B) Linking videos, articles, or other resources that brought on the "lightbulb moment" for easy future reference
+
 As a student and as a frequent tutor, I realize that the ability to summarize a concept concisely is one of the best
 indications of learning. Revisiting one's own words -- one's own "lightbulb moment" -- can instantly reconnect a student
 with previous material. Additionally, it is essential to pinpoint resources that clarify concepts according to one's unique

@@ -26,7 +26,7 @@
 .wrapper {
   float:right;
 }
-#submissions {
+#submissions, #notifications  {
   width: 400px;
   margin-left:28%;
   padding: 20px;
@@ -34,23 +34,17 @@
   margin-top: 5%;
   padding: 50px;
   padding-top: 10px;
-  text-align:center;
-  background-color: #FFD452 !important;
-  background-color: rgba(275, 220, 130, 1) !important;
+  background-color: #fff !important;
   height:300px;
-}
-
-#notifications {
-  width: 400px;
-  margin-left:28%;
-  margin-left: 5%;
-  margin-top: 5%;
-  text-align:center;
-  background-color: #FFD452 !important;
-  background-color:rgba(275, 220, 130, 1) !important;
-  background: rgba(248,80,50,1);
-  height:300px;
-  padding-top: 10px;
+  h5 {
+    font-size:1.5em;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ccc;
+  }
+  p{
+    font-size: 1.2em;
+  }
 }
 
 #box {
@@ -70,13 +64,19 @@
 
 #lightbulbstats {
   height: 10%;
-  background: rgba(39, 174, 228, 0.7) !important;
   margin-left: 5%;
   margin-top: 5%;
   text-align:center;
+  background-color: #37B6E9!important;
+  color: #fff!important;
     h1{
       line-height: 60%;
       margin-top: 25px;
+    }
+
+    h6 {
+      text-transform: none!important;
+      padding-bottom: 8px;
     }
   margin-bottom: 0;
   border-radius:3px;
@@ -112,22 +112,29 @@
 // display:none for notice
 #courses {
   color: #39454b !important;
-  background: rgba(185,186,187,.5) !important;
+  background: #fff !important;
   width: 25%;
   width:25%;
   padding: 20px;
-  height: 100vh;
   font-family: 'Lato', sans-serif;
   margin-top: 0px;
   h3 {
-    text-align:center;
+    font-size:2em;
+    margin-bottom: 30px;
+    text-align:left;
   }
       p {
-        text-align:center;
-        font-size:20px;
+        font-size:16px;
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+        border-bottom: 1px solid #ccc;
       }
   a {
+
     width: 100%;
-    text-transform: uppercase;
+    &:hover {
+      color: #39454b;
+      background-color: transparent;
+    }
   }
   }
