@@ -16,6 +16,10 @@
  @import "materialize";
  @import "materialize/components/color";
 
+.btn {
+  background:lightseagreen;
+}
+
 .btn:hover, .btn-large:hover {
   background-color: orange;
  }
@@ -72,14 +76,15 @@ label {
 
     h3 {
       padding: 20px;
+      margin: 35px;
       }
 
     a {
       background-color:#fbaa19;
       color: black;
       font-size: 30px;
-      padding:10px;
-      font: black;
+      padding:10px 15px;
+      margin: 10px;
 
     }
     a:hover {

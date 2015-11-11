@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-a.modal-trigger.btn {
+a.modal-style.btn {
   width:25px;
   height:25px;
 }
@@ -14,8 +14,8 @@ a.modal-trigger.btn {
 #lightbulbmomentcard.row.card-panel.teal{
   background: #FFD452 !important;
   opacity: .8;
-  height: 90px;
-  padding: 10px;
+  min-height: 90px;
+  padding: 10px 0;
 }
 
 .col.s12.m4.l9 {
@@ -28,8 +28,8 @@ a.modal-trigger.btn {
   color: black;
 }
 
-.btn {
-  background: #F62459;
+#sharebutton {
+  background: lightseagreen;
   width: 30px;
   height: 25px;
   float: right;
@@ -223,4 +223,11 @@ h6 {
   display: block;
   color: #666;
   font-size: 1em;
+}
+
+.row .col.s6 {
+    width: 50%;
+    margin-left: 0;
+    padding: 20px;
+    padding-top: 40px;
 }

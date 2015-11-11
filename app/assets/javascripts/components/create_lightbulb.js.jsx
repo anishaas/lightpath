@@ -71,7 +71,7 @@ var CreateLightBulbForm = React.createClass({
                         value={this.state.ArticleURL}
                         className={this.state.className}/>
                       </p>
-                    <a href= "#modal1" class="modal-trigger btn" onClick={this.handleClick}>Create A Lightbulb!</a>
+                    <a href= "#modal1" class="modal-trigger modal-style btn" onClick={this.handleClick}>Create A Lightbulb!</a>
                   </div>
                 </div>
                 <div class="modal-footer">
