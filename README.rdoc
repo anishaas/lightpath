@@ -1,4 +1,4 @@
-<h3>**About Lightpath**</h3>
+<h3>About Lightpath</h3>
 >
 Lightpath focuses on concept mastery and knowledge retention for students. By tracking and recording "lightbulb moments"
 (when the concept "clicks" with a student), students can revisit past material and efficiently solidify past concepts.
