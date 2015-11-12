@@ -96,7 +96,7 @@ label {
 
  #hpbackground {
      img {
-       width: 115%;
+       width: 155%;
        height:100%;
        opacity: .65;
    }
@@ -145,3 +145,7 @@ label {
     font-family: 'Lato';
     text-align:center;
   }
+
+.btn, .btn-large {
+  background: lightseagreen !important;
+}
