@@ -7,7 +7,7 @@
         <li class='last'><a href='/student_dashboard'><p>Dashboard</p></a></li>
          <li class='has-sub'><a href='/courses/:id/assignments'><p>Assigments</p></a>
             <ul>
-              <li><%= link_to "View All Assignments", course_assignments_path(@course)%></li>
+              <li><p><%= link_to "View All Assignments", course_assignments_path(@course)%></p></li>
               <%@course.assignments.each do |assignment|%>
                <li><a href='#'><p><%=assignment.title%></p></a></li>
                <%end%>

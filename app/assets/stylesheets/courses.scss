@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+
 a.modal-style.btn {
   width:25px;
   height:25px;
@@ -215,6 +217,7 @@ h6 {
 
 #cssmenu ul ul {
   display: none;
+  font-size: 16px;
 }
 #cssmenu ul ul li {
   border-top: 0;
@@ -222,7 +225,9 @@ h6 {
 #cssmenu ul ul a {
   display: block;
   color: #666;
-  font-size: 1em;
+  font-size: 16px;
+  font-size: 16px;
+  font-family: verdana, arial, helvetica, sans-serif;
 }
 
 .row .col.s6 {
@@ -230,4 +235,11 @@ h6 {
     margin-left: 0;
     padding: 20px;
     padding-top: 40px;
+}
+
+#viewall {
+  font-size: 16px;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ccc;
 }
