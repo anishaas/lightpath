@@ -46,6 +46,7 @@
                       <h6><%= "Lightbulb:" + " " + result.summary + " "  if result.has_attribute?('summary')%></h6>
                       <h6>Lightbulbs:</h6>
                       <% result.lightbulbs.each do |lightbulb|%>
+                      <img src ='http://s13.postimg.org/6n2pzw1zb/image.png'id = 'resultbulb'></img>
                         <p><%= lightbulb.summary if lightbulb.summary.present?%></p>
                         <p><%= link_to lightbulb.video_url, '#{lightbulb.video_url}' if lightbulb.video_url.present?%></p>
                         <p><%= link_to lightbulb.article_url, '#{lightbulb.articule_url}' if lightbulb.article_url.present?%></p>
