@@ -15,7 +15,7 @@ var CreateLightBulbByLesson = React.createClass({
           lightbulb: {
             lesson_id: this.props.lessonID,
             course_id: this.props.courseID,
-            summary: this.state.VideoURL,
+            summary: this.state.Summary,
             article_url: this.state.ArticleURL,
             video_url: this.state.VideoURL,
             student_id: this.props.studentID,
