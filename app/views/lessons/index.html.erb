@@ -33,7 +33,8 @@
                 </div>
               </div>
             <td><a href= "#modal1" class="modal-trigger modal-style btn" id= "createlightbulbbutton"><img src ='http://s13.postimg.org/6n2pzw1zb/image.png'></a></td>
-            <td><%=react_component('CreateLightBulbForm', assignmentID: lesson.id, courseID: lesson.course.id)%></p></td>
+            <td><%=react_component('CreateLightBulbByLesson', studentID: current_user.id, lessonID: lesson.id, courseID: lesson.course.id)%></p></td>
+
        </tr>
        <%end%>
        </tbody>

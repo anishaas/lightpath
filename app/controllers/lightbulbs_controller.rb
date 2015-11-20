@@ -25,7 +25,7 @@ class LightbulbsController < ApplicationController
   # POST /lightbulbs.json
   def create
     @lightbulb = Lightbulb.new(lightbulb_params)
-
+    @lightbulb.student_id == current_user.id
     respond_to do |format|
       if @lightbulb.save
         format.html { redirect_to @lightbulb, notice: 'Lightbulb was successfully created.' }
