@@ -5,6 +5,14 @@
     <div id='cssmenu'>
       <ul>
         <li class='last'><a href='/student_dashboard'><p>Dashboard</p></a></li>
+        <li class='has-sub'><a href='/courses/:id/assignments'><p>Lessons</p></a>
+           <ul>
+             <li><p><%= link_to "View All Lessons", course_lessons_path(@course)%></p></li>
+             <%@course.lessons.each do |lesson|%>
+              <li><a href='#'><p><%=lesson.title%></p></a></li>
+              <%end%>
+           </ul>
+        </li>
          <li class='has-sub'><a href='/courses/:id/assignments'><p>Assigments</p></a>
             <ul>
               <li><p><%= link_to "View All Assignments", course_assignments_path(@course)%></p></li>

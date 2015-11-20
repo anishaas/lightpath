@@ -17,7 +17,7 @@ Teacher.create(first_name:"Martin", last_name:"Kevorkian", email: "mk@example.co
 username:"martinkevorkian", admin:true, password: 'password')
 Teacher.create(first_name:"Justin", last_name:"Herrick", email: "jh@example.com",
 username:"justinherrick", admin:true, password: 'password')
-Teacher.create(first_name:"Self-teaching", email: "anisha.srivastava123@gmail.com",
+Teacher.create(first_name:"Self", last_name:"-teaching", email: "anisha.srivastava123@gmail.com",
 username:"anishasrivastava", admin:true, password: 'password')
 
 Course.create(name:"World Literature",teacher_id:1, description:"Classic literature")
@@ -50,6 +50,7 @@ Assignment.create(lesson_id: 2, graded: false, course_id:2, title: "Event Loop B
 Assignment.create(lesson_id: 1, graded: false, course_id:2, title:"Quick Concept Check", description: "Answer the following question in a few sentences: What is a method?")
 Assignment.create(lesson_id: 1, course_id:2, title:"Blog Post on Object Oriented Programming", description:"Write a blog post defining object oriented programming
 and compare/contrast it to functional programming")
+Assignment.create(lesson_id: 5, course_id:3, title:"Verb Conjugation Practice", description:"Record or write out conjugation for the following verbs")
 
 Submission.create(assignment_id: 1, student_id: 1, body:'answer answer answer')
 
@@ -59,3 +60,4 @@ Lesson.create(number: 2, course_id: 2, title:"Interacting with Server", descript
 Lesson.create(number: 1, course_id: 1, title:"Novels", description: "Studying the novel. Themes. Conformity. Individualism.")
 Lesson.create(number: 10, course_id: 2, title:"Self-referential Tables", description: "A field in the table need to be associated with another field in the table that has the same content.
 Ex) Friend following a friend on social media.")
+Lesson.create(number: 1, course_id: 3, title:"Verb Conjugation", description: "Using verbs in sentences and conjugating based on tense and gender")
