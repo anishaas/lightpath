@@ -23,6 +23,7 @@ username:"anishasrivastava", admin:true, password: 'password')
 Course.create(name:"World Literature",teacher_id:1, description:"Classic literature")
 Course.create(name:"Backend Engineering, Ruby on Rails", teacher_id:2, description:"Build web applications using Rails framework")
 Course.create(name:"Hindi: Grammar and Conversation", teacher_id:3, description: "Learn correct Hindi grammar and build vocabulary")
+Course.create(name:"Programming Interview Prep", teacher_id:3, description: "Practicing katas and programming logic")
 
 Enrollment.create(student_id:1, course_id:1)
 Enrollment.create(student_id:1, course_id:2)
@@ -30,6 +31,8 @@ Enrollment.create(student_id:2, course_id:1)
 Enrollment.create(student_id:3, course_id:2)
 Enrollment.create(student_id:3, course_id:1)
 Enrollment.create(student_id:1, course_id:3)
+Enrollment.create(student_id:1, course_id:4)
+
 
 Lightbulb.create(lesson_id: 3, course_id: 1, assignment_id: 1, enrollment_id: 1, student_id: 1, summary:"Ahab -- clash of fate and free-will")
 Lightbulb.create(lesson_id: 3, course_id: 1, assignment_id: 2, enrollment_id: 1, student_id: 1, summary:"Roark represents individualism, Keating conformity.")
@@ -61,3 +64,4 @@ Lesson.create(number: 1, course_id: 1, title:"Novels", description: "Studying th
 Lesson.create(number: 10, course_id: 2, title:"Self-referential Tables", description: "A field in the table need to be associated with another field in the table that has the same content.
 Ex) Friend following a friend on social media.")
 Lesson.create(number: 1, course_id: 3, title:"Verb Conjugation", description: "Using verbs in sentences and conjugating based on tense and gender")
+Lesson.create(number: 1, course_id: 4, title:"Permutations", description: "Finding all combinations of a string")
