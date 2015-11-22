@@ -33,7 +33,6 @@ Enrollment.create(student_id:3, course_id:1)
 Enrollment.create(student_id:1, course_id:3)
 Enrollment.create(student_id:1, course_id:4)
 
-
 Lightbulb.create(lesson_id: 3, course_id: 1, assignment_id: 1, enrollment_id: 1, student_id: 1, summary:"Ahab -- clash of fate and free-will")
 Lightbulb.create(lesson_id: 3, course_id: 1, assignment_id: 2, enrollment_id: 1, student_id: 1, summary:"Roark represents individualism, Keating conformity.")
 Lightbulb.create(lesson_id: 1, course_id: 2, assignment_id: 4, enrollment_id: 2, student_id: 1, summary:"A method is a function or feature of a class")
@@ -54,6 +53,8 @@ Assignment.create(lesson_id: 1, graded: false, course_id:2, title:"Quick Concept
 Assignment.create(lesson_id: 1, course_id:2, title:"Blog Post on Object Oriented Programming", description:"Write a blog post defining object oriented programming
 and compare/contrast it to functional programming")
 Assignment.create(lesson_id: 5, course_id:3, title:"Verb Conjugation Practice", description:"Record or write out conjugation for the following verbs")
+Assignment.create(lesson_id: 6, graded: false, course_id:4, title:"Permutation Practice", description: "Writing methods to find all reorded combinations of characters in a string")
+
 
 Submission.create(assignment_id: 1, student_id: 1, body:'answer answer answer')
 
