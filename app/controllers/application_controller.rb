@@ -7,6 +7,10 @@ def homepage
   render '/layouts/home.html.erb'
 end
 
+def about
+  render '/layouts/about.html.erb'
+end
+
 def authenticate_user
   unless user_logged_in? #User would not be able to log in if invalid
     redirect_to new_login_path

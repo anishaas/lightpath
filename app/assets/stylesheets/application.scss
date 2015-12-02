@@ -16,6 +16,14 @@
  @import "materialize";
  @import "materialize/components/color";
 
+ .about {
+   width: 70%;
+   margin-left:15%;
+   font-family: 'Lato';
+   font-size: 18px;
+   line-height: 30px;
+ }
+
 .btn {
   background:lightseagreen;
 }

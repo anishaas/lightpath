@@ -28,5 +28,6 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create', as: 'create_session' #username, pw params passed in
   post '/login', to: 'sessions#create_teacher_session', as: 'create_teacher_session' #username, pw params passed in
   get '/logout', to: 'sessions#destroy', as: 'logout'
+  get '/about', to: 'application#about', as: 'about'
   root 'application#homepage'
 end
