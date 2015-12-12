@@ -24,6 +24,7 @@ Course.create(name:"World Literature",teacher_id:1, description:"Classic literat
 Course.create(name:"Backend Engineering, Ruby on Rails", teacher_id:2, description:"Build web applications using Rails framework")
 Course.create(name:"Hindi: Grammar and Conversation", teacher_id:3, description: "Learn correct Hindi grammar and build vocabulary")
 Course.create(name:"Programming Interview Prep", teacher_id:3, description: "Practicing katas and programming logic")
+Course.create(name:"African American Literature",teacher_id:1, description:"Studying literature by African American authors, focusing on the Harlem Renaissance")
 
 Enrollment.create(student_id:1, course_id:1)
 Enrollment.create(student_id:1, course_id:4)
@@ -32,6 +33,7 @@ Enrollment.create(student_id:2, course_id:1)
 Enrollment.create(student_id:3, course_id:2)
 Enrollment.create(student_id:3, course_id:1)
 Enrollment.create(student_id:1, course_id:3)
+Enrollment.create(student_id:1, course_id:5)
 
 Lightbulb.create(lesson_id: 3, course_id: 1, assignment_id: 1, enrollment_id: 1, student_id: 1, summary:"Ahab -- clash of fate and free-will")
 Lightbulb.create(lesson_id: 3, course_id: 1, assignment_id: 2, enrollment_id: 1, student_id: 1, summary:"Roark represents individualism, Keating conformity.")
@@ -45,6 +47,7 @@ Lightbulb.create(lesson_id: 1, course_id: 2, assignment_id: 4, enrollment_id: 4,
 For example, if the class is Beyonce, the methods could be dance and sing.")
 Lightbulb.create(lesson_id: 5, course_id: 3, assignment_id: 1, enrollment_id: 7, student_id: 1, summary:"TEST TEST TEST")
 Lightbulb.create(lesson_id: 5, course_id: 3, assignment_id: 1, enrollment_id: 7, student_id: 1, summary:"TESTTWO TESTTWO TESTTWO")
+Lightbulb.create(lesson_id: 7, course_id: 5, assignment_id: 8, enrollment_id: 8, student_id: 1, summary:"Gender gender gender gender")
 
 
 #teachers can also see which assignments brought the best 'lightbulb moments'
@@ -57,7 +60,7 @@ Assignment.create(lesson_id: 1, course_id:2, title:"Blog Post on Object Oriented
 and compare/contrast it to functional programming")
 Assignment.create(lesson_id: 5, course_id:3, title:"Verb Conjugation Practice", description:"Record or write out conjugation for the following verbs")
 Assignment.create(lesson_id: 6, graded: false, course_id:4, title:"Permutation Practice", description: "Writing methods to find all reorded combinations of characters in a string")
-
+Assignment.create(lesson_id: 7, graded: false, course_id:5, title:"Gender Role Analysis", description: "Analyze the main character's limitations because of her gender")
 
 Submission.create(assignment_id: 1, student_id: 1, body:'answer answer answer')
 
@@ -69,3 +72,4 @@ Lesson.create(number: 10, course_id: 2, title:"Self-referential Tables", descrip
 Ex) Friend following a friend on social media.")
 Lesson.create(number: 1, course_id: 3, title:"Verb Conjugation", description: "Using verbs in sentences and conjugating based on tense and gender")
 Lesson.create(number: 1, course_id: 4, title:"Permutations", description: "Finding all combinations of a string")
+Lesson.create(number: 1, course_id: 5, title:"A Mercy, Toni Morrsion", description: "Gender roles in the novel")
