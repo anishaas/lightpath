@@ -12,6 +12,8 @@ Student.create(first_name:"Mikaila", last_name:"Smith", email: "mikaila@example.
 username:"mikailasmith", admin:false, password: 'password')
 Student.create(first_name:"Arjun", last_name:"Srivastava", email: "arjun@example.com",
 username:"arjunsrivastava", admin:false, password: 'password')
+Student.create(first_name:"Test", last_name:"Test", email: "test@example.com",
+username:"test", admin:false, password: 'password')
 
 Teacher.create(first_name:"Martin", last_name:"Kevorkian", email: "mk@example.com",
 username:"martinkevorkian", admin:true, password: 'password')

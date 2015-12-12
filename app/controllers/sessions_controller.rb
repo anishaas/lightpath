@@ -9,7 +9,7 @@ end
 
 def create_teacher_session
   user = Teacher.find_by_username(params[:username])
-  if user && user.authenticate(params[:password])
+  if user && user.authenticate(params[:password_digest])
     set_user_session(user) #set session's user id to params passed in user
     redirect_to teacher_dashboard_path, notice: "Successfully Logged In. Welcome #{current_user.first_name}" + "!"
   else
