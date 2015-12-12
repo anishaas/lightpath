@@ -1,7 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<%=react_component('LightbulbForm', userID: 1, enrollmentID:2)%>
-
 <h1>Listing Courses</h1>
 
 <table>
@@ -18,16 +16,12 @@
     <% @courses.each do |course| %>
       <tr>
         <td><%= course.name %></td>
-        <td><%= course.teacher_id %></td>
+        <td><%= course.teacher.first_name + " " + course.teacher.last_name %></td>
         <td><%= course.description %></td>
-        <td><%= link_to 'Show', course %></td>
-        <td><%= link_to 'Edit', edit_course_path(course) %></td>
-        <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Join', course %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Course', new_course_path %>

@@ -7,7 +7,7 @@
           <p class='course'><%=link_to course.name, course_path(course)%></p>
           <%end%>
           <%else%>
-          You have not joined any courses yet, add courses here
+          You have not joined any courses yet, add courses <%=link_to "here", courses_path%>
           <%end%>
       </div>
   </div>
