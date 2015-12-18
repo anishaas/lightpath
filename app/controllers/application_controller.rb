@@ -3,10 +3,9 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-require 'lib/assets/learning_studio_authentication-0.0.1.gem'
-require 'lib/assets/learning_studio_core-0.0.1.gem'
-
 def homepage
+  @api_response = HTTParty.get('https://api.learningstudio.com/oauth2/me')
+  @api_response.to_json
   render '/layouts/home.html.erb'
 end
 

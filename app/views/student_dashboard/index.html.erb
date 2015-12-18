@@ -2,6 +2,8 @@
 <div class="col s3 card-panel teal" id="courses">
       <div class="col s12 m4 l11">
         <h3> Your Courses </h3>
+        <p> TEST </p>
+        <p> @api_response </p>
         <%if @courses.length > 0%>
           <%@courses.each do |course|%>
           <p class='course'><%=link_to course.name, course_path(course)%></p>
