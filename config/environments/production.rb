@@ -76,4 +76,14 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  conf = LearningStudioAuthentication::Config::OAuthConfig.new({
+    :application_id   => '4d2b474e-7b70-4b7e-aff5-7313567c2c38',
+    :application_name => 'Lightpath',
+    :client_string    => 'gbtestc',
+    :consumer_key     => '04b11650-b3bb-41d6-91a6-c19936aaf4e5',
+    :consumer_secret  =>  '8a72063be6d0409da86a5c239e39fd10'
+})
+oauth_factory = LearningStudioAuthentication::Service::OAuthServiceFactory.new(conf)
+service = LearningStudioCore::BasicService.new(oauth_factory)
+service.use_oauth2
 end

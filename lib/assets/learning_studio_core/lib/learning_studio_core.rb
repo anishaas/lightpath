@@ -36,17 +36,3 @@ module LearningStudioCore
     VERSION
   end
 end
-
-conf = LearningStudioAuthentication::Config::OAuthConfig.new({
-    :application_id   => 'your_application_id',
-    :application_name => 'your_application_name',
-    :client_string    => 'your_client_string',
-    :consumer_key     => 'consumer_key',
-    :consumer_secret  =>  'consumer_secret'
-})
-
-oauth_factory = LearningStudioAuthentication::Service::OAuthServiceFactory.new(conf)
-service = LearningStudioCore::BasicService.new(oauth_factory)
-service.use_oauth2
-service.data_format = LearningStudioCore::BasicService::DataFormat::JSON
-response = service.request("GET","/users/{user_id}", nil)
