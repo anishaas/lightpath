@@ -4,14 +4,11 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
 #These requires return the error 'cannot load such file' when running the app on local server
-require_relative '../../learning_studio_core'
-require_relative '../../learning_studio_authentication'
 
 def homepage
 #Test API call, returns error because of no Access Key, not sure of struture for that
   @api_response = HTTParty.get('https://api.learningstudio.com/oauth2/me')
   @api_response.to_json
-
   render '/layouts/home.html.erb'
 end
 

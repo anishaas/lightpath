@@ -26,6 +26,7 @@
                         <p><%="Summary:" + " " + lightbulb.summary + " " + "-" + " " + " " + lightbulb.student.first_name if lightbulb.summary.present?%></p>
                         <p><%= "Video URL:" + lightbulb.video_url if lightbulb.video_url.present?%></p>
                         <p><%= "Article URL:" + lightbulb.article_url if lightbulb.article_url.present?%></p>
+                        <p id = "fave"><%=react_component "FavoriteButton", studentID:current_user.id, lightbulbID: lightbulb.id%></p>
                   </div>
                 <%end%>
               </center>

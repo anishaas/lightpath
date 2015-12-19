@@ -13,7 +13,7 @@
               <%end%>
            </ul>
         </li>
-         <li class='has-sub'><a href='/courses/:id/assignments'><p>Assigments</p></a>
+         <li class='has-sub'><a href='/courses/:id/assignments'><p>Assignments</p></a>
             <ul>
               <li><p><%= link_to "View All Assignments", course_assignments_path(@course)%></p></li>
               <%@course.assignments.each do |assignment|%>

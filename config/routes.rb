@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :teachers
   resources :enrollments
   resources :lightbulbs
+  resources :favorites
 
   # get '/student/sign_up' => 'devise/registrations#new'
   post '/courses/:id/send_lightbulb' => 'courses#send_lightbulb', as: 'send_lightbulb'
