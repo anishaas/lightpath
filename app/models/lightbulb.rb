@@ -5,4 +5,5 @@ class Lightbulb < ActiveRecord::Base
   belongs_to :submission #check if needed
   belongs_to :course
   belongs_to :lesson
+  has_many :favorites
 end

@@ -75,3 +75,5 @@ Ex) Friend following a friend on social media.")
 Lesson.create(number: 1, course_id: 3, title:"Verb Conjugation", description: "Using verbs in sentences and conjugating based on tense and gender")
 Lesson.create(number: 1, course_id: 4, title:"Permutations", description: "Finding all combinations of a string")
 Lesson.create(number: 1, course_id: 5, title:"A Mercy, Toni Morrsion", description: "Gender roles in the novel")
+
+Favorite.create(lightbulb_id: 1, student_id:1)
