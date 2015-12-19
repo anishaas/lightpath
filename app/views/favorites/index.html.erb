@@ -1,1 +1,3 @@
-<h1> favorites </h1>
+<%=@favorites.each do |favorite|%>
+<p><%=favorite.lightbulb.summary%></p>
+<%end%>

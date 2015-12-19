@@ -26,6 +26,11 @@
                <li><a href='#'><span><%=@course.assignments.first.title%></span></a></li>
             </ul>
          </li>
+         <li class='has-sub'><a href='/favorites'><p>Favorites</p></a>
+            <ul>
+              <li><p><%= link_to "View All Favorited Lightbulbs", favorites_path(@course)%></p></li>
+            </ul>
+         </li>
          <li class='last'><a href='/student_dashboard'><p>Logout</p></a></li>
       </ul>
     </div>

@@ -4,7 +4,7 @@ class FavoritesController < ApplicationController
   # GET /courses
   # GET /courses.json
   def index
-    @favorites = Lightbulb.find(params[:lightbulb_id]).favorites
+    @favorites = current_user.favorites
   end
 
   def create
