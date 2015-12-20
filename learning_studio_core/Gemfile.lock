@@ -5,12 +5,6 @@ PATH
       httpclient
       nokogiri
 
-PATH
-  remote: /Users/anishasrivastava/theironyard/projects/applications/lightpath/learning_studio_authentication
-  specs:
-    learning_studio_authentication (0.0.1)
-      httpclient (~> 2.4, >= 2.4.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -29,6 +23,8 @@ GEM
     httpclient (2.7.0.1)
     i18n (0.7.0)
     json (1.8.3)
+    learning_studio_authentication (0.0.1)
+      httpclient (~> 2.4, >= 2.4.0)
     mini_portile2 (2.0.0)
     minitest (5.8.3)
     minitest-reporters (1.1.7)
@@ -63,7 +59,7 @@ PLATFORMS
 DEPENDENCIES
   bundler (~> 1.3)
   factory_girl (~> 4.0)
-  learning_studio_authentication!
+  learning_studio_authentication
   learning_studio_core!
   minitest
   minitest-reporters (~> 1.0, >= 1.0.5)

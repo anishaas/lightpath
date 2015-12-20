@@ -1,9 +1,9 @@
 #--
-# LearningStudio RESTful API Libraries 
+# LearningStudio RESTful API Libraries
 # These libraries make it easier to use the LearningStudio Course APIs.
-# Full Documentation is provided with the library. 
+# Full Documentation is provided with the library.
 #
-# Need Help or Have Questions? 
+# Need Help or Have Questions?
 # Please use the PDN Developer Community at https://community.pdn.pearson.com
 #
 # @category   LearningStudio Course APIs
