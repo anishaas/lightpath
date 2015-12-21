@@ -1,3 +1,30 @@
-<%=@favorites.each do |favorite|%>
-<p><%=favorite.lightbulb.summary%></p>
-<%end%>
+<!-- Need to style and disallow duplicate favorites -->
+
+<center>
+<%@favorites.each do |favorite|%>
+    <div class="row card-panel teal" id = "favoritelightbulbmomentcard">
+      <div class="col s12" id = "side">
+        <div class="col s3">
+      <img src ='http://s13.postimg.org/6n2pzw1zb/image.png'></img>
+      </div>
+      <div class="col s9">
+        <div class='buttonwrapper'>
+        <%=favorite.lightbulb.summary if favorite.lightbulb.summary.present?%>
+        <%=link_to favorite.lightbulb.video_url, '#{article_url}' if favorite.lightbulb.video_url.present?%>
+        <%=link_to favorite.lightbulb.article_url, '#{article_url}' if favorite.lightbulb.article_url.present?%>
+        <a href= "#modal-<%=favorite.lightbulb.id%>" class="modal-trigger btn" id="sharebutton">Share</a>
+      </div>
+    </div>
+    </div>
+    </div>
+    <div id="modal-<%=favorite.lightbulb.id%>" class="modal">
+      <div class="modal-content">
+        <%=react_component 'ShareLightbulbForm', lightbulbID:favorite.lightbulb.id, courseID: favorite.lightbulb.course.id, senderID: current_user.id%>
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+     </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  <%end%>
+</div>
+</center>
