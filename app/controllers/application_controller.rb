@@ -5,14 +5,17 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
 #These requires return the error 'cannot load such file' when running the app on local server
-# require 'rubygems'
-require 'learning_studio_authentication/lib/learning_studio_authentication'
-require 'learning_studio_core'
+# require 'learning_studio_authentication'
+# require 'learning_studio_core'
 
 def homepage
-#Test API call, returns error because of no Access Key, not sure of struture for that
+#Test API call, returns error because ßof no Access Key, not sure of struture for that
 # Issue the request and return the response.
 render '/layouts/home.html.erb'
+#API call to retrieve logged in user's courses
+#API call to retrieve logged in user's classmates (their lightbulbs are accessible)
+#API Call to retrieve course's information for course show page
+#API call to retrieve assignments for a course
 end
 
 def about
