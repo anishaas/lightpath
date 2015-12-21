@@ -1,3 +1,12 @@
+PATH
+  remote: vendor/gems/
+  specs:
+    learning_studio_authentication (0.0.1)
+      httpclient (~> 2.4, >= 2.4.0)
+    learning_studio_core (0.0.1)
+      httpclient
+      nokogiri
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -71,6 +80,7 @@ GEM
     httparty (0.13.7)
       json (~> 1.8)
       multi_xml (>= 0.5.2)
+    httpclient (2.7.0.1)
     i18n (0.7.0)
     jbuilder (2.3.2)
       activesupport (>= 3.0.0, < 5)
@@ -181,6 +191,8 @@ DEPENDENCIES
   httparty
   jbuilder (~> 2.0)
   jquery-rails
+  learning_studio_authentication (= 0.0.1)!
+  learning_studio_core (= 0.0.1)!
   materialize-sass
   paperclip (~> 4.3)
   pg

@@ -75,4 +75,5 @@ Lesson.create(number: 1, course_id: 3, title:"Verb Conjugation", description: "U
 Lesson.create(number: 1, course_id: 4, title:"Permutations", description: "Finding all combinations of a string")
 Lesson.create(number: 1, course_id: 5, title:"A Mercy, Toni Morrsion", description: "Gender roles in the novel")
 
+
 Favorite.create(lightbulb_id: 1, student_id:1)
