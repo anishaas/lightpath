@@ -69,6 +69,6 @@ class LightbulbsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lightbulb_params
-      params.require(:lightbulb).permit(:assignment_id :course_id, :student_id, :lesson_id, :summary, :video_url, :article_url, :other)
+      params.require(:lightbulb).permit(:assignment_id, :course_id, :student_id, :lesson_id, :summary, :video_url, :article_url, :other)
     end
 end
