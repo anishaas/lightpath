@@ -17,10 +17,18 @@ render '/layouts/home.html.erb'
 # @api_response = POST "https://api.learningstudio.com/token"
 # Content-Type: application/x-www-form-urlencoded
 # grant_type=password&amp;client_id=c5b8742f-c459-4fc2-91a1-7ee542acb214&amp;username=gbtestc\anisha.srivastava123.student@gmail.com&amp;password=msuTooEg
+
 #API call to retrieve logged in user's courses
+
 #API call to retrieve logged in user's classmates (their lightbulbs are accessible)
+#enrolledUsers = /courses/{courseId}/enrolledUsers
+#classmates = /users/{userId}/classmates
+
 #/courses/{courseId}/enrolledUsers
+
 #API Call to retrieve course's information for course show page
+#get instructor /courses/{courseId}/instructors
+
 #API call to retrieve assignments for a course
 end
 
