@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
 #These requires return the error 'cannot load such file' when running the app on local server
+
 require 'learning_studio_authentication'
 require 'learning_studio_core'
 
@@ -12,8 +13,13 @@ def homepage
 #Test API call, returns error because of no Access Key, not sure of struture for that
 # Issue the request and return the response.
 render '/layouts/home.html.erb'
+#Test this API call to get access token
+# @api_response = POST "https://api.learningstudio.com/token"
+# Content-Type: application/x-www-form-urlencoded
+# grant_type=password&amp;client_id=c5b8742f-c459-4fc2-91a1-7ee542acb214&amp;username=gbtestc\anisha.srivastava123.student@gmail.com&amp;password=msuTooEg
 #API call to retrieve logged in user's courses
 #API call to retrieve logged in user's classmates (their lightbulbs are accessible)
+#/courses/{courseId}/enrolledUsers
 #API Call to retrieve course's information for course show page
 #API call to retrieve assignments for a course
 end
