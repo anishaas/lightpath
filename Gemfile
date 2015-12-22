@@ -2,8 +2,8 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 
-gem 'learning_studio_authentication', '0.0.1', :path => 'vendor/gems/'
-gem 'learning_studio_core', '0.0.1', :path => 'vendor/gems/'
+# gem 'learning_studio_authentication', '0.0.1', :path => 'vendor/gems/'
+# gem 'learning_studio_core', '0.0.1', :path => 'vendor/gems/'
 gem 'figaro', '~> 1.1'
 gem 'rails', '4.2.4'
 # Use sqlite3 as the database for Active Record
