@@ -74,4 +74,4 @@ Lesson.create(number: 1, course_id: 4, title:"Permutations", description: "Findi
 Lesson.create(number: 1, course_id: 5, title:"A Mercy, Toni Morrsion", description: "Gender roles in the novel")
 
 
-Favorite.create(lightbulb_id: 1, student_id:1)
+Favorite.create(lightbulb_id: 1, student_id:2)

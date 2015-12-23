@@ -47,7 +47,13 @@
                 <div id= 'messagebody'><%=message.body%></div>
                 - <%=message.subject%>
            </div>
-            <%end%>
+           <%end%>
+           <%@displayfavorites.each do |favorite|%>
+           <div class= "row card-panel teal" id="notification">
+             <img src ='http://s13.postimg.org/6n2pzw1zb/image.png'></img>
+             <div id = 'sender'><%=favorite.student.first_name%> favorited your lightbulb from <%=favorite.lightbulb.assignment.title%></div>
+          </div>
+          <%end%>
           </div>
         </div>
     </div>
