@@ -43,10 +43,9 @@
             <%@messages.each do |message|%>
             <div class= "row card-panel teal" id="notification">
               <img src ='http://s13.postimg.org/6n2pzw1zb/image.png'></img>
+              <div id = 'sender'><%=message.sender.first_name + " " +"sent you a lightbulb and message:"%></div>
                 <div id= 'messagebody'><%=message.body%></div>
                 - <%=message.subject%>
-                From:
-                <%=message.sender.first_name%>
            </div>
             <%end%>
           </div>
