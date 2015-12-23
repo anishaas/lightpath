@@ -47,7 +47,7 @@
     </p>
     <div class='searchbar'>
       <%= form_tag search_assignments_path do %>
-        <input class="search full width" id="searchbar" name="query" placeholder = "Type in a topic and search through your classmates' lightbulbs!"
+        <input class="search full width" id="searchbar" name="query" placeholder = "Type in a topic to search through your classmates' lightbulbs!"
         autocomplete:"on" />
         <%if @results%>
         <% if @results.length > 0 %>

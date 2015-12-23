@@ -46,9 +46,7 @@ Lightbulb.create(lesson_id: 2, course_id: 2, assignment_id: 1, enrollment_id: 5,
 Lightbulb.create(lesson_id: 4, course_id: 2, assignment_id: 1, enrollment_id: 2, student_id: 1, article_url:"railscasts.com/episodes/163-self-referential-association")
 Lightbulb.create(lesson_id: 1, course_id: 2, assignment_id: 4, enrollment_id: 4, student_id: 3, summary:"I view a method as an action carried out by a class.
 For example, if the class is Beyonce, the methods could be dance and sing.")
-Lightbulb.create(lesson_id: 5, course_id: 3, assignment_id: 1, enrollment_id: 7, student_id: 1, summary:"TEST TEST TEST")
-Lightbulb.create(lesson_id: 5, course_id: 3, assignment_id: 1, enrollment_id: 7, student_id: 1, summary:"TESTTWO TESTTWO TESTTWO")
-Lightbulb.create(lesson_id: 7, course_id: 5, assignment_id: 8, enrollment_id: 8, student_id: 1, summary:"Gender gender gender gender")
+Lightbulb.create(lesson_id: 7, course_id: 5, assignment_id: 8, enrollment_id: 8, student_id: 1, summary:"Gender discrimination transcends all races")
 
 
 #teachers can also see which assignments brought the best 'lightbulb moments'
