@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151219053206) do
+ActiveRecord::Schema.define(version: 20151223163259) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,8 @@ ActiveRecord::Schema.define(version: 20151219053206) do
     t.integer "student_id",   null: false
     t.integer "lightbulb_id", null: false
   end
+
+  add_index "favorites", ["lightbulb_id", "student_id"], name: "index_favorites_on_lightbulb_id_and_student_id", unique: true, using: :btree
 
   create_table "lessons", force: :cascade do |t|
     t.integer "course_id"
