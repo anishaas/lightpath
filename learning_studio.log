@@ -250,3 +250,134 @@ D, [2015-12-26T00:53:14.960453 #47278] DEBUG -- : Generating new OAuth2 headers.
 D, [2015-12-26T00:53:16.695239 #47278] DEBUG -- : REQUEST - Method: GET URL: https://api.learningstudio.com/users/38619307 Body:  Headers: {"X-Authorization"=>"Access_Token access_token=c5b8742f-c459-4fc2-91a1-7ee542acb214|da3e64c4-05d1-44d6-bcf7-cac945f2fd6d|38619307|2015-12-25T18%3a53%3a16|4eac6bd7b69ea749acd43f07c4331bca"}
 D, [2015-12-26T00:53:17.236821 #47278] DEBUG -- : REQUEST - Method: GET URL: https://api.learningstudio.com/me/courses Body:  Headers: {"X-Authorization"=>"Access_Token access_token=c5b8742f-c459-4fc2-91a1-7ee542acb214|da3e64c4-05d1-44d6-bcf7-cac945f2fd6d|38619307|2015-12-25T18%3a53%3a16|4eac6bd7b69ea749acd43f07c4331bca"}
 D, [2015-12-26T00:53:17.455909 #47278] DEBUG -- : REQUEST - Method: GET URL: https://api.learningstudio.com/courses/12288063/webliographyEntries Body:  Headers: {"X-Authorization"=>"Access_Token access_token=c5b8742f-c459-4fc2-91a1-7ee542acb214|da3e64c4-05d1-44d6-bcf7-cac945f2fd6d|38619307|2015-12-25T18%3a53%3a16|4eac6bd7b69ea749acd43f07c4331bca"}
+D, [2015-12-26T01:05:37.328939 #47655] DEBUG -- : Generating new OAuth2 headers.
+D, [2015-12-26T01:05:38.990261 #47655] DEBUG -- : REQUEST - Method: POST URL: https://api.learningstudio.com/courses/12288063/webliographyEntries Body: webliographyEntry:{
+    title: TEST,
+    description:TESTDES,
+    site:{
+      url:www.youtube
+    },
+    submitter:{
+      userId:38619307
+    },
+    category:{
+  id:11380945
+} Headers: {"X-Authorization"=>"Access_Token access_token=c5b8742f-c459-4fc2-91a1-7ee542acb214|da3e64c4-05d1-44d6-bcf7-cac945f2fd6d|38619307|2015-12-25T19%3a05%3a38|09fc064d56c1ee3dfc0c3d8ac91db217"}
+D, [2015-12-26T01:07:03.531041 #47735] DEBUG -- : Generating new OAuth2 headers.
+D, [2015-12-26T01:07:06.019170 #47735] DEBUG -- : REQUEST - Method: POST URL: https://api.learningstudio.com/courses/12288063/webliographyEntries Body: webliographyEntry:{
+    title: TEST,
+    description:TESTDES,
+    site:{
+      url:www.youtube
+    },
+    submitter:{
+      userId:38619307
+    },
+    category:{
+	  id:11380945
+	} Headers: {"X-Authorization"=>"Access_Token access_token=c5b8742f-c459-4fc2-91a1-7ee542acb214|da3e64c4-05d1-44d6-bcf7-cac945f2fd6d|38619307|2015-12-25T19%3a07%3a05|17bff1d5e1a55237ab3df1e6c6d3be1b"}
+D, [2015-12-26T01:07:06.869697 #47735] DEBUG -- : REQUEST - Method: GET URL: https://api.learningstudio.com/users/38619307 Body:  Headers: {"X-Authorization"=>"Access_Token access_token=c5b8742f-c459-4fc2-91a1-7ee542acb214|da3e64c4-05d1-44d6-bcf7-cac945f2fd6d|38619307|2015-12-25T19%3a07%3a05|17bff1d5e1a55237ab3df1e6c6d3be1b"}
+D, [2015-12-26T01:07:07.071344 #47735] DEBUG -- : REQUEST - Method: GET URL: https://api.learningstudio.com/me/courses Body:  Headers: {"X-Authorization"=>"Access_Token access_token=c5b8742f-c459-4fc2-91a1-7ee542acb214|da3e64c4-05d1-44d6-bcf7-cac945f2fd6d|38619307|2015-12-25T19%3a07%3a05|17bff1d5e1a55237ab3df1e6c6d3be1b"}
+D, [2015-12-26T01:07:07.298190 #47735] DEBUG -- : REQUEST - Method: GET URL: https://api.learningstudio.com/courses/12288063/webliographyEntries Body:  Headers: {"X-Authorization"=>"Access_Token access_token=c5b8742f-c459-4fc2-91a1-7ee542acb214|da3e64c4-05d1-44d6-bcf7-cac945f2fd6d|38619307|2015-12-25T19%3a07%3a05|17bff1d5e1a55237ab3df1e6c6d3be1b"}
+D, [2015-12-26T01:07:07.783217 #47735] DEBUG -- : REQUEST - Method: POST URL: https://api.learningstudio.com/courses/12288063/webliographyEntries Body: webliographyEntry:{
+    title: TEST,
+    description:TESTDES,
+    site:{
+      url:www.youtube
+    },
+    submitter:{
+      userId:38619307
+    },
+    category:{
+	  id:11380945
+	} Headers: {"X-Authorization"=>"Access_Token access_token=c5b8742f-c459-4fc2-91a1-7ee542acb214|da3e64c4-05d1-44d6-bcf7-cac945f2fd6d|38619307|2015-12-25T19%3a07%3a05|17bff1d5e1a55237ab3df1e6c6d3be1b"}
+D, [2015-12-26T01:13:04.290873 #47735] DEBUG -- : Generating new OAuth2 headers.
+D, [2015-12-26T01:13:05.152892 #47735] DEBUG -- : REQUEST - Method: POST URL: https://api.learningstudio.com/courses/12288063/webliographyEntries Body: webliographyEntry:{
+    title: TEST,
+    description:TESTDES,
+    site:{
+      url:www.youtube
+    },
+    submitter:{
+      userId:38619307
+    },
+    category:{
+  id:11380945
+} Headers: {"X-Authorization"=>"Access_Token access_token=c5b8742f-c459-4fc2-91a1-7ee542acb214|da3e64c4-05d1-44d6-bcf7-cac945f2fd6d|38619307|2015-12-25T19%3a13%3a04|54b1cf9b40303ea8b1e03c19c0f36f63"}
+D, [2015-12-26T01:13:06.280769 #47735] DEBUG -- : REQUEST - Method: GET URL: https://api.learningstudio.com/users/38619307 Body:  Headers: {"X-Authorization"=>"Access_Token access_token=c5b8742f-c459-4fc2-91a1-7ee542acb214|da3e64c4-05d1-44d6-bcf7-cac945f2fd6d|38619307|2015-12-25T19%3a13%3a04|54b1cf9b40303ea8b1e03c19c0f36f63"}
+D, [2015-12-26T01:13:06.487525 #47735] DEBUG -- : REQUEST - Method: GET URL: https://api.learningstudio.com/me/courses Body:  Headers: {"X-Authorization"=>"Access_Token access_token=c5b8742f-c459-4fc2-91a1-7ee542acb214|da3e64c4-05d1-44d6-bcf7-cac945f2fd6d|38619307|2015-12-25T19%3a13%3a04|54b1cf9b40303ea8b1e03c19c0f36f63"}
+D, [2015-12-26T01:13:06.699733 #47735] DEBUG -- : REQUEST - Method: GET URL: https://api.learningstudio.com/courses/12288063/webliographyEntries Body:  Headers: {"X-Authorization"=>"Access_Token access_token=c5b8742f-c459-4fc2-91a1-7ee542acb214|da3e64c4-05d1-44d6-bcf7-cac945f2fd6d|38619307|2015-12-25T19%3a13%3a04|54b1cf9b40303ea8b1e03c19c0f36f63"}
+D, [2015-12-26T01:13:06.924494 #47735] DEBUG -- : REQUEST - Method: POST URL: https://api.learningstudio.com/courses/12288063/webliographyEntries Body: webliographyEntry:{
+    title: TEST,
+    description:TESTDES,
+    site:{
+      url:www.youtube
+    },
+    submitter:{
+      userId:38619307
+    },
+    category:{
+	  id:11380945
+	} Headers: {"X-Authorization"=>"Access_Token access_token=c5b8742f-c459-4fc2-91a1-7ee542acb214|da3e64c4-05d1-44d6-bcf7-cac945f2fd6d|38619307|2015-12-25T19%3a13%3a04|54b1cf9b40303ea8b1e03c19c0f36f63"}
+D, [2015-12-26T01:21:15.996086 #47735] DEBUG -- : Generating new OAuth2 headers.
+D, [2015-12-26T01:21:16.941788 #47735] DEBUG -- : REQUEST - Method: POST URL: https://api.learningstudio.com/courses/12288063/webliographyEntries Body: {
+  webliographyEntry:{
+    title:TEST,
+    description:TESTDES,
+    site:{
+      url:http://www.youtube.com/
+    },
+    submitter:{
+      userId:38619307
+    },
+    category:{
+	  id:11380945
+	}
+  }
+} Headers: {"X-Authorization"=>"Access_Token access_token=c5b8742f-c459-4fc2-91a1-7ee542acb214|da3e64c4-05d1-44d6-bcf7-cac945f2fd6d|38619307|2015-12-25T19%3a21%3a16|e898a78162e5801d93d0a30aa8c464f1"}
+D, [2015-12-26T01:21:18.927079 #47735] DEBUG -- : REQUEST - Method: GET URL: https://api.learningstudio.com/users/38619307 Body:  Headers: {"X-Authorization"=>"Access_Token access_token=c5b8742f-c459-4fc2-91a1-7ee542acb214|da3e64c4-05d1-44d6-bcf7-cac945f2fd6d|38619307|2015-12-25T19%3a21%3a16|e898a78162e5801d93d0a30aa8c464f1"}
+D, [2015-12-26T01:21:19.151950 #47735] DEBUG -- : REQUEST - Method: GET URL: https://api.learningstudio.com/me/courses Body:  Headers: {"X-Authorization"=>"Access_Token access_token=c5b8742f-c459-4fc2-91a1-7ee542acb214|da3e64c4-05d1-44d6-bcf7-cac945f2fd6d|38619307|2015-12-25T19%3a21%3a16|e898a78162e5801d93d0a30aa8c464f1"}
+D, [2015-12-26T01:21:19.400309 #47735] DEBUG -- : REQUEST - Method: GET URL: https://api.learningstudio.com/courses/12288063/webliographyEntries Body:  Headers: {"X-Authorization"=>"Access_Token access_token=c5b8742f-c459-4fc2-91a1-7ee542acb214|da3e64c4-05d1-44d6-bcf7-cac945f2fd6d|38619307|2015-12-25T19%3a21%3a16|e898a78162e5801d93d0a30aa8c464f1"}
+D, [2015-12-26T01:21:20.463596 #47735] DEBUG -- : REQUEST - Method: POST URL: https://api.learningstudio.com/courses/12288063/webliographyEntries Body: webliographyEntry:{
+    title: TEST,
+    description:TESTDES,
+    site:{
+      url:www.youtube
+    },
+    submitter:{
+      userId:38619307
+    },
+    category:{
+	  id:11380945
+	} Headers: {"X-Authorization"=>"Access_Token access_token=c5b8742f-c459-4fc2-91a1-7ee542acb214|da3e64c4-05d1-44d6-bcf7-cac945f2fd6d|38619307|2015-12-25T19%3a21%3a16|e898a78162e5801d93d0a30aa8c464f1"}
+D, [2015-12-26T01:21:21.351447 #47735] DEBUG -- : Generating new OAuth2 headers.
+D, [2015-12-26T01:21:22.203061 #47735] DEBUG -- : REQUEST - Method: POST URL: https://api.learningstudio.com/courses/12288063/webliographyEntries Body: {
+  webliographyEntry:{
+    title:TEST,
+    description:TESTDES,
+    site:{
+      url:http://www.youtube.com/
+    },
+    submitter:{
+      userId:38619307
+    },
+    category:{
+	  id:11380945
+	}
+  }
+} Headers: {"X-Authorization"=>"Access_Token access_token=c5b8742f-c459-4fc2-91a1-7ee542acb214|da3e64c4-05d1-44d6-bcf7-cac945f2fd6d|38619307|2015-12-25T19%3a21%3a22|bfe79943d8a18f3fb23f4b3cead91ac8"}
+D, [2015-12-26T01:21:26.304024 #47735] DEBUG -- : REQUEST - Method: GET URL: https://api.learningstudio.com/users/38619307 Body:  Headers: {"X-Authorization"=>"Access_Token access_token=c5b8742f-c459-4fc2-91a1-7ee542acb214|da3e64c4-05d1-44d6-bcf7-cac945f2fd6d|38619307|2015-12-25T19%3a21%3a22|bfe79943d8a18f3fb23f4b3cead91ac8"}
+D, [2015-12-26T01:21:26.493150 #47735] DEBUG -- : REQUEST - Method: GET URL: https://api.learningstudio.com/me/courses Body:  Headers: {"X-Authorization"=>"Access_Token access_token=c5b8742f-c459-4fc2-91a1-7ee542acb214|da3e64c4-05d1-44d6-bcf7-cac945f2fd6d|38619307|2015-12-25T19%3a21%3a22|bfe79943d8a18f3fb23f4b3cead91ac8"}
+D, [2015-12-26T01:21:26.719879 #47735] DEBUG -- : REQUEST - Method: GET URL: https://api.learningstudio.com/courses/12288063/webliographyEntries Body:  Headers: {"X-Authorization"=>"Access_Token access_token=c5b8742f-c459-4fc2-91a1-7ee542acb214|da3e64c4-05d1-44d6-bcf7-cac945f2fd6d|38619307|2015-12-25T19%3a21%3a22|bfe79943d8a18f3fb23f4b3cead91ac8"}
+D, [2015-12-26T01:21:26.913655 #47735] DEBUG -- : REQUEST - Method: POST URL: https://api.learningstudio.com/courses/12288063/webliographyEntries Body: webliographyEntry:{
+    title: TEST,
+    description:TESTDES,
+    site:{
+      url:www.youtube
+    },
+    submitter:{
+      userId:38619307
+    },
+    category:{
+	  id:11380945
+	} Headers: {"X-Authorization"=>"Access_Token access_token=c5b8742f-c459-4fc2-91a1-7ee542acb214|da3e64c4-05d1-44d6-bcf7-cac945f2fd6d|38619307|2015-12-25T19%3a21%3a22|bfe79943d8a18f3fb23f4b3cead91ac8"}
