@@ -15,6 +15,10 @@ class LightbulbsController < ApplicationController
   # GET /lightbulbs/new
   def new
     @lightbulb = Lightbulb.new
+    #new lightbulb moment
+    @new_lightbulb =  HTTParty.post('https://api.learningstudio.com/courses/12288063/webliographyEntries',
+    :headers => { "X-Authorization" => "Access_Token access_token=c5b8742f-c459-4fc2-91a1-7ee542acb214|da3e64c4-05d1-44d6-bcf7-cac945f2fd6d|38619307|2015-12-24T06%3a44%3a56|e83dd39cd083801ba4597ec951fc3218"},
+    :query => {:webliographyEntry => {:title => 'TEST TITLE', :description => 'TEST DESCRIPTION', :site => {:URL => 'www.youtube.com'}, :submitter => {:userId => 38619307}, :category => {:id => 11380945}})
   end
 
   # GET /lightbulbs/1/edit

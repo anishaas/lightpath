@@ -5,7 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
+@api_response =  HTTParty.get('https://api.learningstudio.com/me',
+:headers => { "X-Authorization" => "Access_Token access_token=c5b8742f-c459-4fc2-91a1-7ee542acb214|da3e64c4-05d1-44d6-bcf7-cac945f2fd6d|38619307|2015-12-23T17%3a14%3a11|f3da636ea2b6fe9e4ad91de114660dc6" })
+@classmates = HTTParty.get('https://api.learningstudio.com/users/38619307/classmates',
+:headers => { "X-Authorization" => "Access_Token access_token=c5b8742f-c459-4fc2-91a1-7ee542acb214|da3e64c4-05d1-44d6-bcf7-cac945f2fd6d|38619307|2015-12-23T17%3a14%3a11|f3da636ea2b6fe9e4ad91de114660dc6" })
 Student.create(first_name:"Anisha", last_name:"Srivastava", email: "anisha@example.com",
 username:"anishasrivastava", admin:false, password: 'password')
 Student.create(first_name:"Mikaila", last_name:"Smith", email: "mikaila@example.com",
@@ -14,6 +17,11 @@ Student.create(first_name:"Arjun", last_name:"Srivastava", email: "arjun@example
 username:"arjunsrivastava", admin:false, password: 'password')
 Student.create(first_name:"Test", last_name:"Test", email: "test@example.com",
 username:"test", admin:false, password: 'password')
+Student.create(first_name: @api_response["me"]["firstName"], last_name: @api_response["me"]["lastName"], email: @api_response["me"]["emailAddress"],
+username:"floudpouncey", admin:false, password: 'password')
+Student.create(first_name:@classmates.first[1].first["firstName"], last_name:@classmates.first[1].first["lastName"],email: "grady@example.com",
+username:"gradymohamed", admin:false, password: 'password')
+
 
 Teacher.create(first_name:"Martin", last_name:"Kevorkian", email: "mk@example.com",
 username:"martinkevorkian", admin:true, password: 'password')
@@ -27,6 +35,7 @@ Course.create(name:"Backend Engineering, Ruby on Rails", teacher_id:2, descripti
 Course.create(name:"Hindi: Grammar and Conversation", teacher_id:3, description: "Learn correct Hindi grammar and build vocabulary")
 Course.create(name:"Programming Interview Prep", teacher_id:3, description: "Practicing katas and programming logic")
 Course.create(name:"African American Literature",teacher_id:1, description:"Studying literature by African American authors, focusing on the Harlem Renaissance")
+
 
 Enrollment.create(student_id:1, course_id:1)
 Enrollment.create(student_id:1, course_id:4)

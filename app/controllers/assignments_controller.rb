@@ -6,6 +6,7 @@ class AssignmentsController < ApplicationController
   def index
     @assignments = Course.find(params[:course_id]).assignments
     @assignmentone = Course.find(params[:course_id]).assignments.first
+    @lightbulb = Lightbulb.new
   end
 
 end
