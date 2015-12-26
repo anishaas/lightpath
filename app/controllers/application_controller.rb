@@ -29,11 +29,11 @@ responseone = service.request("GET","/users/38619307")
 responsetwo = service.request("GET","/me/courses")
 @response_course_title = JSON.parse(responsetwo.content)["courses"].first["links"].first["title"]
 
-# @response_id = JSON.parse(response.content)["users"].first["id"]
-# @response_userName = JSON.parse(response.content)["users"].first["userName"]
-# @response_firstName = JSON.parse(response.content)["users"].first["firstName"]
-# @response_lastName = JSON.parse(response.content)["users"].first["lastName"]
-
+@response = service.request("GET","/courses/12288063/webliographyEntries")
+# @response_title = JSON.parse(@response.content)["webliographyEntries"].first["title"]
+@response_description = JSON.parse(@response.content)["webliographyEntries"].first["description"]
+@response_site = JSON.parse(@response.content)["webliographyEntries"].first["site"]["url"]
+@response_submitter = JSON.parse(@response.content)["webliographyEntries"].first["submitter"]["firstName"]
 render '/layouts/home.html.erb'
 #Test this API call to get access token
 # @api_response = POST "https://api.learningstudio.com/token"
