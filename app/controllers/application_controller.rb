@@ -20,21 +20,15 @@ oauth_factory = LearningStudioAuthentication::Service::OAuthServiceFactory.new(c
 service = LearningStudioCore::BasicService.new(oauth_factory)
 service.use_oauth2('anisha.srivastava123.student@gmail.com','msuTooEg')
 service.data_format = LearningStudioCore::BasicService::DataFormat::JSON
-@wb_post_response = service.request("POST","/courses/12288063/webliographyEntries", "{
-  webliographyEntry:{
-    title:TEST,
-    description:TESTDES,
-    site:{
-      url:http://www.youtube.com/
-    },
-    submitter:{
-      userId:38619307
-    },
-    category:{
-	  id:11380945
-	}
+@wb_post_response = service.request("POST","/courses/12288063/webliographyEntries", {
+    :webliographyEntry => {
+      :title => "TEST TITLE",
+      :description => "TEST DESCRIPTION",
+      :site => {:url => "www.youtube.com"},
+      :submitter =>{:userId => 38619307},
+      :category => {:id => 11380945},
   }
-}")
+}.to_json)
 
 responseone = service.request("GET","/users/38619307")
 @response_id = JSON.parse(responseone.content)["users"].first["id"]
