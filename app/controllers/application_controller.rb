@@ -20,15 +20,15 @@ oauth_factory = LearningStudioAuthentication::Service::OAuthServiceFactory.new(c
 service = LearningStudioCore::BasicService.new(oauth_factory)
 service.use_oauth2('anisha.srivastava123.student@gmail.com','msuTooEg')
 service.data_format = LearningStudioCore::BasicService::DataFormat::JSON
-@wb_post_response = service.request("POST","/courses/12288063/webliographyEntries", {
-    :webliographyEntry => {
-      :title => "TEST TITLE",
-      :description => "TEST DESCRIPTION",
-      :site => {:url => "www.youtube.com"},
-      :submitter =>{:userId => 38619307},
-      :category => {:id => 11380945},
-  }
-}.to_json)
+# @wb_post_response = service.request("POST","/courses/12288063/webliographyEntries", {
+#     :webliographyEntry => {
+#       :title => "TEST TITLE",
+#       :description => "TEST DESCRIPTION",
+#       :site => {:url => "www.youtube.com"},
+#       :submitter =>{:userId => 38619307},
+#       :category => {:id => 11380945},
+#   }
+# }.to_json)
 
 responseone = service.request("GET","/users/38619307")
 @response_id = JSON.parse(responseone.content)["users"].first["id"]
@@ -44,21 +44,8 @@ responsetwo = service.request("GET","/me/courses")
 @response_description = JSON.parse(@response.content)["webliographyEntries"].first["description"]
 @response_site = JSON.parse(@response.content)["webliographyEntries"].first["site"]["url"]
 @response_submitter = JSON.parse(@response.content)["webliographyEntries"].first["submitter"]["firstName"]
-
-@webliography_post_response = service.request("POST","/courses/12288063/webliographyEntries", "webliographyEntry:{
-    title: TEST,
-    description:TESTDES,
-    site:{
-      url:www.youtube
-    },
-    submitter:{
-      userId:38619307
-    },
-    category:{
-	  id:11380945
-	}")
-
-
+@response_items = service.request("GET","/users/38619307/courses/12288063/items/home/items")
+@item_title = JSON.parse(@response_items.content)["items"].first["title"]
 render '/layouts/home.html.erb'
 #Test this API call to get access token
 # @api_response = POST "https://api.learningstudio.com/token"

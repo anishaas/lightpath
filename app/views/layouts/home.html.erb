@@ -4,6 +4,8 @@
           <img src="http://s19.postimg.org/kn3znihj7/whiteboard_849811.jpg" alt="" z-index:-2>
       </div>
         <h1>LIGHTPATH </h1>
+        <p><%=@item_title%></p>
+        <p><%=@response_items%></p>
         <p><%=@responseone%></p>
         <p><%=@response_id%></p>
         <p><%=@response_userName%></p>
@@ -15,7 +17,8 @@
         <p><%=@response_description%></p>
         <p><%=@response_site%></p>
         <p><%=@response_submitter%></p>
-        <p><%=@wb_post_response%></p>
+        <!-- <p><%=@wb_post_response%></p> -->
+        <p><%=@response%></p>
         <h3> illuminate the path to mastery </h3>
         <%=link_to "I'm a Student", new_login_path%>
         <%=link_to "I'm a Teacher", teacher_login_path%>
