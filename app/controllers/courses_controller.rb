@@ -7,7 +7,6 @@ class CoursesController < ApplicationController
 
   def search
     #get assignments for the course page user is on
-
     @q = "%#{params[:query]}%".downcase.strip
     @assignments = Assignment.where("lower(title) LIKE ?", @q)
     @results = @assignments
@@ -47,6 +46,10 @@ class CoursesController < ApplicationController
     service = LearningStudioCore::BasicService.new(oauth_factory)
     service.use_oauth2('anisha.srivastava123.student@gmail.com','msuTooEg')
     service.data_format = LearningStudioCore::BasicService::DataFormat::JSON
+    @courses = service.request("GET","/me/courses?expand=course")
+    @course_title = JSON.parse(@courses.content)["courses"].first.first.last.first["course"]["displayCourseCode"]
+    @course = Course.find_by("name LIKE ?", @course_title)
+    @lessons = @course.lessons
     @response_array = service.request("GET","/courses/12288063/webliographyEntries")
     response = JSON.parse(@response_array.content)["webliographyEntries"]
     response = response.sort_by{|response|response["title"]}
@@ -54,9 +57,8 @@ class CoursesController < ApplicationController
     response.each do |response|
         @lightbulbs.push(response["title"], response["description"], response["url"], response["submitter"]["firstName"])
       end
-
     @bulbs = Array.new
-    # @bulbs= current_user.lightbulbs.where(course_id: @course.id)
+    @bulbs= @current_user.lightbulbs.where(course_id: @course.id)
     @recipient = Student.find_by("lower(first_name) LIKE ?", @qu)
   end
 
@@ -115,7 +117,23 @@ class CoursesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_course
-      @course = Course.find(params[:id])
+      conf = LearningStudioAuthentication::Config::OAuthConfig.new({
+          :application_id   => 'c5b8742f-c459-4fc2-91a1-7ee542acb214',
+          :application_name => 'Lightpath',
+          :client_string    => 'gbtestc',
+          :consumer_key     => '4d2b474e-7b70-4b7e-aff5-7313567c2c38',
+          :consumer_secret  =>  'DmyLEZn8ts7MuOUm'
+      })
+      oauth_factory = LearningStudioAuthentication::Service::OAuthServiceFactory.new(conf)
+      service = LearningStudioCore::BasicService.new(oauth_factory)
+      service.use_oauth2('anisha.srivastava123.student@gmail.com','msuTooEg')
+      service.data_format = LearningStudioCore::BasicService::DataFormat::JSON
+      @currentuser = service.request("GET", "/users/38619307")
+      @current_user_firstName = JSON.parse(@currentuser.content)["users"].first["firstName"]
+      @current_user = Student.find_by("first_name LIKE ?", @current_user_firstName)
+      @courses = service.request("GET","/me/courses?expand=course")
+      @course_title = JSON.parse(@courses.content)["courses"].first.first.last.first["course"]["displayCourseCode"]
+      @course = Course.find_by("name LIKE ?", @course_title)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

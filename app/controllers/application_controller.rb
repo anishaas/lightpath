@@ -21,7 +21,7 @@ def homepage
   service = LearningStudioCore::BasicService.new(oauth_factory)
   service.use_oauth2('anisha.srivastava123.student@gmail.com','msuTooEg')
   service.data_format = LearningStudioCore::BasicService::DataFormat::JSON
-  @currentuser = service.request("GET","/me")
+  @currentuser = service.request("GET","/users/38619307")
   @currentuser_firstName = JSON.parse(@currentuser.content)["users"].first["firstName"]
   @assignments = service.request("GET", "/users/38619307/courses/12288063/itemHierarchy?expand=item")
   @assignments = JSON.parse(@assignments.content)["itemHierarchy"]

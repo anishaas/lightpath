@@ -5,10 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-@api_response =  HTTParty.get('https://api.learningstudio.com/me',
-:headers => { "X-Authorization" => "Access_Token access_token=c5b8742f-c459-4fc2-91a1-7ee542acb214|da3e64c4-05d1-44d6-bcf7-cac945f2fd6d|38619307|2015-12-23T17%3a14%3a11|f3da636ea2b6fe9e4ad91de114660dc6" })
-@classmates = HTTParty.get('https://api.learningstudio.com/users/38619307/classmates',
-:headers => { "X-Authorization" => "Access_Token access_token=c5b8742f-c459-4fc2-91a1-7ee542acb214|da3e64c4-05d1-44d6-bcf7-cac945f2fd6d|38619307|2015-12-23T17%3a14%3a11|f3da636ea2b6fe9e4ad91de114660dc6" })
+
+require 'learning_studio_authentication'
+require 'learning_studio_core'
+require 'JSON'
 conf = LearningStudioAuthentication::Config::OAuthConfig.new({
     :application_id   => 'c5b8742f-c459-4fc2-91a1-7ee542acb214',
     :application_name => 'Lightpath',
@@ -22,14 +22,33 @@ service.use_oauth2('anisha.srivastava123.student@gmail.com','msuTooEg')
 service.data_format = LearningStudioCore::BasicService::DataFormat::JSON
 @courses = service.request("GET","/me/courses?expand=course")
 @course_title = JSON.parse(@courses.content)["courses"].first.first.last.first["course"]["displayCourseCode"]
-# @assignments = service.request("GET", "/users/38619307/courses/12288063/itemHierarchy?expand=item")
-# @assignments = JSON.parse(@assignments.content)["itemHierarchy"]["childItemNodes"]
-# @assignments.sort_by {|assignment| assignment["childItemNodes"]}
-# @assignment_headers = Array.new
-# @assignment_titles = Array.new
-# @assignments.each do |assignment|
-#     @assignment_titles.push(assignment["title"])
-#   end
+
+
+conf = LearningStudioAuthentication::Config::OAuthConfig.new({
+    :application_id   => 'c5b8742f-c459-4fc2-91a1-7ee542acb214',
+    :application_name => 'Lightpath',
+    :client_string    => 'gbtestc',
+    :consumer_key     => '4d2b474e-7b70-4b7e-aff5-7313567c2c38',
+    :consumer_secret  =>  'DmyLEZn8ts7MuOUm'
+})
+oauth_factory = LearningStudioAuthentication::Service::OAuthServiceFactory.new(conf)
+service = LearningStudioCore::BasicService.new(oauth_factory)
+service.use_oauth2('anisha.srivastava123.student@gmail.com','msuTooEg')
+service.data_format = LearningStudioCore::BasicService::DataFormat::JSON
+@accounting_response = service.request("GET", "/me/courses/12288063/itemHierarchy?expand=item")
+lessons = JSON.parse(@accounting_response.content)
+accountinglessons = lessons["itemHierarchy"]
+@lessonnumber= accountinglessons.first[1][5]["links"][0]["item"]["header"]
+@lessonnumbertwo= accountinglessons.first[1][6]["links"][0]["item"]["header"]
+@lessontitle = accountinglessons.first[1][5]["links"][0]["item"]["title"]
+@lessontitletwo = accountinglessons.first[1][6]["links"][0]["item"]["title"]
+@response_array = service.request("GET","/courses/12288063/webliographyEntries")
+response = JSON.parse(@response_array.content)["webliographyEntries"]
+response = response.sort_by{|response|response["title"]}
+@lightbulbs = Array.new
+response.each do |response|
+    @lightbulbs.push(response["title"], response["description"], response["url"], response["submitter"]["firstName"])
+  end
 
 Student.create(first_name:"Anisha", last_name:"Srivastava", email: "anisha@example.com",
 username:"anishasrivastava", admin:false, password: 'password')
@@ -68,24 +87,21 @@ Enrollment.create(student_id:3, course_id:1)
 Enrollment.create(student_id:1, course_id:3)
 Enrollment.create(student_id:1, course_id:5)
 
-Lightbulb.create(lesson_id: 3, course_id: 1, assignment_id: 1, enrollment_id: 1, student_id: 1, summary:"Ahab -- clash of fate and free-will")
-Lightbulb.create(lesson_id: 3, course_id: 1, assignment_id: 2, enrollment_id: 1, student_id: 1, summary:"Roark represents individualism, Keating conformity.")
 Lightbulb.create(lesson_id: 1, course_id: 2, assignment_id: 4, enrollment_id: 2, student_id: 2, summary:"A method is a function or feature of a class")
-Lightbulb.create(lesson_id: 3, course_id: 1, assignment_id: 2, enrollment_id: 1, student_id: 2, summary:"Roark is ultimately more fulfilled.")
 Lightbulb.create(lesson_id: 1, course_id: 2, assignment_id: 5, enrollment_id: 1, student_id: 1, summary: "Object oriented programming is about encapsulation and inheritance")
 Lightbulb.create(lesson_id: 2, course_id: 2, assignment_id: 1, enrollment_id: 5, student_id: 1, video_url:"www.youtube.com")
 Lightbulb.create(lesson_id: 4, course_id: 2, assignment_id: 1, enrollment_id: 2, student_id: 1, article_url:"railscasts.com/episodes/163-self-referential-association")
 Lightbulb.create(lesson_id: 1, course_id: 2, assignment_id: 4, enrollment_id: 4, student_id: 3, summary:"I view a method as an action carried out by a class.
 For example, if the class is Beyonce, the methods could be dance and sing.")
-Lightbulb.create(lesson_id: 7, course_id: 5, assignment_id: 8, enrollment_id: 8, student_id: 1, summary:"Gender discrimination transcends all races")
+Lightbulb.create(lesson_id: 9, course_id: 6, assignment_id: 7, enrollment_id: 8, student_id: 5, article_url:@lightbulbs[3])
 
 
 #teachers can also see which assignments brought the best 'lightbulb moments'
 
 Assignment.create(lesson_id: 3, graded: false, course_id:1, title:"Moby Dick Reading Response", description: "Analyze Captain Ahab's inner conflit.")
 Assignment.create(lesson_id: 3, graded: false, course_id:1, title:"The Fountainhead Essay", description: "Contrast Peter Keating and Howard Roark.")
-Assignment.create(lesson_id: 2, graded: false, course_id:2, title: "Event Loop Blog Post", description: "In your own words explain the event loop and come up with a real world parallel.")
-Assignment.create(lesson_id: 1, graded: false, course_id:2, title:"Quick Concept Check", description: "Answer the following question in a few sentences: What is a method?")
+Assignment.create(lesson_id: 2, graded: false, course_id:6, title: "Event Loop Blog Post", description: "In your own words explain the event loop and come up with a real world parallel.")
+Assignment.create(lesson_id: 1, graded: false, course_id:6, title:"Quick Concept Check", description: "Answer the following question in a few sentences: What is a method?")
 Assignment.create(lesson_id: 1, course_id:2, title:"Blog Post on Object Oriented Programming", description:"Write a blog post defining object oriented programming
 and compare/contrast it to functional programming")
 Assignment.create(lesson_id: 5, course_id:3, title:"Verb Conjugation Practice", description:"Record or write out conjugation for the following verbs")
@@ -110,6 +126,7 @@ Ex) Friend following a friend on social media.")
 Lesson.create(number: 1, course_id: 3, title:"Verb Conjugation", description: "Using verbs in sentences and conjugating based on tense and gender")
 Lesson.create(number: 1, course_id: 4, title:"Permutations", description: "Finding all combinations of a string")
 Lesson.create(number: 1, course_id: 5, title:"A Mercy, Toni Morrsion", description: "Gender roles in the novel")
-
+Lesson.create(number: @lessonnumber, course_id: 6, title:@lessontitle, description: "Learn")
+Lesson.create(number: @lessonnumbertwo, course_id: 6, title:@lessontitletwo, description: "Learn")
 
 Favorite.create(lightbulb_id: 1, student_id:2)

@@ -17,7 +17,7 @@ class StudentDashboardController < ApplicationController
     @currentuser_firstName = JSON.parse(@currentuser.content)["users"].first["firstName"]
     @courses = service.request("GET","/me/courses?expand=course")
     @course_title = JSON.parse(@courses.content)["courses"].first.first.last.first["course"]["displayCourseCode"]
-    @course = Course.find(6)
+    @course = Course.where("name LIKE ?", @course_title)
     # @courses = current_user.courses
     # @submissions = current_user.submissions
     # @messages = current_user.received_messages
