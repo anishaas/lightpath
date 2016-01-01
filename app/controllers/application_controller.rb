@@ -9,17 +9,58 @@ require 'JSON'
 # require 'httparty'
 
 def homepage
-conf = LearningStudioAuthentication::Config::OAuthConfig.new({
-    :application_id   => 'c5b8742f-c459-4fc2-91a1-7ee542acb214',
-    :application_name => 'Lightpath',
-    :client_string    => 'gbtestc',
-    :consumer_key     => '4d2b474e-7b70-4b7e-aff5-7313567c2c38',
-    :consumer_secret  =>  'DmyLEZn8ts7MuOUm'
-})
-oauth_factory = LearningStudioAuthentication::Service::OAuthServiceFactory.new(conf)
-service = LearningStudioCore::BasicService.new(oauth_factory)
-service.use_oauth2('anisha.srivastava123.student@gmail.com','msuTooEg')
-service.data_format = LearningStudioCore::BasicService::DataFormat::JSON
+  conf = LearningStudioAuthentication::Config::OAuthConfig.new({
+      :application_id   => 'c5b8742f-c459-4fc2-91a1-7ee542acb214',
+      :application_name => 'Lightpath',
+      :client_string    => 'gbtestc',
+      :consumer_key     => '4d2b474e-7b70-4b7e-aff5-7313567c2c38',
+      :consumer_secret  =>  'DmyLEZn8ts7MuOUm'
+  })
+  oauth_factory = LearningStudioAuthentication::Service::OAuthServiceFactory.new(conf)
+  service = LearningStudioCore::BasicService.new(oauth_factory)
+  service.use_oauth2('anisha.srivastava123.student@gmail.com','msuTooEg')
+  service.data_format = LearningStudioCore::BasicService::DataFormat::JSON
+  @assignments = service.request("GET", "/users/38619307/courses/12288063/itemHierarchy?expand=item")
+  @assignments = JSON.parse(@assignments.content)["itemHierarchy"]
+
+  # @assignments.sort_by {|assignment| assignment["childItemNodes"]}
+  # @childitemnodes = Array.new
+  # @assignments.each do |assignment|
+  #     @childitemnodes.push(assignment["childItemNodes"])
+  #   end
+  # @response = service.request("GET","/courses/12288063/webliographyEntries")
+  # response = JSON.parse(@response.content)["webliographyEntries"]
+  # response = response.sort_by{|response|response["title"]}
+  # @lightbulbs = Array.new
+  # response.each do |response|
+  #     @lightbulbs.push(response["title"], response["description"], response["url"], response["submitter"]["firstName"])
+  #   end
+  # conf = LearningStudioAuthentication::Config::OAuthConfig.new({
+  #     :application_id   => 'c5b8742f-c459-4fc2-91a1-7ee542acb214',
+  #     :application_name => 'Lightpath',
+  #     :client_string    => 'gbtestc',
+  #     :consumer_key     => '4d2b474e-7b70-4b7e-aff5-7313567c2c38',
+  #     :consumer_secret  =>  'DmyLEZn8ts7MuOUm'
+  # })
+  # oauth_factory = LearningStudioAuthentication::Service::OAuthServiceFactory.new(conf)
+  # service = LearningStudioCore::BasicService.new(oauth_factory)
+  # service.use_oauth2('anisha.srivastava123.student@gmail.com','msuTooEg')
+  # service.data_format = LearningStudioCore::BasicService::DataFormat::JSON
+  # @assignments = service.request("GET", "/users/38619307/courses/12288063/itemHierarchy?expand=item")
+  # JSON.parse(@assignments.content)["itemHierarchy"]
+  #
+  # assignments = JSON.parse(@assignments.content)
+  # @response = service.request("GET","/courses/12288063/webliographyEntries")
+
+  # @assignments = JSON.parse(@assignments.content)["itemHierarchy"]["childItemNodes"].first["links"].first["item"]
+  # @assignments.sort_by {|assignment| assignment["title"]}
+  # @assignment_headers = Array.new
+  # @assignment_titles = Array.new
+  # @assignments.each do |assignment|
+  #     @assignment_titles.push(assignment["title"])
+  #   end
+
+
 # @wb_post_response = service.request("POST","/courses/12288063/webliographyEntries", {
 #     :webliographyEntry => {
 #       :title => "TEST TITLE",
@@ -30,22 +71,18 @@ service.data_format = LearningStudioCore::BasicService::DataFormat::JSON
 #   }
 # }.to_json)
 
-responseone = service.request("GET","/users/38619307")
-@response_id = JSON.parse(responseone.content)["users"].first["id"]
-@response_userName = JSON.parse(responseone.content)["users"].first["userName"]
-@response_firstName = JSON.parse(responseone.content)["users"].first["firstName"]
-@response_lastName = JSON.parse(responseone.content)["users"].first["lastName"]
-
-responsetwo = service.request("GET","/me/courses")
-@response_course_title = JSON.parse(responsetwo.content)["courses"].first["links"].first["title"]
-
+# responseone = service.request("GET","/users/38619307")
+# @response_id = JSON.parse(responseone.content)["users"].first["id"]
+# @response_userName = JSON.parse(responseone.content)["users"].first["userName"]
+# @response_firstName = JSON.parse(responseone.content)["users"].first["firstName"]
+# @response_lastName = JSON.parse(responseone.content)["users"].first["lastName"]
+#
 @response = service.request("GET","/courses/12288063/webliographyEntries")
-# @response_title = JSON.parse(@response.content)["webliographyEntries"].first["title"]
+@response_title = JSON.parse(@response.content)["webliographyEntries"].first["title"]
 @response_description = JSON.parse(@response.content)["webliographyEntries"].first["description"]
 @response_site = JSON.parse(@response.content)["webliographyEntries"].first["site"]["url"]
 @response_submitter = JSON.parse(@response.content)["webliographyEntries"].first["submitter"]["firstName"]
-@response_items = service.request("GET","/users/38619307/courses/12288063/items/home/items")
-@item_title = JSON.parse(@response_items.content)["items"].first["title"]
+
 render '/layouts/home.html.erb'
 #Test this API call to get access token
 # @api_response = POST "https://api.learningstudio.com/token"
@@ -57,7 +94,7 @@ render '/layouts/home.html.erb'
 #classmates = /users/{userId}/classmates
 #/courses/{courseId}/enrolledUsers
 #API Call to retrieve course's information for course show page
-#get instructor /courses/{courseId}/instructors
+# get instructor /courses/{courseId}/instructors
 #API call to retrieve assignments for a course
 end
 

@@ -2,13 +2,7 @@
 <div class="col s3 card-panel teal" id="courses">
       <div class="col s12 m4 l11">
         <h3> Your Courses </h3>
-        <%if @courses.length > 0%>
-          <%@courses.each do |course|%>
-          <p class='course'><%=link_to course.name, course_path(course)%></p>
-          <%end%>
-          <%else%>
-          You have not joined any courses yet, add courses <%=link_to "here", courses_path%>
-          <%end%>
+        <p class='course'><%=link_to "#{@course_title}", course_path(@course)%></p>
       </div>
   </div>
 
@@ -33,13 +27,16 @@
         <div class="row">
           <div class="col s6 card-panel teal" id="submissions">
             <div id='headingnotifications'><h5> Recent Submissions </h5></div>
+            <%if @submissions != nil%>
             <%@submissions.each do |submission|%>
             <p><%=submission.assignment.title%></p>
+            <%end%>
             <%end%>
           </div>
 
           <div class= "col s6 card-panel teal" id="notifications">
             <div id='headingnotifications'><h5> Notifications </h5></div>
+            <%if @submissions != nil%>
             <%@messages.each do |message|%>
             <div class= "row card-panel teal" id="notification">
               <img src ='http://s13.postimg.org/6n2pzw1zb/image.png'></img>
@@ -47,6 +44,7 @@
                 <div id= 'messagebody'><%=message.body%></div>
                 - <%=message.subject%>
            </div>
+           <%end%>
            <%end%>
            <%@displayfavorites.each do |favorite|%>
            <div class= "row card-panel teal" id="notification">

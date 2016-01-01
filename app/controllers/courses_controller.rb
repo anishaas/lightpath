@@ -7,6 +7,7 @@ class CoursesController < ApplicationController
 
   def search
     #get assignments for the course page user is on
+
     @q = "%#{params[:query]}%".downcase.strip
     @assignments = Assignment.where("lower(title) LIKE ?", @q)
     @results = @assignments
@@ -35,7 +36,27 @@ class CoursesController < ApplicationController
   def show
     # @course = Course.fetch(params[:id])
     # @assignments = @course.assignments
-    @bulbs= current_user.lightbulbs.where(course_id: @course.id)
+    conf = LearningStudioAuthentication::Config::OAuthConfig.new({
+        :application_id   => 'c5b8742f-c459-4fc2-91a1-7ee542acb214',
+        :application_name => 'Lightpath',
+        :client_string    => 'gbtestc',
+        :consumer_key     => '4d2b474e-7b70-4b7e-aff5-7313567c2c38',
+        :consumer_secret  =>  'DmyLEZn8ts7MuOUm'
+    })
+    oauth_factory = LearningStudioAuthentication::Service::OAuthServiceFactory.new(conf)
+    service = LearningStudioCore::BasicService.new(oauth_factory)
+    service.use_oauth2('anisha.srivastava123.student@gmail.com','msuTooEg')
+    service.data_format = LearningStudioCore::BasicService::DataFormat::JSON
+    @response_array = service.request("GET","/courses/12288063/webliographyEntries")
+    response = JSON.parse(@response_array.content)["webliographyEntries"]
+    response = response.sort_by{|response|response["title"]}
+    @lightbulbs = Array.new
+    response.each do |response|
+        @lightbulbs.push(response["title"], response["description"], response["url"], response["submitter"]["firstName"])
+      end
+
+    @bulbs = Array.new
+    # @bulbs= current_user.lightbulbs.where(course_id: @course.id)
     @recipient = Student.find_by("lower(first_name) LIKE ?", @qu)
   end
 
