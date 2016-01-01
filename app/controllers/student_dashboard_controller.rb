@@ -13,6 +13,8 @@ class StudentDashboardController < ApplicationController
     service = LearningStudioCore::BasicService.new(oauth_factory)
     service.use_oauth2('anisha.srivastava123.student@gmail.com','msuTooEg')
     service.data_format = LearningStudioCore::BasicService::DataFormat::JSON
+    @currentuser = service.request("GET","/users/38619307")
+    @currentuser_firstName = JSON.parse(@currentuser.content)["users"].first["firstName"]
     @courses = service.request("GET","/me/courses?expand=course")
     @course_title = JSON.parse(@courses.content)["courses"].first.first.last.first["course"]["displayCourseCode"]
     @course = Course.find(6)
