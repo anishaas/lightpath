@@ -9,7 +9,6 @@ require 'JSON'
 # require 'httparty'
 
 def homepage
-
   conf = LearningStudioAuthentication::Config::OAuthConfig.new({
       :application_id   => 'c5b8742f-c459-4fc2-91a1-7ee542acb214',
       :application_name => 'Lightpath',
@@ -97,6 +96,7 @@ render '/layouts/home.html.erb'
 end
 
 def about
+  @content = JSON.parse(@content.content)
   render '/layouts/about.html.erb'
 end
 

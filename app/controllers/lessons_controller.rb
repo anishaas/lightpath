@@ -7,4 +7,8 @@ class LessonsController < ApplicationController
     @lessons = @course.lessons
   end
 
+  def show
+    @id = params.fetch(:id)
+  end
+
 end
