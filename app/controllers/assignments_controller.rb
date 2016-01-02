@@ -1,5 +1,5 @@
 class AssignmentsController < ApplicationController
-  before_action :set_course, only: [:show, :edit, :update, :destroy]
+  before_action :set_course, only: [:index, :show, :edit, :update, :destroy]
 
   # GET /courses
   # GET /courses.json
@@ -21,7 +21,7 @@ class AssignmentsController < ApplicationController
     @item_title_two = JSON.parse(@response_items.content)["items"].last["title"]
     @assignmentone = Course.find(params[:course_id]).assignments.first
     @lightbulb = Lightbulb.new
-    # @assignments = Course.find(params[:course_id]).assignments
+    @assignments = @course.assignments
 
   end
 

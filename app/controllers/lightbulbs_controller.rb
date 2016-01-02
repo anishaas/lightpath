@@ -14,13 +14,9 @@ class LightbulbsController < ApplicationController
 
   # GET /lightbulbs/new
   def new
-    @lightbulb = Lightbulb.new
-    #new lightbulb moment
-    @new_lightbulb =  HTTParty.post('https://api.learningstudio.com/courses/12288063/webliographyEntries',
-    :headers => { "X-Authorization" => "Access_Token access_token=c5b8742f-c459-4fc2-91a1-7ee542acb214|da3e64c4-05d1-44d6-bcf7-cac945f2fd6d|38619307|2015-12-24T06%3a44%3a56|e83dd39cd083801ba4597ec951fc3218"},
-    :query => {:webliographyEntry => {:title => 'TEST TITLE', :description => 'TEST DESCRIPTION', :site => {:URL => 'www.youtube.com'}, :submitter => {:userId => 38619307}, :category => {:id => 11380945}})
+  @lightbulb = Lightbulb.new
+    #new lightbulb
   end
-
   # GET /lightbulbs/1/edit
   def edit
   end
@@ -28,17 +24,27 @@ class LightbulbsController < ApplicationController
   # POST /lightbulbs
   # POST /lightbulbs.json
   def create
-    @lightbulb = Lightbulb.new(lightbulb_params)
-    @lightbulb.student_id == current_user.id
-    respond_to do |format|
-      if @lightbulb.save
-        format.html { redirect_to @lightbulb, notice: 'Lightbulb was successfully created.' }
-        format.json { render :show, status: :created, location: @lightbulb }
-      else
-        format.html { render :new }
-        format.json { render json: @lightbulb.errors, status: :unprocessable_entity }
-      end
-    end
+    conf = LearningStudioAuthentication::Config::OAuthConfig.new({
+        :application_id   => 'c5b8742f-c459-4fc2-91a1-7ee542acb214',
+        :application_name => 'Lightpath',
+        :client_string    => 'gbtestc',
+        :consumer_key     => '4d2b474e-7b70-4b7e-aff5-7313567c2c38',
+        :consumer_secret  =>  'DmyLEZn8ts7MuOUm'
+    })
+    oauth_factory = LearningStudioAuthentication::Service::OAuthServiceFactory.new(conf)
+    service = LearningStudioCore::BasicService.new(oauth_factory)
+    service.use_oauth2('anisha.srivastava123.student@gmail.com','msuTooEg')
+    service.data_format = LearningStudioCore::BasicService::DataFormat::JSON
+    service.request("POST","/courses/12288063/webliographyEntries", {
+        :webliographyEntry => {
+          :title => :summary,
+          :description => :summary,
+          :site => {:url => :video_URL},
+          :submitter =>{:userId => Student.find(5).id},
+          :category => {:id => 11380945},
+      }
+    }.to_json)
+    redirect_to :back
   end
 
   # PATCH/PUT /lightbulbs/1

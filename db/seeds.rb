@@ -20,28 +20,22 @@ oauth_factory = LearningStudioAuthentication::Service::OAuthServiceFactory.new(c
 service = LearningStudioCore::BasicService.new(oauth_factory)
 service.use_oauth2('anisha.srivastava123.student@gmail.com','msuTooEg')
 service.data_format = LearningStudioCore::BasicService::DataFormat::JSON
+#Courses
 @courses = service.request("GET","/me/courses?expand=course")
 @course_title = JSON.parse(@courses.content)["courses"].first.first.last.first["course"]["displayCourseCode"]
-
-
-conf = LearningStudioAuthentication::Config::OAuthConfig.new({
-    :application_id   => 'c5b8742f-c459-4fc2-91a1-7ee542acb214',
-    :application_name => 'Lightpath',
-    :client_string    => 'gbtestc',
-    :consumer_key     => '4d2b474e-7b70-4b7e-aff5-7313567c2c38',
-    :consumer_secret  =>  'DmyLEZn8ts7MuOUm'
-})
-oauth_factory = LearningStudioAuthentication::Service::OAuthServiceFactory.new(conf)
-service = LearningStudioCore::BasicService.new(oauth_factory)
-service.use_oauth2('anisha.srivastava123.student@gmail.com','msuTooEg')
-service.data_format = LearningStudioCore::BasicService::DataFormat::JSON
+#Lessons
 @accounting_response = service.request("GET", "/me/courses/12288063/itemHierarchy?expand=item")
 lessons = JSON.parse(@accounting_response.content)
 accountinglessons = lessons["itemHierarchy"]
-@lessonnumber= accountinglessons.first[1][5]["links"][0]["item"]["header"]
-@lessonnumbertwo= accountinglessons.first[1][6]["links"][0]["item"]["header"]
-@lessontitle = accountinglessons.first[1][5]["links"][0]["item"]["title"]
-@lessontitletwo = accountinglessons.first[1][6]["links"][0]["item"]["title"]
+titles = accountinglessons['childItemNodes'].map do |child_node_item|
+child_node_item['links'][0]['item']['title']
+end
+headers = accountinglessons['childItemNodes'].map do |child_node_item|
+child_node_item['links'][0]['item']['header']
+end
+#Assignments
+
+#Lightbulbs
 @response_array = service.request("GET","/courses/12288063/webliographyEntries")
 response = JSON.parse(@response_array.content)["webliographyEntries"]
 response = response.sort_by{|response|response["title"]}
@@ -49,6 +43,8 @@ response = response.sort_by{|response|response["title"]}
 response.each do |response|
     @lightbulbs.push(response["title"], response["description"], response["url"], response["submitter"]["firstName"])
   end
+
+
 
 Student.create(first_name:"Anisha", last_name:"Srivastava", email: "anisha@example.com",
 username:"anishasrivastava", admin:false, password: 'password')
@@ -117,16 +113,8 @@ Assignment.create(lesson_id: 7, graded: false, course_id:5, title:"Gender Role A
 
 Submission.create(assignment_id: 1, student_id: 1, body:'answer answer answer')
 
-Lesson.create(number: 1, course_id: 2, title:"Object Oriented Programming", description: "In OOP, everything is an object.
-Object object object object object")
-Lesson.create(number: 2, course_id: 2, title:"Interacting with Server", description: "Communicate with the server. Request response, request response")
-Lesson.create(number: 1, course_id: 1, title:"Novels", description: "Studying the novel. Themes. Conformity. Individualism.")
-Lesson.create(number: 10, course_id: 2, title:"Self-referential Tables", description: "A field in the table need to be associated with another field in the table that has the same content.
-Ex) Friend following a friend on social media.")
-Lesson.create(number: 1, course_id: 3, title:"Verb Conjugation", description: "Using verbs in sentences and conjugating based on tense and gender")
-Lesson.create(number: 1, course_id: 4, title:"Permutations", description: "Finding all combinations of a string")
-Lesson.create(number: 1, course_id: 5, title:"A Mercy, Toni Morrsion", description: "Gender roles in the novel")
-Lesson.create(number: @lessonnumber, course_id: 6, title:@lessontitle, description: "Learn")
-Lesson.create(number: @lessonnumbertwo, course_id: 6, title:@lessontitletwo, description: "Learn")
+titles.each do |title|
+  Lesson.create(course_id: 6, title: title)
+end
 
 Favorite.create(lightbulb_id: 1, student_id:2)

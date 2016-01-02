@@ -15,10 +15,12 @@ Rails.application.routes.draw do
   end
   resources :teachers
   resources :enrollments
-  resources :lightbulbs
   resources :favorites
 
   # get '/student/sign_up' => 'devise/registrations#new'
+  get '/lightbulbs' => 'lightbulbs#create', as: "lightbulbs"
+  post '/lightbulbs' => 'lightbulbs#new', as: "new_lightbulb"
+  # post '/courses/:id' => 'courses#search_classmates', as: 'search_classmates'
   post '/courses/:id/send_lightbulb' => 'courses#send_lightbulb', as: 'send_lightbulb'
   post '/courses/:id' => 'courses#search_classmates', as: 'search_classmates'
   post '/courses/:id/topicsearch' => 'courses#search', as: 'search_assignments'

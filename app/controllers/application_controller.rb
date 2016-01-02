@@ -87,11 +87,6 @@ def homepage
 @response_submitter = JSON.parse(@response.content)["webliographyEntries"].first["submitter"]["firstName"]
 
 render '/layouts/home.html.erb'
-#Test this API call to get access token
-# @api_response = POST "https://api.learningstudio.com/token"
-# Content-Type: application/x-www-form-urlencoded
-# grant_type=password&amp;client_id=c5b8742f-c459-4fc2-91a1-7ee542acb214&amp;username=gbtestc\anisha.srivastava123.student@gmail.com&amp;password=msuTooEg
-#API call to retrieve logged in user's courses
 #API call to retrieve logged in user's classmates (their lightbulbs are accessible)
 #enrolledUsers = /courses/{courseId}/enrolledUsers
 #classmates = /users/{userId}/classmates
@@ -124,3 +119,24 @@ end
   helper_method :user_logged_in?
   helper_method :current_user
 end
+
+  # Use callbacks to share common setup or constraints between actions.
+  def set_course
+    conf = LearningStudioAuthentication::Config::OAuthConfig.new({
+        :application_id   => 'c5b8742f-c459-4fc2-91a1-7ee542acb214',
+        :application_name => 'Lightpath',
+        :client_string    => 'gbtestc',
+        :consumer_key     => '4d2b474e-7b70-4b7e-aff5-7313567c2c38',
+        :consumer_secret  =>  'DmyLEZn8ts7MuOUm'
+    })
+    oauth_factory = LearningStudioAuthentication::Service::OAuthServiceFactory.new(conf)
+    service = LearningStudioCore::BasicService.new(oauth_factory)
+    service.use_oauth2('anisha.srivastava123.student@gmail.com','msuTooEg')
+    service.data_format = LearningStudioCore::BasicService::DataFormat::JSON
+    @currentuser = service.request("GET", "/users/38619307")
+    @current_user_firstName = JSON.parse(@currentuser.content)["users"].first["firstName"]
+    @current_user = Student.find_by("first_name LIKE ?", @current_user_firstName)
+    @courses = service.request("GET","/me/courses?expand=course")
+    @course_title = JSON.parse(@courses.content)["courses"].first.first.last.first["course"]["displayCourseCode"]
+    @course = Course.find_by("name LIKE ?", @course_title)
+  end
