@@ -4,7 +4,7 @@
 #fave.btn {
   width:90px;
 }
-#sender {
+#sender, #favorite {
   font-weight:bold;
 }
 
@@ -30,10 +30,20 @@
   float:left;
   min-height: 80px;
 }
+
+#favorite.row.card-panel.teal {
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(185, 186, 187, 0.6) !important;
+  margin-bottom: 5px;
+  float:left;
+  min-height: 80px;
+}
+
 .wrapper {
   float:right;
 }
-#submissions, #notifications  {
+#notifications, #favorites  {
   width: 400px;
   margin-left:28%;
   padding: 20px;
