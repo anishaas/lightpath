@@ -17,7 +17,7 @@ class CoursesController < ApplicationController
     service = LearningStudioCore::BasicService.new(oauth_factory)
     service.use_oauth2('anisha.srivastava123.student@gmail.com','msuTooEg')
     response = service.request("GET","/courses/12288063/webliographyEntries")
-    response = JSON.parse(@weblinks.content)
+    response = JSON.parse(response.content)
     @titles = response["webliographyEntries"].map do |entry|
                 entry['title']
               end
