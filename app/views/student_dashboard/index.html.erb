@@ -11,25 +11,25 @@
       <div class='row'>
           <div class="col s3 card-panel teal" id="lightbulbstats">
               <h1><%=current_user.lightbulbs.count%></h1>
-              <h6>Lightbulbs so far. Keep lighting!</h6>
+              <h6><%="#{current_user.lightbulbs.count}"%> lightbulb moments so far. Keep lighting!</h6>
            </div>
 
            <div class="col s3 card-panel teal" id="lightbulbstats2">
-               <h1><%=current_user.submissions.count%></h1>
-               <h6>You've submitted <%="#{current_user.submissions.count}"%> assignments!</h6>
+               <h1><%=current_user.favorites.count%></h1>
+               <h6><%="#{current_user.favorites.count}"%> lightbulbs favorited so far. Keep favoriting!</h6>
             </div>
 
           <div class="col s3 card-panel teal" id="box">
               <h1><%=current_user.sent_messages.count%></h1>
-              <h6>You've shared <%="#{current_user.sent_messages.count}"%> lightbulbs. Keep sharing!</h6>
+              <h6><%="#{current_user.sent_messages.count}"%> lightbulbs shared so far. Keep sharing!</h6>
            </div>
         </div>
         <div class="row">
           <div class="col s6 card-panel teal" id="submissions">
-            <div id='headingnotifications'><h5> Recent Submissions </h5></div>
-            <%if @submissions != nil%>
-            <%@submissions.each do |submission|%>
-            <p><%=submission.assignment.title%></p>
+            <div id='headingnotifications'><h5> Recent Favorites </h5></div>
+            <%if @displayfavorites != nil%>
+            <%@displayfavorites.each do |favorite|%>
+            <p><%=favorite.lightbulb.student.first_name%></p>
             <%end%>
             <%end%>
           </div>

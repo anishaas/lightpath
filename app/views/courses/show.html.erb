@@ -35,9 +35,19 @@
                <li><a href='#'><span><%=@course.assignments.first.title%></span></a></li>
             </ul>
          </li> -->
-         <li class='has-sub'><a href='/favorites'><p>Favorites</p></a>
+         <li class='has-sub'><a href='/favorites'><p>Favorited Lightbulbs</p></a>
             <ul>
               <li><p><%= link_to "View All Favorited Lightbulbs", favorites_path(@course)%></p></li>
+            </ul>
+         </li>
+         <li class='has-sub'><a href='/favorites'><p>Concept Summaries</p></a>
+            <ul>
+              <li><p><%= link_to "View All Concept Summaries for Lightbulb Moments", favorites_path(@course)%></p></li>
+            </ul>
+         </li>
+         <li class='has-sub'><a href='/favorites'><p>Useful Web Links</p></a>
+            <ul>
+              <li><p><%= link_to "View All Video & Article Links for Lightbulb Moments", favorites_path(@course)%></p></li>
             </ul>
          </li>
          <li class='last'><a href='/student_dashboard'><p>Logout</p></a></li>
@@ -61,16 +71,15 @@
         <%if @results%>
         <% if @results.length > 0 %>
             <% @results.each do |result| %>
-              <% if result.course_id == @course.id%>
+              <% if result.course_id == 6%>
                 <div class="card-panel teal" id = "result">
-                      <strong><h6><%= "Assignment:" + " " +result.title if result.has_attribute?('lesson_id')%></h6></strong>
+                      <!-- <strong><h6><%= "Assignment:" + " " +result.title if result.has_attribute?('lesson_id')%></h6></strong> -->
                       <h6><%= "Lesson:" + " " + result.number.to_s + " " +result.title if result.has_attribute?('number')%></h6>
                       <h6><%= "Lightbulb:" + " " + result.summary + " "  if result.has_attribute?('summary')%></h6>
                       <h6>Lightbulbs:</h6>
                       <% result.lightbulbs.each do |lightbulb|%>
                       <img src ='http://s13.postimg.org/6n2pzw1zb/image.png'id = 'resultbulb'></img>
                       <%=react_component "FavoriteButton", studentID:current_user.id, lightbulbID: lightbulb.id%>
-                      <!-- <%=lightbulb.favorites.count%> -->
                         <p><%= lightbulb.summary if lightbulb.summary.present?%></p>
                         <p><%= link_to lightbulb.video_url, '#{lightbulb.video_url}' if lightbulb.video_url.present?%></p>
                         <p><%= link_to lightbulb.article_url, '#{lightbulb.articule_url}' if lightbulb.article_url.present?%></p>
