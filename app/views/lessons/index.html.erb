@@ -4,9 +4,12 @@
 
 <h4>Create A Lightbulb</h4>
 <form action="/webliographyentries/post_to_api" method="POST">
-<input type="text" name="lightbulb[summary]"
-<input type="text" name="lightbulb[article_url]">
-<input type="text" name="lightbulb[video_url]">
+<p><label for="summary">Summarize the concept:</label></p>
+<input id='summary' type="text" name="lightbulb[summary]">
+<p><label for="video_url">Was there a video that helped?</label></p>
+<input id='video_url' type="text" name="lightbulb[article_url]">
+<p><label for="article_url">Was there an article that helped?</label></p>
+<input id='article_url'type="text" name="lightbulb[article_url]">
 <input type=submit>
 </form>
 
@@ -21,7 +24,7 @@
        <tbody>
          <%@lessons.each do |lesson|%>
          <tr>
-            <td><h6><%=lesson.title%></h6></td>
+            <td><h6><%="Lesson" + " " + "#{lesson.id}:" + " " + "#{lesson.title}"%></h6></td>
             <td><p><%=lesson.description%></p></td>
             <td></td>
             <td><p><a href= "#modal-<%= lesson.id %>" class="modal-trigger modal-style btn" id= 'viewlightbulbs'>Lightbulbs</a></p></td>

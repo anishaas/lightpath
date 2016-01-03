@@ -27,8 +27,8 @@ class WebliographyentriesController < ActionController::Base
       }
     }.to_json)
     #seed new Lightbulb
-    @lightbulb = Lightbulb.create(student_id: @current_user.id, summary: params["lightbulb"][:summary],
-    video_url: params["lightbulb"][:video_url], article_url: params["lightbulb"][:video_url])
+    @lightbulb = Lightbulb.create(lesson_id:,student_id: @current_user.id, summary: params["lightbulb"][:summary],
+    video_url: params["lightbulb"][:video_url], article_url: params["lightbulb"][:article_url])
     render 'post_to_api'
   end
 
