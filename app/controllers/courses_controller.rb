@@ -43,8 +43,9 @@ class CoursesController < ApplicationController
 
   def summaries
     @course = Course.find(params[:id])
+    @lessons = @course.lessons
     @lightbulbs = @course.lightbulbs
-    @lightbulbs.map do |lightbulb|
+    @summaries = @lightbulbs.map do |lightbulb|
       lightbulb.summary if lightbulb.summary.present?
     end
     render 'summaries'
@@ -80,7 +81,7 @@ class CoursesController < ApplicationController
     service.data_format = LearningStudioCore::BasicService::DataFormat::JSON
     @courses = service.request("GET","/me/courses?expand=course")
     @course_title = JSON.parse(@courses.content)["courses"].first.first.last.first["course"]["displayCourseCode"]
-    @course = Course.find(6)
+    @course = Course.find(1)
     # ("name LIKE ?", @course_title)
     @lessons = @course.lessons
     @response_array = service.request("GET","/courses/12288063/webliographyEntries")

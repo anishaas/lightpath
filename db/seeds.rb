@@ -46,44 +46,35 @@ response.each do |response|
     @lightbulbs.push(response["title"], response["description"], response["url"], response["submitter"]["firstName"])
   end
 
-
-
-Student.create(first_name:"Anisha", last_name:"Srivastava", email: "anisha@example.com",
-username:"anishasrivastava", admin:false, password: 'password')
 Student.create(first_name:"Mikaila", last_name:"Smith", email: "mikaila@example.com",
 username:"mikailasmith", admin:false, password: 'password')
 Student.create(first_name:"Arjun", last_name:"Srivastava", email: "arjun@example.com",
 username:"arjunsrivastava", admin:false, password: 'password')
-Student.create(first_name:"Test", last_name:"Test", email: "test@example.com",
-username:"test", admin:false, password: 'password')
 Student.create(first_name: "Floyd", last_name: "Pouncey", email: "floydp@example.com",
 username:"floydpouncey", admin:false, password: 'password')
-# Student.create(first_name:@classmates.first[1].first["firstName"], last_name:@classmates.first[1].first["lastName"],email: "grady@example.com",
-# username:"gradymohamed", admin:false, password: 'password')
-
 
 Teacher.create(first_name:"Grady", last_name:"Mohamed", email: "gradym@example.com",
 username:"martinkevorkian", admin:true, password: 'password')
-Teacher.create(first_name:"Justin", last_name:"Herrick", email: "jh@example.com",
-username:"justinherrick", admin:true, password: 'password')
-Teacher.create(first_name:"Self", last_name:"-teaching", email: "anisha.srivastava123@gmail.com",
-username:"anishasrivastava", admin:true, password: 'password')
+# Teacher.create(first_name:"Justin", last_name:"Herrick", email: "jh@example.com",
+# username:"justinherrick", admin:true, password: 'password')
+# Teacher.create(first_name:"Self", last_name:"-teaching", email: "anisha.srivastava123@gmail.com",
+# username:"anishasrivastava", admin:true, password: 'password')
 
-Course.create(name:"World Literature",teacher_id:1, description:"Classic literature")
-Course.create(name:"Backend Engineering, Ruby on Rails", teacher_id:2, description:"Build web applications using Rails framework")
-Course.create(name:"Hindi: Grammar and Conversation", teacher_id:3, description: "Learn correct Hindi grammar and build vocabulary")
-Course.create(name:"Programming Interview Prep", teacher_id:3, description: "Practicing katas and programming logic")
-Course.create(name:"African American Literature",teacher_id:1, description:"Studying literature by African American authors, focusing on the Harlem Renaissance")
+# Course.create(name:"World Literature",teacher_id:1, description:"Classic literature")
+# Course.create(name:"Backend Engineering, Ruby on Rails", teacher_id:2, description:"Build web applications using Rails framework")
+# Course.create(name:"Hindi: Grammar and Conversation", teacher_id:3, description: "Learn correct Hindi grammar and build vocabulary")
+# Course.create(name:"Programming Interview Prep", teacher_id:3, description: "Practicing katas and programming logic")
+# Course.create(name:"African American Literature",teacher_id:1, description:"Studying literature by African American authors, focusing on the Harlem Renaissance")
 Course.create(name:@course_title, teacher_id: 1, description: "Introduction to Accounting")
 
 Enrollment.create(student_id:1, course_id:1)
-Enrollment.create(student_id:1, course_id:4)
-Enrollment.create(student_id:1, course_id:2)
 Enrollment.create(student_id:2, course_id:1)
-Enrollment.create(student_id:3, course_id:2)
 Enrollment.create(student_id:3, course_id:1)
-Enrollment.create(student_id:1, course_id:3)
-Enrollment.create(student_id:1, course_id:5)
+# Enrollment.create(student_id:2, course_id:1)
+# Enrollment.create(student_id:3, course_id:2)
+# Enrollment.create(student_id:3, course_id:1)
+# Enrollment.create(student_id:1, course_id:3)
+# Enrollment.create(student_id:1, course_id:5)
 
 # Lightbulb.create(lesson_id: 1, course_id: 2, assignment_id: 4, enrollment_id: 2, student_id: 2, summary:"A method is a function or feature of a class")
 # Lightbulb.create(lesson_id: 1, course_id: 2, assignment_id: 5, enrollment_id: 1, student_id: 1, summary: "Object oriented programming is about encapsulation and inheritance")
@@ -91,7 +82,9 @@ Enrollment.create(student_id:1, course_id:5)
 # Lightbulb.create(lesson_id: 4, course_id: 2, assignment_id: 1, enrollment_id: 2, student_id: 1, article_url:"railscasts.com/episodes/163-self-referential-association")
 # Lightbulb.create(lesson_id: 1, course_id: 2, assignment_id: 4, enrollment_id: 4, student_id: 3, summary:"I view a method as an action carried out by a class.
 # For example, if the class is Beyonce, the methods could be dance and sing.")
-Lightbulb.create(lesson_id: 9, course_id: 6, assignment_id: 7, enrollment_id: 8, student_id: 5, article_url:@lightbulbs[3])
+Lightbulb.create(lesson_id: 10, course_id: 1, enrollment_id: 1, student_id: 2, video_url: 'https://www.youtube.com/watch?v=rJyzD25Jo0w')
+Lightbulb.create(lesson_id: 10, course_id: 1, enrollment_id: 1, student_id: 2, summary: 'I think of Accounts Receivables the same way I think about an IOU')
+Lightbulb.create(lesson_id: 2, course_id: 1, enrollment_id: 1, student_id: 3, summary: 'Credits are the opposite in accounting - they are negative not positive!')
 
 Assignment.create(lesson_id: 3, graded: false, course_id:1, title:"Moby Dick Reading Response", description: "Analyze Captain Ahab's inner conflit.")
 Assignment.create(lesson_id: 3, graded: false, course_id:1, title:"The Fountainhead Essay", description: "Contrast Peter Keating and Howard Roark.")
@@ -105,7 +98,7 @@ Assignment.create(lesson_id: 7, graded: false, course_id:5, title:"Gender Role A
 Submission.create(assignment_id: 1, student_id: 1, body:'answer answer answer')
 
 titles.each do |title|
-  Lesson.create(course_id: 6, title: title)
+  Lesson.create(course_id: 1, title: title)
 end
 
-Favorite.create(lightbulb_id: 1, student_id:2)
+Favorite.create(lightbulb_id: 1, student_id:3)

@@ -18,14 +18,15 @@ def homepage
   })
   oauth_factory = LearningStudioAuthentication::Service::OAuthServiceFactory.new(conf)
   service = LearningStudioCore::BasicService.new(oauth_factory)
-  service.use_oauth2('anisha.srivastava123.teacher@gmail.com','5J9UF8Jm')
+  service.use_oauth2('anisha.srivastava123.student@gmail.com','msuTooEg')
   service.data_format = LearningStudioCore::BasicService::DataFormat::JSON
-  @response = service.request("DELETE","/courses/12288063/webliographyEntries/20686260")
+  @currentuser = service.request("GET","/users/38619307/courses/12405800/classmates")
 
-  @currentuser = service.request("GET","/users/38619307")
-  @currentuser_firstName = JSON.parse(@currentuser.content)["users"].first["firstName"]
-  @assignments = service.request("GET", "/users/38619307/courses/12288063/itemHierarchy?expand=item")
-  @assignments = JSON.parse(@assignments.content)["itemHierarchy"]
+  # @response = service.request("DELETE","/courses/12288063/webliographyEntries/20686260")
+  #
+  # @currentuser_firstName = JSON.parse(@currentuser.content)["users"].first["firstName"]
+  # @assignments = service.request("GET", "/users/38619307/courses/12288063/itemHierarchy?expand=item")
+  # @assignments = JSON.parse(@assignments.content)["itemHierarchy"]
 
   # @assignments.sort_by {|assignment| assignment["childItemNodes"]}
   # @childitemnodes = Array.new
@@ -130,5 +131,5 @@ end
     @current_user = Student.find_by("first_name LIKE ?", @current_user_firstName)
     @courses = service.request("GET","/me/courses?expand=course")
     @course_title = JSON.parse(@courses.content)["courses"].first.first.last.first["course"]["displayCourseCode"]
-    @course = Course.find(6)
+    @course = Course.find(1)
   end

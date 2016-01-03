@@ -66,15 +66,15 @@
     </p>
     <div class='searchbar'>
       <%= form_tag search_assignments_path do %>
-        <input class="search full width" id="searchbar" name="query" placeholder = "Enter a topic to search through classmates' lightbulb moments!"
+        <input class="search full width" id="searchbar" name="query" placeholder = "Enter a lesson to search through classmates' lightbulb moments!"
         autocomplete:"on" />
         <%if @results%>
         <% if @results.length > 0 %>
             <% @results.each do |result| %>
-              <% if result.course_id == 6%>
+              <% if result.course_id == 1%>
                 <div class="card-panel teal" id = "result">
                       <!-- <strong><h6><%= "Assignment:" + " " +result.title if result.has_attribute?('lesson_id')%></h6></strong> -->
-                      <h6><%= "Lesson:" + " " + result.number.to_s + " " +result.title if result.has_attribute?('number')%></h6>
+                      <h6><%= "Lesson:" + " " + result.number.to_s + " " +result.title if result.has_attribute?('title')%></h6>
                       <h6><%= "Lightbulb:" + " " + result.summary + " "  if result.has_attribute?('summary')%></h6>
                       <h6>Lightbulbs:</h6>
                       <% result.lightbulbs.each do |lightbulb|%>

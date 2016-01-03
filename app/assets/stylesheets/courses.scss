@@ -2,6 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#summary{
+  width:400px;
+  background-color: #FFD452 !important;
+  opacity: .75;
+  color: black;
+}
+
 #resultbulb {
   width:30px;
   height:30px;

@@ -1,1 +1,11 @@
-<h2>TEST</h2>
+<%@lessons.each do |lesson|%>
+  <h6><%=lesson.title%></h6>
+  <%lesson.lightbulbs.each do |lightbulb|%>
+  <center>
+  <div class="card-panel teal" id = "summary">
+    <img src ='http://s13.postimg.org/6n2pzw1zb/image.png'id = 'resultbulb'></img>
+  <p><%=lightbulb.summary if lightbulb.summary.present?%></p>
+  </div>
+  </center>
+  <%end%>
+<%end%>
