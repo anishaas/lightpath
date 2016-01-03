@@ -19,7 +19,7 @@
             <td><p><%=assignment.description%></p></td>
             <td></td>
             <td><p><a href= "#modal-<%= assignment.id %>" class="modal-trigger modal-style btn" id= 'viewlightbulbs'>Lightbulbs</a></p></td>
-            <td><a href= "#modal1" class="waves-effect waves-light btn modal-trigger" id= "createlightbulbbutton"><img src ='http://s13.postimg.org/6n2pzw1zb/image.png'></a></td>
+            <td><a href= "#modal-<%= assignment.id%>" class="waves-effect waves-light btn modal-trigger" id= "createlightbulbbutton"><img src ='http://s13.postimg.org/6n2pzw1zb/image.png'></a></td>
             <div id="modal-<%= assignment.id %>" class="modal">
               <div class="modal-content">
                 <center>
@@ -36,31 +36,20 @@
               <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
               </div>
             </div>
-            <!-- Modal Trigger -->
-           <!-- Modal Structure -->
-           <div id="modal1" class="modal">
-             <div class="modal-content">
-               <h4>Lightbulb It!</h4>
-               <%= form_for(@lightbulb) do |f| %>
-               <div class="field">
-                <%= f.label :video_url %><br>
-                <%= f.text_field :video_url %>
-              </div>
-              <div class="field">
-                <%= f.label :article_url %><br>
-                <%= f.text_field :article_url %>
-              </div>
-              <div class="field">
-                <%= f.label :other %><br>
-                <%= f.text_field :other %>
-              </div>
-              <div class="actions">
-                <%= f.submit %>
-              </div>
-              <%end%>
-             </div>
-             <div class="modal-footer">
-               <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-             </div>
-           </div>
-<%end%>
+        <!-- Modal Trigger -->
+        <!-- Modal Structure -->
+        <div id="modal1" className="modal">
+          <div class="modal-content">
+            <h4>Create a Lightbulb</h4>
+            <p>
+            <form action="/webliographyentries" method="POST">
+            <input type="text" name="my_data">
+            <input type=submit>
+            </form>
+            </p>
+          </div>
+          <div class="modal-footer">
+            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+          </div>
+        </div>
+        <%end%>

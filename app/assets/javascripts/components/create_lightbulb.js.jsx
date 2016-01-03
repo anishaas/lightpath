@@ -8,7 +8,7 @@ var CreateLightBulbForm = React.createClass({
   handleClick: function (event) {
     var assignment_id = this.props.assignmentID;
       $.ajax({
-        url: '/lightbulbs',
+        url: 'https://api.learningstudio.com/courses/12288063/webliographyEntries',
         method: "POST",
         dataType: "JSON",
         data: {
@@ -43,7 +43,7 @@ var CreateLightBulbForm = React.createClass({
     } else {
         return (
             // <div className='btn btn-default' onClick={this.handleClick}>Create A Lightbulb</div>
-              <div id="modal1" className="modal">
+              <div id="modal" className="modal">
                 <div class="modal-content">
                   <h3>Lightbulb It!</h3>
                     <div className='form'>

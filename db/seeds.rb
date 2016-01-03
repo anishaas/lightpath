@@ -108,8 +108,6 @@ Assignment.create(lesson_id: 7, graded: false, course_id:5, title:"Gender Role A
 # Assignment.create(lesson_id: 5, graded: false, course_id: 1, title: @assignment_titles[2], description: "TEST")
 # Assignment.create(lesson_id: 5, graded: false, course_id: 1, title: @assignment_titles[3], description: "TEST")
 # Assignment.create(lesson_id: 5, graded: false, course_id: 1, title: @assignment_titles[4], description: "TEST")
-# Assignment.create(lesson_id: 5, graded: false, course_id: 1, title: @assignment_titles[5], description: "TEST")
-# Assignment.create(lesson_id: 5, graded: false, course_id: 1, title: @assignment_titles[6], description: "TEST")
 
 Submission.create(assignment_id: 1, student_id: 1, body:'answer answer answer')
 

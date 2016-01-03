@@ -5,27 +5,40 @@
     <div id='cssmenu'>
       <ul>
         <li class='last'><a href='/student_dashboard'><p>Dashboard</p></a></li>
-        <li class='has-sub'><a href='/courses/:id/assignments'><p>Lessons</p></a>
+        <li class='has-sub'><a href='/courses/:id/lessons'><p>Lessons</p></a>
            <ul>
              <li><p><%= link_to "View All Lessons", course_lessons_path(@course)%></p></li>
+             <li><a href='/courses/:id/lessons/1'><p><%=Lesson.find(1).title%></p></a></li>
+             <li><a href='/courses/:id/lessons/2'><p><%=Lesson.find(2).title%></p></a></li>
+             <li><a href='/courses/:id/lessons/3'><p><%=Lesson.find(3).title%></p></a></li>
+             <li><a href='/courses/:id/lessons/4'><p><%=Lesson.find(4).title%></p></a></li>
+             <li><a href='/courses/:id/lessons/5'><p><%=Lesson.find(5).title%></p></a></li>
+             <li><a href='/courses/:id/lessons/6'><p><%=Lesson.find(6).title%></p></a></li>
+             <li><a href='/courses/:id/lessons/7'><p><%=Lesson.find(7).title%></p></a></li>
+             <li><a href='/courses/:id/lessons/8'><p><%=Lesson.find(8).title%></p></a></li>
+             <li><a href='/courses/:id/lessons/9'><p><%=Lesson.find(9).title%></p></a></li>
+             <li><a href='/courses/:id/lessons/10'><p><%=Lesson.find(10).title%></p></a></li>
+             <li><a href='/courses/:id/lessons/11'><p><%=Lesson.find(11).title%></p></a></li>
+             <li><a href='/courses/:id/lessons/12'><p><%=Lesson.find(12).title%></p></a></li>
+             <!-- loop not recognizing lesson object
              <%@lessons.each do |lesson|%>
-              <li><a href='#'><p><%=lesson.title%></p></a></li>
-              <%end%>
+              <li><p><%= link_to "#{lesson.title}", course_lessons_path(@course)%></p></a></li>
+              <%end%> -->
            </ul>
         </li>
-         <li class='has-sub'><a href='/courses/:id/assignments'><p>Assignments</p></a>
+         <!-- <li class='has-sub'><a href='/courses/:id/assignments'><p>Assignments</p></a>
             <ul>
               <li><p><%= link_to "View All Assignments", course_assignments_path(@course)%></p></li>
               <%@course.assignments.each do |assignment|%>
                <li><a href='#'><p><%=assignment.title%></p></a></li>
                <%end%>
             </ul>
-         </li>
-         <li class='has-sub'><a href='#'><p>Quizzes</p></a>
+         </li> -->
+         <!-- <li class='has-sub'><a href='#'><p>Quizzes</p></a>
             <ul>
                <li><a href='#'><span><%=@course.assignments.first.title%></span></a></li>
             </ul>
-         </li>
+         </li> -->
          <li class='has-sub'><a href='/favorites'><p>Favorites</p></a>
             <ul>
               <li><p><%= link_to "View All Favorited Lightbulbs", favorites_path(@course)%></p></li>

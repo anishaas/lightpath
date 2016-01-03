@@ -17,6 +17,7 @@
             <td><p><%=lesson.description%></p></td>
             <td></td>
             <td><p><a href= "#modal-<%= lesson.id %>" class="modal-trigger modal-style btn" id= 'viewlightbulbs'>Lightbulbs</a></p></td>
+            <td><a href= "#modal-<%= lesson.id %>" class="modal-trigger modal-style btn" id= "createlightbulbbutton"><img src ='http://s13.postimg.org/6n2pzw1zb/image.png'></a></td>
             <div id="modal-<%= lesson.id %>" class="modal">
               <div class="modal-content">
                 <center>
@@ -32,9 +33,16 @@
               <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
                 </div>
               </div>
-            <td><a href= "#modal1" class="modal-trigger modal-style btn" id= "createlightbulbbutton"><img src ='http://s13.postimg.org/6n2pzw1zb/image.png'></a></td>
-            <td><%=react_component('CreateLightBulbByLesson', studentID: current_user.id, lessonID: lesson.id, courseID: lesson.course.id)%></p></td>
-
+                <h4>Create a Lightbulb</h4>
+                <p>
+                <form action="/webliographyentries/post_to_api" method="POST">
+                <input type="text" name="summary">
+                <input type="text" name="article_url">
+                <input type="text" name="video_url">
+                <input type=submit>
+                </form>
+                </p>
+            </div>
        </tr>
        <%end%>
        </tbody>

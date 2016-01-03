@@ -48,7 +48,8 @@ class CoursesController < ApplicationController
     service.data_format = LearningStudioCore::BasicService::DataFormat::JSON
     @courses = service.request("GET","/me/courses?expand=course")
     @course_title = JSON.parse(@courses.content)["courses"].first.first.last.first["course"]["displayCourseCode"]
-    @course = Course.find_by("name LIKE ?", @course_title)
+    @course = Course.find(6)
+    # ("name LIKE ?", @course_title)
     @lessons = @course.lessons
     @response_array = service.request("GET","/courses/12288063/webliographyEntries")
     response = JSON.parse(@response_array.content)["webliographyEntries"]

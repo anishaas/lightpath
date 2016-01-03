@@ -7,7 +7,7 @@ var LightbulbForm = React.createClass ({
 
 handleClick: function (event) {
       $.ajax({
-      url: '/lightbulbs',
+      url: 'https://api.learningstudio.com/courses/12288063/webliographyEntries',
       method: "POST",
       dataType: "JSON",
       data: {

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  post '/webliographyentries/post_to_api' => 'webliographyentries#post_to_api'
   resources :messages
   resources :students
   resources :courses do
@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :enrollments
   resources :favorites
 
+  get 'courses/:course_id/lesson/:id' => 'lessons#show'
   # get '/student/sign_up' => 'devise/registrations#new'
   get '/lightbulbs' => 'lightbulbs#create', as: "lightbulbs"
   post '/lightbulbs' => 'lightbulbs#new', as: "new_lightbulb"
