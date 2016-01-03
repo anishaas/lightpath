@@ -40,14 +40,14 @@
               <li><p><%= link_to "View All Favorited Lightbulbs", favorites_path(@course)%></p></li>
             </ul>
          </li>
-         <li class='has-sub'><a href='/favorites'><p>Concept Summaries</p></a>
+         <li class='has-sub'><a href='/courses/:id/summaries'><p>Concept Summaries</p></a>
             <ul>
-              <li><p><%= link_to "View All Concept Summaries for Lightbulb Moments", favorites_path(@course)%></p></li>
+              <li><p><%= link_to "View All Concept Summaries for Lightbulb Moments", summaries_path%></p></li>
             </ul>
          </li>
-         <li class='has-sub'><a href='/favorites'><p>Useful Web Links</p></a>
+         <li class='has-sub'><a href='/courses/:id/user_links'><p>Useful Web Links</p></a>
             <ul>
-              <li><p><%= link_to "View All Video & Article Links for Lightbulb Moments", favorites_path(@course)%></p></li>
+              <li><p><%= link_to "View All Video & Article Links for Lightbulb Moments", useful_links_path%></p></li>
             </ul>
          </li>
          <li class='last'><a href='/student_dashboard'><p>Logout</p></a></li>
@@ -66,7 +66,7 @@
     </p>
     <div class='searchbar'>
       <%= form_tag search_assignments_path do %>
-        <input class="search full width" id="searchbar" name="query" placeholder = "Type in a topic to search through your classmates' lightbulbs!"
+        <input class="search full width" id="searchbar" name="query" placeholder = "Enter a topic to search through classmates' lightbulb moments!"
         autocomplete:"on" />
         <%if @results%>
         <% if @results.length > 0 %>

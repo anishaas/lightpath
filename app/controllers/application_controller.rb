@@ -34,11 +34,11 @@ def homepage
   #   end
   # @response = service.request("GET","/courses/12288063/webliographyEntries")
   # response = JSON.parse(@response.content)["webliographyEntries"]
-  response = response.sort_by{|response|response["title"]}
-  @lightbulbs = Array.new
-  response.each do |response|
-      @lightbulbs.push(response["title"], response["description"], response["url"], response["submitter"]["firstName"])
-    end
+  # response = response.sort_by{|response|response["title"]}
+  # @lightbulbs = Array.new
+  # response.each do |response|
+  #     @lightbulbs.push(response["title"], response["description"], response["url"], response["submitter"]["firstName"])
+  #   end
   # conf = LearningStudioAuthentication::Config::OAuthConfig.new({
   #     :application_id   => 'c5b8742f-c459-4fc2-91a1-7ee542acb214',
   #     :application_name => 'Lightpath',

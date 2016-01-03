@@ -27,6 +27,7 @@ class CoursesController < ApplicationController
     @submitters = response["webliographyEntries"].map do |entry|
                 entry['submitter']['firstName']
               end
+    render 'useful_links'
   end
 
   def search
@@ -41,10 +42,12 @@ class CoursesController < ApplicationController
   end
 
   def summaries
+    @course = Course.find(params[:id])
     @lightbulbs = @course.lightbulbs
     @lightbulbs.map do |lightbulb|
       lightbulb.summary if lightbulb.summary.present?
     end
+    render 'summaries'
   end
 
   def send_lightbulb
