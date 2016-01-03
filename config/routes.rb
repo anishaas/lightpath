@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :enrollments
   resources :favorites
 
+  get '/courses/:id/useful_links' => 'courses#useful_links', as: 'useful_links'
   get 'courses/:course_id/lesson/:id' => 'lessons#show'
   # get '/student/sign_up' => 'devise/registrations#new'
   get '/lightbulbs' => 'lightbulbs#create', as: "lightbulbs"

@@ -40,6 +40,13 @@ class CoursesController < ApplicationController
     render 'show'
   end
 
+  def summaries
+    @lightbulbs = @course.lightbulbs
+    @lightbulbs.map do |lightbulb|
+      lightbulb.summary if lightbulb.summary.present?
+    end
+  end
+
   def send_lightbulb
     @subject = "%#{params[:querysubject]}%".downcase.strip
     @qu = "%#{params[:queryclassmates]}%".downcase.strip
