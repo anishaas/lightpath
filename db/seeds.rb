@@ -85,12 +85,12 @@ Enrollment.create(student_id:3, course_id:1)
 Enrollment.create(student_id:1, course_id:3)
 Enrollment.create(student_id:1, course_id:5)
 
-Lightbulb.create(lesson_id: 1, course_id: 2, assignment_id: 4, enrollment_id: 2, student_id: 2, summary:"A method is a function or feature of a class")
-Lightbulb.create(lesson_id: 1, course_id: 2, assignment_id: 5, enrollment_id: 1, student_id: 1, summary: "Object oriented programming is about encapsulation and inheritance")
-Lightbulb.create(lesson_id: 2, course_id: 2, assignment_id: 1, enrollment_id: 5, student_id: 1, video_url:"www.youtube.com")
-Lightbulb.create(lesson_id: 4, course_id: 2, assignment_id: 1, enrollment_id: 2, student_id: 1, article_url:"railscasts.com/episodes/163-self-referential-association")
-Lightbulb.create(lesson_id: 1, course_id: 2, assignment_id: 4, enrollment_id: 4, student_id: 3, summary:"I view a method as an action carried out by a class.
-For example, if the class is Beyonce, the methods could be dance and sing.")
+# Lightbulb.create(lesson_id: 1, course_id: 2, assignment_id: 4, enrollment_id: 2, student_id: 2, summary:"A method is a function or feature of a class")
+# Lightbulb.create(lesson_id: 1, course_id: 2, assignment_id: 5, enrollment_id: 1, student_id: 1, summary: "Object oriented programming is about encapsulation and inheritance")
+# Lightbulb.create(lesson_id: 2, course_id: 2, assignment_id: 1, enrollment_id: 5, student_id: 1, video_url:"www.youtube.com")
+# Lightbulb.create(lesson_id: 4, course_id: 2, assignment_id: 1, enrollment_id: 2, student_id: 1, article_url:"railscasts.com/episodes/163-self-referential-association")
+# Lightbulb.create(lesson_id: 1, course_id: 2, assignment_id: 4, enrollment_id: 4, student_id: 3, summary:"I view a method as an action carried out by a class.
+# For example, if the class is Beyonce, the methods could be dance and sing.")
 Lightbulb.create(lesson_id: 9, course_id: 6, assignment_id: 7, enrollment_id: 8, student_id: 5, article_url:@lightbulbs[3])
 
 Assignment.create(lesson_id: 3, graded: false, course_id:1, title:"Moby Dick Reading Response", description: "Analyze Captain Ahab's inner conflit.")

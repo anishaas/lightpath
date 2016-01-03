@@ -2,47 +2,32 @@
 <script type="text/javascript" src="css-pop.js"></script>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-<h4>Create A Lightbulb</h4>
-<form action="/webliographyentries/post_to_api" method="POST">
-<p><label for="summary">Summarize the concept:</label></p>
-<input id='summary' type="text" name="lightbulb[summary]">
-<p><label for="video_url">Was there a video that helped?</label></p>
-<input id='video_url' type="text" name="lightbulb[article_url]">
-<p><label for="article_url">Was there an article that helped?</label></p>
-<input id='article_url'type="text" name="lightbulb[article_url]">
-<input type=submit>
-</form>
-
 <div class = 'assignments'>
   <table class='highlight bordered'>
        <thead>
          <tr>
           <th data-field="">Name</th>
-          <th data-field="name">Description</th>
          </tr>
        </thead>
        <tbody>
          <%@lessons.each do |lesson|%>
          <tr>
             <td><h6><%="Lesson" + " " + "#{lesson.id}:" + " " + "#{lesson.title}"%></h6></td>
-            <td><p><%=lesson.description%></p></td>
             <td></td>
             <td><p><a href= "#modal-<%= lesson.id %>" class="modal-trigger modal-style btn" id= 'viewlightbulbs'>Lightbulbs</a></p></td>
-            <td><a href= "#modal-<%= lesson.id %>" class="modal-trigger modal-style btn" id= "createlightbulbbutton"><img src ='http://s13.postimg.org/6n2pzw1zb/image.png'></a></td>
             <div id="modal-<%= lesson.id %>" class="modal">
               <div class="modal-content">
                 <center>
                 <h3>Lightbulbs</h3>
                 <% lesson.lightbulbs.each do |lightbulb|%>
                   <div class="row card-panel teal" id = "viewlightbulbs">
-                        <p><%="Summary:" + " " + lightbulb.summary + " " + "-" + " " + " " + lightbulb.student.first_name if lightbulb.summary.present?%></p>
-                        <p><%= "Video URL:" + lightbulb.video_url if lightbulb.video_url.present?%></p>
-                        <p><%= "Article URL:" + lightbulb.article_url if lightbulb.article_url.present?%></p>
+                        <p><%="Summary:" + " " + lightbulb.summary + " " + "-" + " " + " " + lightbulb.student.first_name + " " + lightbulb.student.last_name if lightbulb.summary.present?%></p>
+                        <p><%= "Video URL:" + lightbulb.video_url + " " + "-" + " " + " " + lightbulb.student.first_name + " " + lightbulb.student.last_name if lightbulb.video_url.present?%></p>
+                        <p><%= "Article URL:" + lightbulb.article_url + " " + "-" + " " + " " + lightbulb.student.first_name + " " + lightbulb.student.last_name if lightbulb.article_url.present?%></p>
                   </div>
                 <%end%>
               </center>
               <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
-                </div>
               </div>
             </div>
        </tr>

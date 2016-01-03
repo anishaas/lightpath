@@ -16,6 +16,22 @@
  @import "materialize";
  @import "materialize/components/color";
 
+ .margin_right {
+     margin-right: 10px !important;
+     margin-left: 20px;
+     margin-bottom: 20px;
+     margin-top: 0px;
+     float: right;
+ }
+
+ #content1 {
+     border-left: 1px solid #CCC;
+     border-right: 1px solid #CCC;
+     padding: 50px !important;
+     background-color: #FFF;
+     min-height: 350px;
+ }
+
 #favoritelightbulbmomentcard {
   width: 400px;
   background: #FFD452 !important;

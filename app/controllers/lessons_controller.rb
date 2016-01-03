@@ -5,6 +5,7 @@ class LessonsController < ApplicationController
   # GET /courses.json
   def index
     @lessons = @course.lessons
+    @lesson_options = Lesson.where(course_id:6).all.map{|l| [ l.title, l.id ] }
   end
 
   def show

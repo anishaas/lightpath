@@ -14,6 +14,23 @@
         </div>
         <div class="header_right"></div>
         </div>
+        <a href= "#modal" class="modal-trigger modal-style btn" id= "createlightbulbbutton"><img src ='http://s13.postimg.org/6n2pzw1zb/image.png'></a>
+        <div id="modal" class="modal">
+          <div class="modal-content">
+        <h4>Create A Lightbulb</h4>
+        <form action="/webliographyentries/post_to_api" method="POST">
+        <p><label for="summary">Summarize a concept:</label></p>
+        <input id='summary' type="text" name="lightbulb[summary]">
+        <p><label for="video_url">Was there a video that helped?</label></p>
+        <input id='video_url' type="text" name="lightbulb[article_url]">
+        <p><label for="article_url">Was there an article that helped?</label></p>
+        <input id='article_url'type="text" name="lightbulb[article_url]">
+        <p><label for="lesson_id">Which Lesson number? (please select from Lessons from 1 - 13)</label></p>
+        <input id='lesson_id'type="text" name="lightbulb[lesson_id]">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat"><input type=submit></a>
+        </form>
+          </div>
+        </div>
         <div id="content1"> <img src="http://media.pearsoncmg.com/pcp/pls_coco_2/accounting_1/images_css/images/img_b_07.jpg" class="margin_right" width="340" height="350">
         <div class="title_blue_top"><strong>Lesson 7 Objectives</strong></div>
         <p class="bullet">At the end of this lesson, you will be able to:</p>
