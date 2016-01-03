@@ -14,7 +14,6 @@ class LightbulbsController < ApplicationController
 
   # GET /lightbulbs/new
   def new
-    redirect_to '/webliographyentries/post_to_api'
     #new lightbulb
   end
   # GET /lightbulbs/1/edit

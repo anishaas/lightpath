@@ -5,21 +5,23 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
 require 'learning_studio_authentication'
 require 'learning_studio_core'
 require 'JSON'
 conf = LearningStudioAuthentication::Config::OAuthConfig.new({
-    :application_id   => 'c5b8742f-c459-4fc2-91a1-7ee542acb214',
-    :application_name => 'Lightpath',
-    :client_string    => 'gbtestc',
-    :consumer_key     => '4d2b474e-7b70-4b7e-aff5-7313567c2c38',
-    :consumer_secret  =>  'DmyLEZn8ts7MuOUm'
+  :application_id   => 'c5b8742f-c459-4fc2-91a1-7ee542acb214',
+  :application_name => 'Lightpath',
+  :client_string    => 'gbtestc',
+  :consumer_key     => '04b11650-b3bb-41d6-91a6-c19936aaf4e5',
+  :consumer_secret  => 'DmyLEZn8ts7MuOUm'
 })
 oauth_factory = LearningStudioAuthentication::Service::OAuthServiceFactory.new(conf)
 service = LearningStudioCore::BasicService.new(oauth_factory)
 service.use_oauth2('anisha.srivastava123.student@gmail.com','msuTooEg')
 service.data_format = LearningStudioCore::BasicService::DataFormat::JSON
+require 'learning_studio_authentication'
+require 'learning_studio_core'
+require 'JSON'
 #Courses
 @courses = service.request("GET","/me/courses?expand=course")
 @course_title = JSON.parse(@courses.content)["courses"].first.first.last.first["course"]["displayCourseCode"]
@@ -54,13 +56,13 @@ Student.create(first_name:"Arjun", last_name:"Srivastava", email: "arjun@example
 username:"arjunsrivastava", admin:false, password: 'password')
 Student.create(first_name:"Test", last_name:"Test", email: "test@example.com",
 username:"test", admin:false, password: 'password')
-Student.create(first_name: "Floyd", last_name: "Pouncey", email: "testtest@example.com",
+Student.create(first_name: "Floyd", last_name: "Pouncey", email: "floydp@example.com",
 username:"floydpouncey", admin:false, password: 'password')
 # Student.create(first_name:@classmates.first[1].first["firstName"], last_name:@classmates.first[1].first["lastName"],email: "grady@example.com",
 # username:"gradymohamed", admin:false, password: 'password')
 
 
-Teacher.create(first_name:"Martin", last_name:"Kevorkian", email: "mk@example.com",
+Teacher.create(first_name:"Grady", last_name:"Mohamed", email: "gradym@example.com",
 username:"martinkevorkian", admin:true, password: 'password')
 Teacher.create(first_name:"Justin", last_name:"Herrick", email: "jh@example.com",
 username:"justinherrick", admin:true, password: 'password')
@@ -91,9 +93,6 @@ Lightbulb.create(lesson_id: 1, course_id: 2, assignment_id: 4, enrollment_id: 4,
 For example, if the class is Beyonce, the methods could be dance and sing.")
 Lightbulb.create(lesson_id: 9, course_id: 6, assignment_id: 7, enrollment_id: 8, student_id: 5, article_url:@lightbulbs[3])
 
-
-#teachers can also see which assignments brought the best 'lightbulb moments'
-
 Assignment.create(lesson_id: 3, graded: false, course_id:1, title:"Moby Dick Reading Response", description: "Analyze Captain Ahab's inner conflit.")
 Assignment.create(lesson_id: 3, graded: false, course_id:1, title:"The Fountainhead Essay", description: "Contrast Peter Keating and Howard Roark.")
 Assignment.create(lesson_id: 2, graded: false, course_id:6, title: "Event Loop Blog Post", description: "In your own words explain the event loop and come up with a real world parallel.")
@@ -103,12 +102,6 @@ and compare/contrast it to functional programming")
 Assignment.create(lesson_id: 5, course_id:3, title:"Verb Conjugation Practice", description:"Record or write out conjugation for the following verbs")
 Assignment.create(lesson_id: 6, graded: false, course_id:4, title:"Permutation Practice", description: "Writing methods to find all reorded combinations of characters in a string")
 Assignment.create(lesson_id: 7, graded: false, course_id:5, title:"Gender Role Analysis", description: "Analyze the main character's limitations because of her gender")
-# Assignment.create(lesson_id: 5, graded: false, course_id: 1, title: @assignment_titles[0], description: "TEST")
-# Assignment.create(lesson_id: 5, graded: false, course_id: 1, title: @assignment_titles[1], description: "TEST")
-# Assignment.create(lesson_id: 5, graded: false, course_id: 1, title: @assignment_titles[2], description: "TEST")
-# Assignment.create(lesson_id: 5, graded: false, course_id: 1, title: @assignment_titles[3], description: "TEST")
-# Assignment.create(lesson_id: 5, graded: false, course_id: 1, title: @assignment_titles[4], description: "TEST")
-
 Submission.create(assignment_id: 1, student_id: 1, body:'answer answer answer')
 
 titles.each do |title|

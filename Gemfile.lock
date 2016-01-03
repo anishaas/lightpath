@@ -111,6 +111,11 @@ GEM
       mime-types
       mimemagic (= 0.3.0)
     pg (0.18.4)
+    pusher (0.15.2)
+      httpclient (~> 2.5)
+      multi_json (~> 1.0)
+      pusher-signature (~> 0.1.8)
+    pusher-signature (0.1.8)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -196,6 +201,7 @@ DEPENDENCIES
   materialize-sass
   paperclip (~> 4.3)
   pg
+  pusher
   rails (= 4.2.4)
   react-rails
   sass-rails (~> 5.0)

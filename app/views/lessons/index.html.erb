@@ -2,6 +2,14 @@
 <script type="text/javascript" src="css-pop.js"></script>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+<h4>Create A Lightbulb</h4>
+<form action="/webliographyentries/post_to_api" method="POST">
+<input type="text" name="lightbulb[summary]"
+<input type="text" name="lightbulb[article_url]">
+<input type="text" name="lightbulb[video_url]">
+<input type=submit>
+</form>
+
 <div class = 'assignments'>
   <table class='highlight bordered'>
        <thead>
@@ -33,15 +41,6 @@
               <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
                 </div>
               </div>
-                <h4>Create a Lightbulb</h4>
-                <p>
-                <form action="/webliographyentries/post_to_api" method="POST">
-                <input type="text" name="summary">
-                <input type="text" name="article_url">
-                <input type="text" name="video_url">
-                <input type=submit>
-                </form>
-                </p>
             </div>
        </tr>
        <%end%>

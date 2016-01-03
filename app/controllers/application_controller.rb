@@ -20,6 +20,8 @@ def homepage
   service = LearningStudioCore::BasicService.new(oauth_factory)
   service.use_oauth2('anisha.srivastava123.student@gmail.com','msuTooEg')
   service.data_format = LearningStudioCore::BasicService::DataFormat::JSON
+  @response = service.request("GET","/courses/12288063/webliographyEntries")
+
   @currentuser = service.request("GET","/users/38619307")
   @currentuser_firstName = JSON.parse(@currentuser.content)["users"].first["firstName"]
   @assignments = service.request("GET", "/users/38619307/courses/12288063/itemHierarchy?expand=item")
@@ -86,13 +88,6 @@ def homepage
 @response_submitter = JSON.parse(@response.content)["webliographyEntries"].first["submitter"]["firstName"]
 
 render '/layouts/home.html.erb'
-#API call to retrieve logged in user's classmates (their lightbulbs are accessible)
-#enrolledUsers = /courses/{courseId}/enrolledUsers
-#classmates = /users/{userId}/classmates
-#/courses/{courseId}/enrolledUsers
-#API Call to retrieve course's information for course show page
-# get instructor /courses/{courseId}/instructors
-#API call to retrieve assignments for a course
 end
 
 def about
@@ -138,5 +133,5 @@ end
     @current_user = Student.find_by("first_name LIKE ?", @current_user_firstName)
     @courses = service.request("GET","/me/courses?expand=course")
     @course_title = JSON.parse(@courses.content)["courses"].first.first.last.first["course"]["displayCourseCode"]
-    @course = Course.find_by("name LIKE ?", @course_title)
+    @course = Course.find(6)
   end

@@ -5,7 +5,7 @@
     <div id='cssmenu'>
       <ul>
         <li class='last'><a href='/student_dashboard'><p>Dashboard</p></a></li>
-        <li class='has-sub'><a href='/courses/:id/lessons'><p>Lessons</p></a>
+        <li class='has-sub'><a href='/courses/:course_id/lessons'><p>Lessons</p></a>
            <ul>
              <li><p><%= link_to "View All Lessons", course_lessons_path(@course)%></p></li>
              <li><a href='/courses/:id/lessons/1'><p><%=Lesson.find(1).title%></p></a></li>
@@ -20,10 +20,6 @@
              <li><a href='/courses/:id/lessons/10'><p><%=Lesson.find(10).title%></p></a></li>
              <li><a href='/courses/:id/lessons/11'><p><%=Lesson.find(11).title%></p></a></li>
              <li><a href='/courses/:id/lessons/12'><p><%=Lesson.find(12).title%></p></a></li>
-             <!-- loop not recognizing lesson object
-             <%@lessons.each do |lesson|%>
-              <li><p><%= link_to "#{lesson.title}", course_lessons_path(@course)%></p></a></li>
-              <%end%> -->
            </ul>
         </li>
          <!-- <li class='has-sub'><a href='/courses/:id/assignments'><p>Assignments</p></a>

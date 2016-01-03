@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-
+gem 'pusher'
 gem 'learning_studio_authentication', '0.0.1', :path => 'vendor/gems/'
 gem 'learning_studio_core', '0.0.1', :path => 'vendor/gems/'
 gem 'figaro', '~> 1.1'
