@@ -1,31 +1,25 @@
 <p><%= link_to "Back to Course", course_path(Course.first)%></p>
 
-      <div class = 'assignments'>
-        <table class='highlight bordered'>
-             <thead>
-               <tr>
-                <th data-field="">Lesson</th>
-                <th data-field="">Web Link</th>
-                <th data-field="">Submitter</th>
-               </tr>
-             </thead>
-             <tbody>
-               <%@titles.each do |title|%>
-               <tr>
-                  <td><h6><%=title%></h6></td>
-                  <td></td>
-             </tr>
-             <%end%>
-             <%@urls.each do |url|%>
-             <tr>
-                <td><h6><%=url%></h6></td>
-                <td></td>
+<div class = 'useful_links'>
+      <table class='highlight bordered centered'>
+        <thead>
+          <tr>
+              <th data-field="">Lesson</th>
+              <th data-field="">Weblink</th>
+              <th data-field="">Submmitter</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @titles.each_with_index do |title, index| %>
+           <tr>
+             <td><%=title%></td>
+             <td><%= @urls[index] %></td>
+             <td><%= @submitters[index] %></td>
            </tr>
-           <%end%>
-             </tbody>
-           </table>
-      </div>
-
+          <% end %>
+        </tbody>
+      </table>
+</div>
 
 <!-- <%@urls.each do |url|%>
   <p><%=url%></p>

@@ -2,6 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.useful_links{
+  padding: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
+  border: solid 1px grey;
+  border-radius: 3px;
+  margin-top: 5%;
+}
+
+table.centered tbody tr td {
+  padding:20px;
+}
+
 #summary{
   width:400px;
   background-color: #FFD452 !important;
