@@ -27,8 +27,8 @@
         <div class="row">
           <div class="col s6 card-panel teal" id="favorites">
             <div id='headingnotifications'><h5> Your Recent Favorites </h5>
-            <%if @displayfavorites != nil%>
-                <%@displayfavorites.each do |favorite|%>
+            <%if @favoritedlightbulbs != nil%>
+                <%@favoritedlightbulbs.each do |favorite|%>
                 <div class= "row card-panel teal" id="favorite">
                   <img src ='http://s13.postimg.org/6n2pzw1zb/image.png'></img>
                 <%=favorite.lightbulb.summary + " " + "#{favorite.lightbulb.student.first_name}" if favorite.lightbulb.summary.present?%>

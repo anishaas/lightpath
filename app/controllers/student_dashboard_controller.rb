@@ -1,5 +1,6 @@
 class StudentDashboardController < ApplicationController
   before_filter :authenticate_user
+  before_action :set_course, only: [:index]
 
   def index
     conf = LearningStudioAuthentication::Config::OAuthConfig.new({
@@ -22,10 +23,16 @@ class StudentDashboardController < ApplicationController
     # @submissions = current_user.submissions
     @messages = current_user.received_messages
     # @lightbulb_ids = current_user.lightbulbs.map{|lightbulb|lightbulb.id}
-    @displayfavorites = Array.new
     @favoritesall = Favorite.all
+    @favoritedlightbulbs = Array.new
     @favoritesall.each do |favorite|
-    if favorite.lightbulb.student.id == current_user.id #add to display array
+      if favorite.student_id == @current_user.id #current_user favorited classmates
+        @favoritedlightbulbs.push(favorite)
+      end
+    end
+    @displayfavorites = Array.new
+    @favoritesall.each do |favorite|
+    if favorite.lightbulb.student.id == @current_user.id #classmates' favorited current_user
       @displayfavorites.push(favorite)
       end
     end

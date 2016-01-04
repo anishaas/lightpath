@@ -101,4 +101,4 @@ titles.each do |title|
   Lesson.create(course_id: 1, title: title)
 end
 
-Favorite.create(lightbulb_id: 1, student_id:3)
+Favorite.create(lightbulb_id: 3, student_id:2)
