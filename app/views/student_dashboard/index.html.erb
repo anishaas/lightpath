@@ -42,14 +42,14 @@
 
           <div class= "col s6 card-panel teal" id="notifications">
             <div id='headingnotifications'><h5> Notifications </h5></div>
-            <%if @submissions != nil%>
+            <%if @messages != nil%>
             <%@messages.each do |message|%>
-            <div class= "row card-panel teal" id="notification">
-              <img src ='http://s13.postimg.org/6n2pzw1zb/image.png'></img>
-              <div id = 'sender'><%=message.sender.first_name + " " +"sent you a lightbulb and message:"%></div>
-                <div id= 'messagebody'><%=message.body%></div>
-                - <%=message.subject%>
-           </div>
+              <div class= "row card-panel teal" id="notification">
+                <img src ='http://s13.postimg.org/6n2pzw1zb/image.png'></img>
+                <div id = 'sender'><%=message.sender.first_name + " " +"sent you a lightbulb and message:"%></div>
+                  <div id= 'messagebody'><%=message.body%></div>
+                  - <%=message.subject%>
+              </div>
            <%end%>
            <%end%>
            <%@displayfavorites.each do |favorite|%>

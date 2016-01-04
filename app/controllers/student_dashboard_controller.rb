@@ -20,7 +20,7 @@ class StudentDashboardController < ApplicationController
     @course = Course.find(1)
     # @courses = current_user.courses
     # @submissions = current_user.submissions
-    # @messages = current_user.received_messages
+    @messages = current_user.received_messages
     # @lightbulb_ids = current_user.lightbulbs.map{|lightbulb|lightbulb.id}
     @displayfavorites = Array.new
     @favoritesall = Favorite.all
