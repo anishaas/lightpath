@@ -37,7 +37,7 @@ class CoursesController < ApplicationController
     @q = "%#{params[:query]}%".downcase.strip
     @lessons = Lesson.where("lower(title) LIKE ?", @q)
     @results = @lessons
-    @results += Lightbulb.where("lower(summary) || lower(video_url) LIKE ?", @q)
+    # @results += Lightbulb.where("lower(summary) || lower(video_url) LIKE ?", @q)
     @results
     @bulbs = current_user.lightbulbs.where(course_id: @course.id)
     render 'show'
