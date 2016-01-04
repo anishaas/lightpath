@@ -26,13 +26,13 @@ class StudentDashboardController < ApplicationController
     @favoritesall = Favorite.all
     @favoritedlightbulbs = Array.new
     @favoritesall.each do |favorite|
-      if favorite.student_id == @current_user.id #current_user favorited classmates
+      if favorite.student_id == current_user.id #current_user favorited classmates
         @favoritedlightbulbs.push(favorite)
       end
     end
     @displayfavorites = Array.new
     @favoritesall.each do |favorite|
-    if favorite.lightbulb.student.id == @current_user.id #classmates' favorited current_user
+    if favorite.lightbulb.student.id == current_user.id #classmates' favorited current_user
       @displayfavorites.push(favorite)
       end
     end

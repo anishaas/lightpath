@@ -27,7 +27,7 @@ class WebliographyentriesController < ActionController::Base
       }
     }.to_json)
     #seed new Lightbulb
-    @lightbulb = Lightbulb.create(course_id: @course.id, lesson_id: params["lightbulb"][:lesson_id].to_i ,student_id: @current_user.id, summary: params["lightbulb"][:summary],
+    @lightbulb = Lightbulb.create(course_id: @course.id, lesson_id: params["lightbulb"][:lesson_id].to_i ,student_id: current_user.id, summary: params["lightbulb"][:summary],
     video_url: params["lightbulb"][:video_url], article_url: params["lightbulb"][:article_url])
     redirect_to course_path(@course)
   end

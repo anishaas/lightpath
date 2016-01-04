@@ -92,7 +92,7 @@ class CoursesController < ApplicationController
         @lightbulbs.push(response["title"], response["description"], response["url"], response["submitter"]["firstName"])
       end
     @bulbs = Array.new
-    @bulbs= @current_user.lightbulbs.where(course_id: @course.id)
+    @bulbs= current_user.lightbulbs.where(course_id: @course.id)
     @recipient = Student.find_by("lower(first_name) LIKE ?", @qu)
   end
 
