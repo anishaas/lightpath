@@ -1,3 +1,10 @@
-<p><%=@titles%></p>
-<p><%=@urls%></p>
-<p><%=@submitters%></p>
+<p><%= link_to "Back to Course", course_path(Course.first)%></p>
+<%@titles.each do |title|%>
+  <p><%=title%></p>
+<%end%>
+<%@urls.each do |url|%>
+  <p><%=url%></p>
+<%end%>
+<%@submitters.each do |submitter|%>
+<p><%=submitter%></p>
+<%end%>

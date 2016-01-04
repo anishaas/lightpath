@@ -17,14 +17,14 @@ class CoursesController < ApplicationController
     service = LearningStudioCore::BasicService.new(oauth_factory)
     service.use_oauth2('anisha.srivastava123.student@gmail.com','msuTooEg')
     response = service.request("GET","/courses/12288063/webliographyEntries")
-    response = JSON.parse(response.content)
-    @titles = response["webliographyEntries"].map do |entry|
+    @useful_response = JSON.parse(response.content)
+    @titles = @useful_response["webliographyEntries"].map do |entry|
                 entry['title']
               end
-    @urls = response["webliographyEntries"].map do |entry|
+    @urls = @useful_response["webliographyEntries"].map do |entry|
                 entry['site']['url']
               end
-    @submitters = response["webliographyEntries"].map do |entry|
+    @submitters = @useful_response["webliographyEntries"].map do |entry|
                 entry['submitter']['firstName']
               end
     render 'useful_links'

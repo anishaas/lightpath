@@ -12,7 +12,7 @@ class WebliographyentriesController < ActionController::Base
     service = LearningStudioCore::BasicService.new(oauth_factory)
     service.use_oauth2('anisha.srivastava123.student@gmail.com','msuTooEg')
     service.data_format = LearningStudioCore::BasicService::DataFormat::JSON
-    service.request("POST","/courses/12288063/webliographyEntries",     {  "webliographyEntry":{
+    service.request("POST","/courses/12288063/webliographyEntries", {  "webliographyEntry":{
         "title": params["lightbulb"][:summary],
         "description": params["lightbulb"][:summary],
         "site":{
