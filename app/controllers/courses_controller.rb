@@ -43,11 +43,13 @@ class CoursesController < ApplicationController
 
   def summaries
     @course = Course.find(params[:id])
-    @lessons = @course.lessons
-    @lightbulbs = @course.lightbulbs
-    @summaries = @lightbulbs.map do |lightbulb|
-      lightbulb.summary if lightbulb.summary.present?
+    @lightbulbs = Lightbulb.where(course_id: @course.id)
+    @summarylightbulbs = Array.new
+    @lightbulbs.each do |lightbulb|
+      @summarylightbulbs.push(lightbulb) if lightbulb.summary.present?
     end
+    # @summaries = @lightbulbs.map do |lightbulb|
+    #   lightbulb.summary if lightbulb.summary.present?
     render 'summaries'
   end
 
