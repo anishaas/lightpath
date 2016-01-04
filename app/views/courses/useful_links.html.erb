@@ -1,10 +1,35 @@
 <p><%= link_to "Back to Course", course_path(Course.first)%></p>
-<%@titles.each do |title|%>
-  <p><%=title%></p>
-<%end%>
-<%@urls.each do |url|%>
+
+      <div class = 'assignments'>
+        <table class='highlight bordered'>
+             <thead>
+               <tr>
+                <th data-field="">Lesson</th>
+                <th data-field="">Web Link</th>
+                <th data-field="">Submitter</th>
+               </tr>
+             </thead>
+             <tbody>
+               <%@titles.each do |title|%>
+               <tr>
+                  <td><h6><%=title%></h6></td>
+                  <td></td>
+             </tr>
+             <%end%>
+             <%@urls.each do |url|%>
+             <tr>
+                <td><h6><%=url%></h6></td>
+                <td></td>
+           </tr>
+           <%end%>
+             </tbody>
+           </table>
+      </div>
+
+
+<!-- <%@urls.each do |url|%>
   <p><%=url%></p>
 <%end%>
 <%@submitters.each do |submitter|%>
 <p><%=submitter%></p>
-<%end%>
+<%end%> -->

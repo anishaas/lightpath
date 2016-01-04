@@ -1,6 +1,7 @@
 class WebliographyentriesController < ActionController::Base
   before_action :set_course, only: [:post_to_api]
   def post_to_api
+    @lesson = Lesson.find(params[:lesson_id].to_i)
     conf = LearningStudioAuthentication::Config::OAuthConfig.new({
       :application_id   => 'c5b8742f-c459-4fc2-91a1-7ee542acb214',
       :application_name => 'Lightpath',
@@ -13,7 +14,7 @@ class WebliographyentriesController < ActionController::Base
     service.use_oauth2('anisha.srivastava123.student@gmail.com','msuTooEg')
     service.data_format = LearningStudioCore::BasicService::DataFormat::JSON
     service.request("POST","/courses/12288063/webliographyEntries", {  "webliographyEntry":{
-        "title": params["lightbulb"][:summary],
+        "title": @lesson.title,
         "description": params["lightbulb"][:summary],
         "site":{
           "url": params["lightbulb"][:video_url]
