@@ -1,1 +1,1 @@
-Figaro.require_keys("learningstudio_app_id", "learningstudio_key", "learningstudio_secret")
+# Figaro.require_keys("pearson_app_id", "pearson_key", "pearson_secret")

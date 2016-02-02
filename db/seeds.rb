@@ -5,15 +5,17 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+  #ENV Variables not working  #ENV Variables not working
 require 'learning_studio_authentication'
 require 'learning_studio_core'
 require 'JSON'
+require 'figaro'
 conf = LearningStudioAuthentication::Config::OAuthConfig.new({
-  :application_id   => 'c5b8742f-c459-4fc2-91a1-7ee542acb214',
-  :application_name => 'Lightpath',
-  :client_string    => 'gbtestc',
-  :consumer_key     => '04b11650-b3bb-41d6-91a6-c19936aaf4e5',
-  :consumer_secret  => 'DmyLEZn8ts7MuOUm'
+  :application_id   => ENV['application_id'],
+  :application_name => ENV['application_name'],
+  :client_string    => ENV['client_string'],
+  :consumer_key     => ENV['consumer_key'],
+  :consumer_secret  =>  ENV['consumer_secret']
 })
 oauth_factory = LearningStudioAuthentication::Service::OAuthServiceFactory.new(conf)
 service = LearningStudioCore::BasicService.new(oauth_factory)

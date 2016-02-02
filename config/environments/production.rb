@@ -76,5 +76,17 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  conf = LearningStudioAuthentication::Config::OAuthConfig.new({
+    :application_id   => ENV['pearson_app_id'],
+    :application_name => ENV['pearson_application_name'],
+    :client_string    => ENV['pearson_client_string'],
+    :consumer_key     => ENV['pearson_key'],
+    :consumer_secret  =>  ENV['pearson_secret']
+  })
+end
 
+Rails.application.configure do
+    ...
+    config.secret_key_base = ENV["SECRET_KEY_BASE"]
+    ...
 end

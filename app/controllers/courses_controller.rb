@@ -22,7 +22,7 @@ class CoursesController < ApplicationController
                 entry['title']
               end
     @stop = @titles.count-1.to_i
-    @titles = @titles[4..@stop]
+    @titles = @titles[10..@stop]
     @urls = @useful_response["webliographyEntries"].map do |entry|
                 entry['site']['url']
               end

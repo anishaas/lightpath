@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'pusher'
 gem 'learning_studio_authentication', '0.0.1', :path => 'vendor/gems/'
 gem 'learning_studio_core', '0.0.1', :path => 'vendor/gems/'
-gem 'figaro', '~> 1.1'
+# gem 'figaro', '~> 1.1'
 gem 'rails', '4.2.4'
 # Use sqlite3 as the database for Active Record
 gem 'httparty'
@@ -22,7 +22,7 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails'
+# gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
