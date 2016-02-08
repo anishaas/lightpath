@@ -84,9 +84,3 @@ Rails.application.configure do
     :consumer_secret  =>  ENV['pearson_secret']
   })
 end
-
-Rails.application.configure do
-    ...
-    config.secret_key_base = ENV["SECRET_KEY_BASE"]
-    ...
-end

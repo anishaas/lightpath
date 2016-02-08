@@ -3,7 +3,7 @@ class AssignmentsController < ApplicationController
 
   # GET /courses
   # GET /courses.json
-  def index
+  def index #response is course title 
     conf = LearningStudioAuthentication::Config::OAuthConfig.new({
         :application_id   => 'c5b8742f-c459-4fc2-91a1-7ee542acb214',
         :application_name => 'Lightpath',

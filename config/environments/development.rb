@@ -38,11 +38,4 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
-  conf = LearningStudioAuthentication::Config::OAuthConfig.new({
-      :application_id   => ENV['pearson_app_id'],
-      :application_name => ENV['pearson_application_name'],
-      :client_string    => ENV['pearson_client_string'],
-      :consumer_key     => ENV['pearson_key'],
-      :consumer_secret  =>  ENV['pearson_secret']
-  })
 end

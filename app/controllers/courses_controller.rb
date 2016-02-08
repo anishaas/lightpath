@@ -43,7 +43,7 @@ class CoursesController < ApplicationController
     render 'show'
   end
 
-  def summaries
+  def summaries #collecting summaries for review sheet page
     @course = Course.find(params[:id])
     @lightbulbs = Lightbulb.where(course_id: @course.id)
     @summarylightbulbs = Array.new
@@ -55,7 +55,7 @@ class CoursesController < ApplicationController
     render 'summaries'
   end
 
-  def send_lightbulb
+  def send_lightbulb #searching DB for recipient name
     @subject = "%#{params[:querysubject]}%".downcase.strip
     @qu = "%#{params[:queryclassmates]}%".downcase.strip
     @recipient = Student.find_by("lower(first_name) LIKE ?", @qu)
@@ -69,7 +69,7 @@ class CoursesController < ApplicationController
     @courses = Course.all
   end
 
-  def show
+  def show #Need to use ENV variables
     # @course = Course.fetch(params[:id])
     # @assignments = @course.assignments
     conf = LearningStudioAuthentication::Config::OAuthConfig.new({
